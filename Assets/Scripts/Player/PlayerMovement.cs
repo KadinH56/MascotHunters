@@ -15,16 +15,15 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    private PlayerInput pInput;
     private Rigidbody pRigidBody;
 
-    private InputAction move;
-    private InputAction special;
+    //Used to ID the player for local multiplayer. Set to 0 or 1 ingame
+    private int playerID = -1;
 
     /// <summary>
-    /// This is for local multiplayer. The arcade cabinet could support up to 2 players simeotaneously
+    /// Used by the Player Manager to set the player ID to 0 or 1
     /// </summary>
-    [SerializeField] private int player = 0;
+    public int PlayerID { get => playerID; set => playerID = value; }
 
     /// <summary>
     /// Sets some private variables and starts the action map
@@ -33,10 +32,11 @@ public class PlayerMovement : MonoBehaviour
     public void Awake()
     {
         //Init above variables
-        pInput = GetComponent<PlayerInput>();
         pRigidBody = GetComponent<Rigidbody>();
+    }
 
-        //Start the action map
-        pInput.currentActionMap.Enable();
+    private void OnMove()
+    {
+        Destroy(gameObject);
     }
 }
