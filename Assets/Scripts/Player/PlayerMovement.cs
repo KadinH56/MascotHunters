@@ -15,7 +15,12 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private float playerSpeed = 8f;
+
     private Rigidbody pRigidBody;
+    private PlayerInput pInput;
+
+    private InputAction move;
 
     //Used to ID the player for local multiplayer. Set to 0 or 1 ingame
     private int playerID = -1;
@@ -33,10 +38,18 @@ public class PlayerMovement : MonoBehaviour
     {
         //Init above variables
         pRigidBody = GetComponent<Rigidbody>();
+        pInput = GetComponent<PlayerInput>();
+
+        move = pInput.currentActionMap.FindAction("Move");
     }
 
-    private void OnMove()
+    /// <summary>
+    /// The best player movement ever seen
+    /// </summary>
+    private void FixedUpdate()
     {
-        Destroy(gameObject);
+        Vector3 moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
+
+        pRigidBody.linearVelocity = Vector3.MoveTowards(pRigidBody.linearVelocity, moveDir * playerSpeed, 1f);
     }
 }
