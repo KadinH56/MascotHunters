@@ -46,15 +46,14 @@ public class MainProcGen : MonoBehaviour
         chunkNoise.SetFrequency(0.5f);
 
         chunkNoise.SetSeed(seed);
-
-        Generate(Vector3.zero);
+        StartCoroutine(Generate(Vector3.zero));
     }
 
     /// <summary>
     /// Generate the actual game
     /// </summary>
     /// <param name="position">Player position</param>
-    public void Generate(Vector3 position)
+    public IEnumerator Generate(Vector3 position)
     {
         position /= chunkSize;
 
@@ -76,12 +75,15 @@ public class MainProcGen : MonoBehaviour
                 }
                 //Load Gameobject code
                 GameObject gameObject = GetChunkAtPoint(pos);
-                Instantiate(gameObject, parentTransform);
 
-                print(pos);
+                gameObject = Instantiate(gameObject, parentTransform, true);
                 gameObject.transform.position = new(pos.x * chunkSize, 0, pos.y * chunkSize);
 
+                print(new Vector3(pos.x * chunkSize, 0, pos.y * chunkSize));
+
                 loadedMap.Add(pos, gameObject);
+
+                yield return null;
             }
         }
 
