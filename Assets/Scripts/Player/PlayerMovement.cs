@@ -15,7 +15,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float playerSpeed = 8f;
+    //[SerializeField] private float playerSpeed = 8f;
+     private PlayerStatManager statManager;
 
     private Rigidbody pRigidBody;
     private PlayerInput pInput;
@@ -39,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         //Init above variables
         pRigidBody = GetComponent<Rigidbody>();
         pInput = GetComponent<PlayerInput>();
+        statManager = GetComponent<PlayerStatManager>();
 
         move = pInput.currentActionMap.FindAction("Move");
     }
@@ -50,6 +52,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
 
-        pRigidBody.linearVelocity = Vector3.MoveTowards(pRigidBody.linearVelocity, moveDir * playerSpeed, 1f);
+        pRigidBody.linearVelocity = Vector3.MoveTowards(pRigidBody.linearVelocity, moveDir * statManager.PlayerStats.Movement, 1f);
     }
 }
