@@ -183,3 +183,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 8
+  dashSpeed: 20
+  dashTime: 1
+  isRoll: 0
