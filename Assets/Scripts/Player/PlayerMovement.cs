@@ -8,7 +8,9 @@
 //  Special abilities, including dodge roll
 *****************************************************************************/
 
+using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerInput))]
@@ -16,14 +18,20 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 8f;
+    [SerializeField] private float dashSpeed = 5f;
+    [SerializeField] private float dashTime = 1f;
+    [SerializeField] private bool isRoll;
 
     private Rigidbody pRigidBody;
     private PlayerInput pInput;
 
     private InputAction move;
+    private InputAction roll;
 
     //Used to ID the player for local multiplayer. Set to 0 or 1 ingame
     private int playerID = -1;
+
+    private Vector3 moveDir;
 
     /// <summary>
     /// Used by the Player Manager to set the player ID to 0 or 1
@@ -41,6 +49,39 @@ public class PlayerMovement : MonoBehaviour
         pInput = GetComponent<PlayerInput>();
 
         move = pInput.currentActionMap.FindAction("Move");
+        roll = pInput.currentActionMap.FindAction("Roll");
+
+        //Creates the function when the button for the roll is pressed
+        roll.started += Roll_started;
+    }
+
+    /// <summary>
+    /// Controls what happens when the player hits the dash button
+    /// </summary>
+    /// <param name="obj"></param>
+    private void Roll_started(InputAction.CallbackContext obj)
+    {
+        if(moveDir == Vector3.zero)
+        {
+            return;
+        }
+        isRoll = true;
+        Debug.Log("Roll started!");
+
+        //Vector3 moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
+        //pRigidBody.AddForce(new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed));
+        moveDir *= dashSpeed;
+
+        //Starts the coroutine
+        StartCoroutine(Roll());
+    }
+
+    private IEnumerator Roll()
+    {
+        yield return new WaitForSeconds(dashTime);
+
+        Debug.Log("Coroutine ended!");
+        isRoll = false;
     }
 
     /// <summary>
@@ -48,7 +89,10 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        Vector3 moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
+        if (!isRoll)
+        {
+            moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
+        }
 
         pRigidBody.linearVelocity = Vector3.MoveTowards(pRigidBody.linearVelocity, moveDir * playerSpeed, 1f);
     }
