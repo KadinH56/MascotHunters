@@ -10,7 +10,6 @@
 
 using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerInput))]
@@ -69,7 +68,6 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         isRoll = true;
-        Debug.Log("Roll started!");
 
         //Vector3 moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
         //pRigidBody.AddForce(new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed));
@@ -83,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(dashTime);
 
-        Debug.Log("Coroutine ended!");
         isRoll = false;
     }
 
