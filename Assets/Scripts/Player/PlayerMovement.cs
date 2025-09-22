@@ -10,13 +10,14 @@
 
 using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
+    private PlayerStatManager statManager;
+
     [SerializeField] private float playerSpeed = 8f;
     [SerializeField] private float dashSpeed = 5f;
     [SerializeField] private float dashTime = 1f;
@@ -47,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         //Init above variables
         pRigidBody = GetComponent<Rigidbody>();
         pInput = GetComponent<PlayerInput>();
+        statManager = GetComponent<PlayerStatManager>();
 
         move = pInput.currentActionMap.FindAction("Move");
         roll = pInput.currentActionMap.FindAction("Roll");
@@ -66,7 +68,6 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         isRoll = true;
-        Debug.Log("Roll started!");
 
         //Vector3 moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
         //pRigidBody.AddForce(new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed));
@@ -80,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(dashTime);
 
-        Debug.Log("Coroutine ended!");
         isRoll = false;
     }
 
@@ -94,6 +94,6 @@ public class PlayerMovement : MonoBehaviour
             moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
         }
 
-        pRigidBody.linearVelocity = Vector3.MoveTowards(pRigidBody.linearVelocity, moveDir * playerSpeed, 1f);
+        pRigidBody.linearVelocity = Vector3.MoveTowards(pRigidBody.linearVelocity, moveDir * statManager.PlayerStats.Movement, 1f);
     }
 }
