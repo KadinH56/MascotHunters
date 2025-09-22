@@ -20,8 +20,13 @@ public class Stats
     private int healthModifierAdditive = 0;
     private float healthModifierMultiplicitive = 1.0f;
 
-    //Damage
-    //TODO: talk with designers about this. Damage gets a little nuanced and it's not as easy as "plugin this number"
+    /// <summary>
+    /// Only for enemies
+    /// </summary>
+    [SerializeField] private int baseDamage = 0;
+
+    private int damageModifierAdditive = 0;
+    private float damageModifierMultiplicitive = 1.0f;
 
     //Movement
     [SerializeField] private float baseMovement;
@@ -47,4 +52,11 @@ public class Stats
     /// Do NOT change baseMovement directly
     /// </summary>
     public float Movement { get => (baseMovement + MovementModifierAdditive) * MovementModifierMultiplicitive; }
+    public int DamageModifierAdditive { get => damageModifierAdditive; set => damageModifierAdditive = value; }
+    public float DamageModifierMultiplicitive { get => damageModifierMultiplicitive; set => damageModifierMultiplicitive = value; }
+    /// <summary>
+    /// ONLY USE FOR ENEMIES
+    /// Scales damage based on damage modifiers
+    /// </summary>
+    public int Damage { get => Mathf.RoundToInt((baseDamage + damageModifierAdditive) * damageModifierMultiplicitive); }
 }

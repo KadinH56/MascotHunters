@@ -79,7 +79,7 @@ public class MainProcGen : MonoBehaviour
                 gameObject = Instantiate(gameObject, parentTransform, true);
                 gameObject.transform.position = new(pos.x * chunkSize, 0, pos.y * chunkSize);
 
-                print(new Vector3(pos.x * chunkSize, 0, pos.y * chunkSize));
+                //print(new Vector3(pos.x * chunkSize, 0, pos.y * chunkSize));
 
                 loadedMap.Add(pos, gameObject);
 
