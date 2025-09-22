@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     //Used to ID the player for local multiplayer. Set to 0 or 1 ingame
     private int playerID = -1;
 
+    private Vector3 moveDir;
+
     /// <summary>
     /// Used by the Player Manager to set the player ID to 0 or 1
     /// </summary>
@@ -59,11 +61,16 @@ public class PlayerMovement : MonoBehaviour
     /// <param name="obj"></param>
     private void Roll_started(InputAction.CallbackContext obj)
     {
+        if(moveDir == Vector3.zero)
+        {
+            return;
+        }
         isRoll = true;
         Debug.Log("Roll started!");
 
-        Vector3 moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
-        pRigidBody.AddForce(new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed));
+        //Vector3 moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
+        //pRigidBody.AddForce(new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed));
+        moveDir *= dashSpeed;
 
         //Starts the coroutine
         StartCoroutine(Roll());
@@ -82,7 +89,10 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        Vector3 moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
+        if (!isRoll)
+        {
+            moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
+        }
 
         pRigidBody.linearVelocity = Vector3.MoveTowards(pRigidBody.linearVelocity, moveDir * playerSpeed, 1f);
     }
