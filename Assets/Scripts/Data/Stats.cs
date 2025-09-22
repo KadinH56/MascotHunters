@@ -29,8 +29,6 @@ public class Stats
     private float movementModifierAdditive = 0f;
     private float movementModifierMultiplicitive = 1.0f;
 
-    //TODO: what other stats do we want to store?
-
     public int Health { get => health; set => health = value; }
     public int HealthModifierAdditive { get => healthModifierAdditive; set => healthModifierAdditive = value; }
     public float HealthModifierMultiplicitive { get => healthModifierMultiplicitive; set => healthModifierMultiplicitive = value; }
@@ -49,5 +47,4 @@ public class Stats
     /// Do NOT change baseMovement directly
     /// </summary>
     public float Movement { get => (baseMovement + MovementModifierAdditive) * MovementModifierMultiplicitive; }
-
 }
