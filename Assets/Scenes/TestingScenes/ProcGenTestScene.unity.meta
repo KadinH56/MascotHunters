@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Assets/3D_Assets/Textures.meta
+guid: 5d37231264dcf7141a87fe1a995c861e
+folderAsset: yes
+========
 guid: 94e2912f893a0454a9d54d5d4440dfe3
+>>>>>>>> testing:Assets/Scenes/TestingScenes/ProcGenTestScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
