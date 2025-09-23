@@ -11,6 +11,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(Rigidbody))]
@@ -34,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 moveDir;
 
+    private CameraFollower cam;
+
     /// <summary>
     /// Used by the Player Manager to set the player ID to 0 or 1
     /// </summary>
@@ -55,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Creates the function when the button for the roll is pressed
         roll.started += Roll_started;
+        cam = FindFirstObjectByType<CameraFollower>();
     }
 
     /// <summary>
@@ -95,5 +99,49 @@ public class PlayerMovement : MonoBehaviour
         }
 
         pRigidBody.linearVelocity = Vector3.MoveTowards(pRigidBody.linearVelocity, moveDir * statManager.PlayerStats.Movement, 1f);
+        //if (Vector2.Distance(new(transform.position.x, transform.position.z), new(cam.transform.position.x - cam.OffSet.x, cam.transform.position.z - cam.OffSet.z)) > cam.MaxCameraDistance)
+        //{
+        //    //Vector3 position = (cam.transform.position - cam.OffSet) + transform.position;
+        //    //position.Normalize();
+        //    //transform.position = position * cam.MaxCameraDistance;
+
+        //    Vector2 pPos = new(transform.position.x, transform.position.z);
+        //    Vector2 cPos = new(cam.transform.position.x - cam.OffSet.x, cam.transform.position.z - cam.OffSet.z);
+
+        //    Vector2 direction = cPos + pPos;
+        //    direction.Normalize();
+
+        //    direction *= cam.MaxCameraDistance;
+        //    print(direction);
+        //    transform.position = new(direction.x, 1.5f, direction.y);
+        //}
+
+        if(moveDir == Vector3.zero)
+        {
+            return;
+        }
+
+        Vector3 average = Vector3.zero;
+        float size = 0f;
+        foreach(GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            if (!player.activeSelf)
+            {
+                continue;
+            }
+
+            average += player.transform.position;
+            size += 1f;
+        }
+
+        average /= size;
+
+        if(Vector3.Distance(transform.position, average) > cam.MaxCameraDistance)
+        {
+            Vector3 direction = transform.position - average;
+            direction.Normalize();
+            direction *= cam.MaxCameraDistance;
+            transform.position = average + direction;
+        }
     }
 }

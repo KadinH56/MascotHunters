@@ -21,6 +21,8 @@ public class MainProcGen : MonoBehaviour
 
     private Dictionary<Vector2Int, GameObject> loadedMap = new Dictionary<Vector2Int, GameObject>();
 
+    public float ChunkSize { get => chunkSize; set => chunkSize = value; }
+
     /// <summary>
     /// Initialize the fastnoiselites and configures them. Also randomizes the scene
     /// </summary>
@@ -46,7 +48,12 @@ public class MainProcGen : MonoBehaviour
         chunkNoise.SetFrequency(0.5f);
 
         chunkNoise.SetSeed(seed);
-        StartCoroutine(Generate(Vector3.zero));
+        //StartCoroutine(Generate(Vector3.zero));
+    }
+
+    public void StartGeneration(Vector3 position)
+    {
+        StartCoroutine(Generate(position));
     }
 
     /// <summary>
@@ -57,7 +64,7 @@ public class MainProcGen : MonoBehaviour
     {
         position /= chunkSize;
 
-        Vector2Int relativePosition = new(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y));
+        Vector2Int relativePosition = new(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.z));
 
         List<Vector2Int> loadedChunks = new();
 
