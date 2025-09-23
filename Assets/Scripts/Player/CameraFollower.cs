@@ -8,9 +8,17 @@ public class CameraFollower : MonoBehaviour
 
     [SerializeField] private float cameraHeightMin = 10f;
     [SerializeField] private Vector3 offSet = Vector3.zero;
+    private MainProcGen generation;
 
     public float MaxCameraDistance { get => maxCameraDistance; }
     public Vector3 OffSet { get => offSet; set => offSet = value; }
+
+    private Vector2Int? lastGeneration = null;
+
+    private void Start()
+    {
+        generation = FindFirstObjectByType<MainProcGen>();
+    }
 
     /// <summary>
     /// Get average distance and generate new chunks
@@ -45,7 +53,16 @@ public class CameraFollower : MonoBehaviour
 
         transform.position = average + offSet;
 
-        float fov = Mathf.Lerp(40, 60, (Mathf.Min(Mathf.Max(yValue, cameraHeightMin), maxCameraDistance) - cameraHeightMin) / (maxCameraDistance - cameraHeightMin));
-        GetComponent<CinemachineCamera>().Lens.FieldOfView = fov;
+        //We're not even gonna think about FOV
+        //float fov = Mathf.Lerp(40, 60, (Mathf.Min(Mathf.Max(yValue, cameraHeightMin), maxCameraDistance) - cameraHeightMin) / (maxCameraDistance - cameraHeightMin));
+        //GetComponent<CinemachineCamera>().Lens.FieldOfView = fov;
+
+        //Generation
+        Vector2Int currentPosition = new(Mathf.RoundToInt((transform.position.x - OffSet.x) / generation.ChunkSize), Mathf.RoundToInt((transform.position.z - OffSet.z) / generation.ChunkSize));
+        if(currentPosition != lastGeneration)
+        {
+            generation.StartGeneration(transform.position - OffSet);
+            lastGeneration = currentPosition;
+        }
     }
 }
