@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class LadderRotate : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private Transform rotateAround;
+    [SerializeField] private bool isRotating;
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// If the bool is true, the ladder will rotate around the fixed object
+    /// </summary>
+    void FixedUpdate()
     {
-        
+        if(isRotating == true)
+        {
+            this.transform.RotateAround(Vector3.forward, rotateAround.position, rotationSpeed * Time.deltaTime);
+        }
     }
 }

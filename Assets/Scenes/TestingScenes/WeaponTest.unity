@@ -461,7 +461,7 @@ Transform:
   m_GameObject: {fileID: 761160831}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 391.79, y: 8.96, z: 293.23}
+  m_LocalPosition: {x: 344.68152, y: 8.96, z: 293.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -677,6 +677,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1880094184}
   - component: {fileID: 1880094183}
+  - component: {fileID: 1880094185}
+  - component: {fileID: 1880094186}
   m_Layer: 0
   m_Name: Ladder
   m_TagString: Untagged
@@ -748,12 +750,50 @@ Transform:
   m_GameObject: {fileID: 1880094182}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 387.6685, y: 8.96, z: 293.24}
+  m_LocalPosition: {x: 340.56, y: 8.96, z: 293.24}
   m_LocalScale: {x: 6.5213704, y: 0.7528078, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!136 &1880094185
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880094182}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.49999994
+  m_Height: 1.0699311
+  m_Direction: 0
+  m_Center: {x: -0.004478403, y: 0, z: 0}
+--- !u!114 &1880094186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880094182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca16e054db9e854ea92d51b4ac43544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 15
+  rotateAround: {fileID: 761160833}
+  isRotating: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
