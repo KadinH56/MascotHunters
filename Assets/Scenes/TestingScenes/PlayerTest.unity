@@ -259,7 +259,6 @@ MonoBehaviour:
   loadedChunkDistance: 4
   biomes: 3
   parentTransform: {fileID: 50576275}
-<<<<<<< HEAD
 --- !u!1 &281915999
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,15 +278,11 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &281916000
-=======
---- !u!114 &50576277
->>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 281915999}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -418,6 +413,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838192260}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 =======
   m_GameObject: {fileID: 50576274}
   m_Enabled: 1
@@ -446,6 +442,8 @@ CanvasRenderer:
   m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 >>>>>>> main
+=======
+>>>>>>> Stashed changes
 --- !u!1 &844697018
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,11 +536,7 @@ MonoBehaviour:
   numPlayers: 2
   spawnRadius: 5
   playerPrefab: {fileID: 5593190870652179328, guid: 194562d1d66e8484f93aee963a6e9fed, type: 3}
-<<<<<<< HEAD
 --- !u!1 &930078997
-=======
---- !u!1 &1823208483
->>>>>>> main
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -550,35 +544,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
   - component: {fileID: 930078998}
   - component: {fileID: 930079000}
   - component: {fileID: 930078999}
   m_Layer: 5
   m_Name: WaveProgressBorder
-=======
-  - component: {fileID: 1823208484}
-  - component: {fileID: 1823208486}
-  m_Layer: 0
-  m_Name: SpawnEnemy
->>>>>>> main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
 --- !u!224 &930078998
 RectTransform:
-=======
---- !u!4 &1823208484
-Transform:
->>>>>>> main
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 930078997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -849,24 +830,11 @@ RectTransform:
   m_SizeDelta: {x: 350, y: 13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1268165982
-=======
-  m_GameObject: {fileID: 1823208483}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1823208486
->>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1268165980}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1050,15 +1018,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053085781}
   m_CullTransparentMesh: 1
-=======
-  m_GameObject: {fileID: 1823208483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4038e553d92920b44a7fcda5c9ed1fe9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 5593190870652179328, guid: 3a85ceba3c7d3244ea8202e95afaccdf, type: 3}
->>>>>>> main
 --- !u!1 &2058568337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,9 +1196,5 @@ SceneRoots:
   - {fileID: 844697019}
   - {fileID: 44551559}
   - {fileID: 50576275}
-<<<<<<< HEAD
   - {fileID: 1147852435}
   - {fileID: 281916002}
-=======
-  - {fileID: 1823208484}
->>>>>>> main
