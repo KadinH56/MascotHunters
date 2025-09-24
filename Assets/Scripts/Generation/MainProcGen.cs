@@ -107,6 +107,7 @@ public class MainProcGen : MonoBehaviour
         }
 
         GetComponent<NavMeshSurface>().BuildNavMesh();
+        FindFirstObjectByType<EnemySpawner>().StartSpawningEnemies();
     }
 
     private IEnumerator QueueUnloadKey(Vector2Int unloadChunk)

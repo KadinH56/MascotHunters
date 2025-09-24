@@ -19,8 +19,10 @@ public class EnemyScript : MonoBehaviour
     {
         enemyStats.Health = enemyStats.MaxHealth;
         agent = GetComponent<NavMeshAgent>();
+        //erigidbody = GetComponent<Rigidbody>();
 
         agent.stoppingDistance = distanceFromPlayer;
+        agent.speed = enemyStats.Movement;
     }
 
     private void FixedUpdate()
@@ -33,7 +35,7 @@ public class EnemyScript : MonoBehaviour
 
         agent.SetDestination(target.transform.position);
 
-        erigidbody.linearVelocity = (agent.nextPosition - transform.position) * enemyStats.Movement;
+        //erigidbody.linearVelocity = (agent.nextPosition - transform.position) * enemyStats.Movement;
     }
 
     /// <summary>
@@ -54,6 +56,16 @@ public class EnemyScript : MonoBehaviour
                 target = player.GetComponent<PlayerMovement>();
                 continue;
             }
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        enemyStats.Health -= damage;
+
+        if(enemyStats.Health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
