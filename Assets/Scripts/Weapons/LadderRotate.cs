@@ -13,7 +13,7 @@ public class LadderRotate : MonoBehaviour
     {
         if(isRotating == true)
         {
-            this.transform.RotateAround(Vector3.forward, rotateAround.position, rotationSpeed * Time.deltaTime);
+            this.transform.RotateAround(rotateAround.position, Vector3.down, rotationSpeed * Time.deltaTime);
         }
     }
 }
