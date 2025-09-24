@@ -37,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
 
     private CameraFollower cam;
 
+    public Vector3 playerPosition;
+
     /// <summary>
     /// Used by the Player Manager to set the player ID to 0 or 1
     /// </summary>
@@ -48,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     public void Awake()
     {
+        playerPosition = transform.position;
+
         //Init above variables
         pRigidBody = GetComponent<Rigidbody>();
         pInput = GetComponent<PlayerInput>();
