@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.AI.Navigation;
 using UnityEngine;
 
 /// <summary>
@@ -104,6 +105,8 @@ public class MainProcGen : MonoBehaviour
 
             StartCoroutine(QueueUnloadKey(pos));
         }
+
+        GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
     private IEnumerator QueueUnloadKey(Vector2Int unloadChunk)
