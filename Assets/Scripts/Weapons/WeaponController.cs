@@ -1,16 +1,8 @@
 using UnityEngine;
 
-public class WeaponController : MonoBehaviour
+public static class WeaponController
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private static bool isWeapon;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static bool IsWeapon { get => isWeapon; set => isWeapon = value; }
 }
