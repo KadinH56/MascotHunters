@@ -50,6 +50,8 @@ public class MainProcGen : MonoBehaviour
 
         chunkNoise.SetSeed(seed);
         //StartCoroutine(Generate(Vector3.zero));
+
+        FindFirstObjectByType<EnemySpawner>().StartSpawningEnemies();
     }
 
     public void StartGeneration(Vector3 position)
@@ -107,7 +109,6 @@ public class MainProcGen : MonoBehaviour
         }
 
         GetComponent<NavMeshSurface>().BuildNavMesh();
-        FindFirstObjectByType<EnemySpawner>().StartSpawningEnemies();
     }
 
     private IEnumerator QueueUnloadKey(Vector2Int unloadChunk)
