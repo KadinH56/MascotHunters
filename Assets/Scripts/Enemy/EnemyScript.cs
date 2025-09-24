@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,7 +12,15 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private float distanceFromPlayer = 0f;
     [SerializeField] private bool isBoss = false;
     private NavMeshAgent agent;
-    private Rigidbody erigidbody;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private float shootTimer;
+
+    [SerializeField] private bool isMelee = true;
+    [SerializeField] private float meleeTime = 5f;
+
+    [SerializeField] private Collider meleeBox;
+
+    private Coroutine shootCoroutine;
 
     private PlayerMovement target;
 
@@ -23,6 +32,11 @@ public class EnemyScript : MonoBehaviour
 
         agent.stoppingDistance = distanceFromPlayer;
         agent.speed = enemyStats.Movement;
+
+        if (isMelee)
+        {
+            StartCoroutine(MeleeAttack());
+        }
     }
 
     private void FixedUpdate()
@@ -35,7 +49,10 @@ public class EnemyScript : MonoBehaviour
 
         agent.SetDestination(target.transform.position);
 
-        //erigidbody.linearVelocity = (agent.nextPosition - transform.position) * enemyStats.Movement;
+        if(shootCoroutine != null && projectile != null)
+        {
+            shootCoroutine = StartCoroutine(Shoot());
+        }
     }
 
     /// <summary>
@@ -66,6 +83,33 @@ public class EnemyScript : MonoBehaviour
         if(enemyStats.Health <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    public IEnumerator Shoot()
+    {
+        //Projectile code
+        yield return new WaitForSeconds(shootTimer);
+        shootCoroutine = null;
+    }
+
+    public IEnumerator MeleeAttack()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(meleeTime);
+            print("Melee Attack!");
+            meleeBox.enabled = true;
+            yield return new WaitForFixedUpdate();
+            meleeBox.enabled = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.transform.parent.GetComponent<PlayerStatManager>().TakeDamage(enemyStats.Damage);
         }
     }
 }
