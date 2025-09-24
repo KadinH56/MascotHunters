@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStatManager : MonoBehaviour
 {
     [SerializeField] private Stats playerStats;
+    [SerializeField] private Image healthBar;
 
     /// <summary>
     /// Used to modify player stats or utilize the values
@@ -20,10 +23,20 @@ public class PlayerStatManager : MonoBehaviour
     public void TakeDamage(int damage)
     {
         playerStats.Health -= damage;
+        UpdateHealthBar();
 
-        if(playerStats.Health <= 0)
+        if (playerStats.Health <= 0)
         {
             gameObject.SetActive(false);
+        }
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (healthBar != null)
+        {
+            float fill = Mathf.Clamp01((float)playerStats.Health / playerStats.MaxHealth);
+            healthBar.fillAmount = fill;
         }
     }
 
