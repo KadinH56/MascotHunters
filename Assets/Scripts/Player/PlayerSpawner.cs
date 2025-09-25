@@ -16,7 +16,6 @@ public class PlayerSpawner : MonoBehaviour
     /// <summary>
     /// Number of players playing. Will be set in UI
     /// </summary>
-    [SerializeField] private int numPlayers;
 
     /// <summary>
     /// Radius of which players will spawn in
@@ -39,7 +38,7 @@ public class PlayerSpawner : MonoBehaviour
 
         ////For each player playing, spawn their object
         ////Also sets some internal stuff
-        for (int i = 0; i < numPlayers; i++)
+        for (int i = 0; i < GameInformation.NumPlayers; i++)
         {
             GameObject player = Instantiate(playerPrefab);
 

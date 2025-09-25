@@ -58,7 +58,9 @@ public class CameraFollower : MonoBehaviour
         //GetComponent<CinemachineCamera>().Lens.FieldOfView = fov;
 
         //Generation
-        Vector2Int currentPosition = new(Mathf.RoundToInt((transform.position.x - OffSet.x) / generation.ChunkSize), Mathf.RoundToInt((transform.position.z - OffSet.z) / generation.ChunkSize));
+        Vector2Int currentPosition = new(Mathf.RoundToInt((transform.position.x - OffSet.x) / generation.ChunkSize), 
+            Mathf.RoundToInt((transform.position.z - OffSet.z) / generation.ChunkSize));
+
         if(currentPosition != lastGeneration)
         {
             generation.StartGeneration(transform.position - OffSet);
