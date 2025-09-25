@@ -21,9 +21,13 @@ public class EnemyScript : MonoBehaviour
 
     [SerializeField] private Collider meleeBox;
 
+    [SerializeField] private int cost = 1;
+
     private Coroutine shootCoroutine;
 
     private PlayerMovement target;
+
+    public int Cost { get => cost; set => cost = value; }
 
     private void Start()
     {
@@ -89,7 +93,6 @@ public class EnemyScript : MonoBehaviour
 
     public IEnumerator Shoot()
     {
-        print("Shoot");
         //Projectile code
         Vector3 velocity = target.transform.position - transform.position;
         velocity.Normalize();

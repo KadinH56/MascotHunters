@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 19061732425654056}
   m_Layer: 7
   m_Name: ProjectileEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -231,14 +231,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats:
-    baseMaxHealth: 1
+    baseMaxHealth: 3
     baseDamage: 4
-    baseMovement: 8
+    baseMovement: 5
   distanceFromPlayer: 8
   isBoss: 0
-  projectileVelocity: 100
+  projectileVelocity: 10
   projectile: {fileID: 4408125041637714283, guid: da9f3936808796b41bed45b2661380fa, type: 3}
-  shootTimer: 0.01
+  shootTimer: 3
   isMelee: 0
   meleeTime: 0
   meleeBox: {fileID: 2008192815645434260}
+  cost: 2

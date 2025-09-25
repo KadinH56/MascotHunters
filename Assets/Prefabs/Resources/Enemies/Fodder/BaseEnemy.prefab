@@ -231,11 +231,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats:
-    baseMaxHealth: 1
-    baseDamage: 1
-    baseMovement: 8
+    baseMaxHealth: 12
+    baseDamage: 5
+    baseMovement: 6
   distanceFromPlayer: 0
   isBoss: 0
+  projectileVelocity: 0
   projectile: {fileID: 0}
   shootTimer: 0
   isMelee: 1

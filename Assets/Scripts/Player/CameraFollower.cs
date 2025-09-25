@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.Cinemachine;
 using UnityEngine;
 
 public class CameraFollower : MonoBehaviour
@@ -10,8 +9,11 @@ public class CameraFollower : MonoBehaviour
     [SerializeField] private Vector3 offSet = Vector3.zero;
     private MainProcGen generation;
 
+    private Vector3 average = Vector3.zero;
+
     public float MaxCameraDistance { get => maxCameraDistance; }
     public Vector3 OffSet { get => offSet; set => offSet = value; }
+    public Vector3 Average { get => average; set => average = value; }
 
     private Vector2Int? lastGeneration = null;
 
@@ -37,7 +39,12 @@ public class CameraFollower : MonoBehaviour
             positions.Add(player.transform.position);
         }
 
-        Vector3 average = Vector3.zero;
+        if(positions.Count == 0)
+        {
+            return;
+        }
+
+        average = Vector3.zero;
 
         foreach (Vector3 position in positions)
         {

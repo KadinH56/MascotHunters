@@ -220,7 +220,6 @@ GameObject:
   m_Component:
   - component: {fileID: 50576275}
   - component: {fileID: 50576276}
-  - component: {fileID: 50576277}
   - component: {fileID: 50576278}
   m_Layer: 0
   m_Name: Genscript
@@ -260,19 +259,6 @@ MonoBehaviour:
   loadedChunkDistance: 4
   biomes: 3
   parentTransform: {fileID: 50576275}
---- !u!114 &50576277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50576274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4038e553d92920b44a7fcda5c9ed1fe9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 5593190870652179328, guid: 4769e7a9317bd4545b83727ae7dd63d5, type: 3}
 --- !u!114 &50576278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +278,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 63
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -305,6 +291,60 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
+--- !u!1 &155501310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 155501311}
+  - component: {fileID: 155501312}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &155501311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155501310}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &155501312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155501310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4038e553d92920b44a7fcda5c9ed1fe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpawnRadius: 25
+  maxSpawnRadius: 40
+  creditsPerWave: 5
+  startingCredits: 3
+  costWaveMultiplier: 2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  boxSize: {x: 1.5, y: 1, z: 1.5}
+  secondsBeforeNextWave: 2.5
 --- !u!1 &281915999
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901586f4d237b0b42a334c46b6cb1d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numPlayers: 2
   spawnRadius: 5
   playerPrefab: {fileID: 5593190870652179328, guid: 194562d1d66e8484f93aee963a6e9fed, type: 3}
 --- !u!1 &930078997
@@ -1213,3 +1252,4 @@ SceneRoots:
   - {fileID: 50576275}
   - {fileID: 1147852435}
   - {fileID: 281916002}
+  - {fileID: 155501311}
