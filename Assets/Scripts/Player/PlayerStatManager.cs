@@ -11,10 +11,11 @@ public class PlayerStatManager : MonoBehaviour
     /// Used to modify player stats or utilize the values
     /// </summary>
     public Stats PlayerStats { get => playerStats; set => playerStats = value; }
+    public Image HealthBar { get => healthBar; set => healthBar = value; }
 
     private void Start()
     {
-        OnAlive();
+        //OnAlive();
     }
     /// <summary>
     /// Take damage
@@ -44,5 +45,6 @@ public class PlayerStatManager : MonoBehaviour
     {
         gameObject.SetActive(true);
         playerStats.Health = playerStats.MaxHealth;
+        UpdateHealthBar();
     }
 }
