@@ -130,18 +130,52 @@ public class EnemySpawner : MonoBehaviour
                     yield return null;
                 }
             }
-
-            while(GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
+            else
             {
-                yield return null;
+                GameObject boss = GenerateBoss();
+
+                //int bossCredits = Mathf.CeilToInt(GameInformation.Wave / 15f) - 1; //TODO: Levelup systems nyeheh
+
+                Vector3? position = null;
+
+                while (position == null)
+                {
+                    Vector3 desiredPos = Quaternion.Euler(0, Random.Range(0f, 360f), 0) * Vector3.forward * Random.Range(minSpawnRadius, maxSpawnRadius);
+                    //desiredPos += Vector3.up * 1.5f;
+                    desiredPos += new Vector3(cam.Average.x, 1.5f, cam.Average.z);
+                    bool gotHit = Physics.CheckBox(desiredPos, boxSize / 2f, Quaternion.identity, groundLayers);
+                    //Physics check
+                    //I'm not sure if I need the wait for fixed update...but I don't want to crash the game
+                    yield return new WaitForFixedUpdate();
+                    if (!gotHit)
+                    {
+                        position = desiredPos;
+                        break;
+                    }
+                }
+
+                //Now we spawn boss
+                Instantiate(boss, (Vector3)position, Quaternion.identity);
             }
+
+                while (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
+                {
+                    yield return null;
+                }
             GameInformation.Wave++;
             yield return null;
         }
     }
 
-    private void GenerateBoss()
+    private GameObject GenerateBoss()
     {
+        if (bosses.Count == 0) {
+            bosses = Resources.LoadAll("Enemies/Bosses", typeof(GameObject)).ToList();
+        }
 
+        GameObject boss = (GameObject)bosses[0];
+        bosses.RemoveAt(0);
+
+        return boss;
     }
 }

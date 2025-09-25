@@ -305,10 +305,6 @@ PrefabInstance:
       propertyPath: rotateAround
       value: 
       objectReference: {fileID: 3387858530456264924}
-    - target: {fileID: 4439332330967657993, guid: 712e40bc711677349adc2af1901d357f, type: 3}
-      propertyPath: rotationSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7961224399997987244, guid: 712e40bc711677349adc2af1901d357f, type: 3}
       propertyPath: m_Name
       value: Ladder
