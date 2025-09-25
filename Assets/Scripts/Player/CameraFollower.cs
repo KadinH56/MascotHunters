@@ -70,7 +70,7 @@ public class CameraFollower : MonoBehaviour
 
         if(currentPosition != lastGeneration)
         {
-            generation.StartGeneration(transform.position - OffSet);
+            generation.Generate(transform.position - OffSet);
             lastGeneration = currentPosition;
         }
     }

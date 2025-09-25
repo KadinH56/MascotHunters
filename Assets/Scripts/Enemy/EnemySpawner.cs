@@ -26,8 +26,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float secondsBeforeNextWave = 2.5f;
 
     private CameraFollower cam;
-
-    private Coroutine enemySpawnCoroutine = null;
     
     /// <summary>
     /// Quickly set this up
@@ -128,11 +126,6 @@ public class EnemySpawner : MonoBehaviour
                     //print("I got this far");
                     yield return null;
                 }
-            }
-
-            while(enemySpawnCoroutine != null)
-            {
-                yield return null;
             }
 
             while(GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
