@@ -6,6 +6,7 @@ TagManager:
   tags:
   - 1Player
   - 2Player
+  - Enemy
   layers:
   - Default
   - TransparentFX
