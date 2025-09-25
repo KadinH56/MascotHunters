@@ -9,6 +9,8 @@
 
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(PlayerInputManager))]
 public class PlayerSpawner : MonoBehaviour
@@ -26,16 +28,13 @@ public class PlayerSpawner : MonoBehaviour
     /// Player's prefab
     /// </summary>
     [SerializeField] private GameObject playerPrefab;
-
-    private PlayerInputManager pInputManager;
+    [SerializeField] private List<Image> playerHealthBars;
 
     /// <summary>
     /// Setup the game itself
     /// </summary>
     private void Start()
     {
-        pInputManager = GetComponent<PlayerInputManager>();
-
         ////For each player playing, spawn their object
         ////Also sets some internal stuff
         for (int i = 0; i < GameInformation.NumPlayers; i++)
@@ -52,6 +51,13 @@ public class PlayerSpawner : MonoBehaviour
             spawnPos *= spawnRadius;
             spawnPos += transform.position;
             player.transform.position = spawnPos;
+
+            if(i < playerHealthBars.Count)
+            {
+                playerHealthBars[i].transform.parent.gameObject.SetActive(true);
+                player.GetComponent<PlayerStatManager>().HealthBar = playerHealthBars[i];
+            }
+            player.GetComponent<PlayerStatManager>().OnAlive();
         }
         //Update, I got it to work
         //Apparently control schemes are a thing, and the bane of my existence
