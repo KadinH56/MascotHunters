@@ -4,15 +4,9 @@ using UnityEngine.UIElements;
 public class LadderRotate : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed;
-    [SerializeField] private Transform rotateAround;
     [SerializeField] private bool isRotating;
 
-    private PlayerMovement playerMovement;
-
-    void Start()
-    {
-        
-    }
+    private EnemyScript enemyScript;
 
     /// <summary>
     /// If the bool is true, the ladder will rotate around the fixed object
@@ -21,7 +15,16 @@ public class LadderRotate : MonoBehaviour
     {
         if(isRotating == true)
         {
-            this.transform.RotateAround(playerMovement.playerPosition, Vector3.down, rotationSpeed * Time.deltaTime);
+            transform.Rotate(0, rotationSpeed, 0);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Taking damage!");
+            other.gameObject.GetComponent<EnemyScript>().TakeDamage(1);   
         }
     }
 }
