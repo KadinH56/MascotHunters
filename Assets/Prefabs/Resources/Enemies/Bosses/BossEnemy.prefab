@@ -240,6 +240,6 @@ MonoBehaviour:
   projectile: {fileID: 0}
   shootTimer: 0
   isMelee: 1
-  meleeTime: 1
+  meleeTime: 0.75
   meleeBox: {fileID: 2008192815645434260}
-  cost: 1
+  cost: 0

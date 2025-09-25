@@ -25,6 +25,8 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private float secondsBeforeNextWave = 2.5f;
 
+    private List<Object> bosses;
+
     private CameraFollower cam;
     
     /// <summary>
@@ -33,6 +35,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         Object[] enemies = Resources.LoadAll("Enemies/Fodder", typeof(GameObject));
+        bosses = Resources.LoadAll("Enemies/Bosses", typeof(GameObject)).ToList();
 
         foreach (GameObject enemy in enemies)
         {
@@ -135,5 +138,10 @@ public class EnemySpawner : MonoBehaviour
             GameInformation.Wave++;
             yield return null;
         }
+    }
+
+    private void GenerateBoss()
+    {
+
     }
 }
