@@ -71,7 +71,65 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(secondsBeforeNextWave);
 
-            enemySpawnCoroutine = StartCoroutine(FodderWave());
+            if(GameInformation.Wave % 5 != 0)
+            {
+                credits = startingCredits + (creditsPerWave * GameInformation.Wave);
+                credits *= GameInformation.NumPlayers;
+
+                int highestCost = costsInOrder[0];
+                while (credits > 0)
+                {
+                    if (highestCost > credits)
+                    {
+                        highestCost = credits;
+                    }
+
+                    if (highestCost > 1 && highestCost > GameInformation.Wave / (float)costWaveMultiplier)
+                    {
+                        //print("Occurs?");
+                        highestCost--;
+                        continue;
+                    }
+
+                    List<int> allowedCosts = new();
+                    foreach (int cost in costsInOrder)
+                    {
+                        if (cost <= highestCost)
+                        {
+                            allowedCosts.Add(cost);
+                        }
+                    }
+
+                    //Okay lets run a quick physics check and get a position. Who's ready for TRIPLE WHILE LOOPS
+                    Vector3? position = null;
+
+                    while (position == null)
+                    {
+                        Vector3 desiredPos = Quaternion.Euler(0, Random.Range(0f, 360f), 0) * Vector3.forward * Random.Range(minSpawnRadius, maxSpawnRadius);
+                        //desiredPos += Vector3.up * 1.5f;
+                        desiredPos += new Vector3(cam.Average.x, 1.5f, cam.Average.z);
+                        bool gotHit = Physics.CheckBox(desiredPos, boxSize / 2f, Quaternion.identity, groundLayers);
+                        //Physics check
+                        //I'm not sure if I need the wait for fixed update...but I don't want to crash the game
+                        yield return new WaitForFixedUpdate();
+                        if (!gotHit)
+                        {
+                            position = desiredPos;
+                            break;
+                        }
+                    }
+
+                    //Now we spawn enemies
+                    List<GameObject> enemyPool = enemiesByCost[allowedCosts[Random.Range(0, allowedCosts.Count)]];
+                    GameObject enemy = enemyPool[Random.Range(0, enemyPool.Count)];
+
+                    Instantiate(enemy, (Vector3)position, Quaternion.identity);
+                    credits -= enemy.GetComponent<EnemyScript>().Cost;
+                    //print("I got this far");
+                    yield return null;
+                }
+            }
+
             while(enemySpawnCoroutine != null)
             {
                 yield return null;
@@ -84,66 +142,5 @@ public class EnemySpawner : MonoBehaviour
             GameInformation.Wave++;
             yield return null;
         }
-        //Instantiate(enemy, Vector3.zero, Quaternion.identity);
-    }
-
-    private IEnumerator FodderWave()
-    {
-        credits = startingCredits + (creditsPerWave * GameInformation.Wave);
-        credits *= GameInformation.NumPlayers;
-
-        int highestCost = costsInOrder[0];
-        while (credits > 0)
-        {
-            if (highestCost > credits)
-            {
-                highestCost = credits;
-            }
-
-            if (highestCost > 1 && highestCost >  GameInformation.Wave / (float)costWaveMultiplier)
-            {
-                print("Occurs?");
-                highestCost--;
-                continue;
-            }
-
-            List<int> allowedCosts = new();
-            foreach (int cost in costsInOrder)
-            {
-                if (cost <= highestCost)
-                {
-                    allowedCosts.Add(cost);
-                }
-            }
-
-            //Okay lets run a quick physics check and get a position. Who's ready for TRIPLE WHILE LOOPS
-            Vector3? position = null;
-
-            while (position == null)
-            {
-                Vector3 desiredPos = Quaternion.Euler(0, Random.Range(0f, 360f), 0) * Vector3.forward * Random.Range(minSpawnRadius, maxSpawnRadius);
-                //desiredPos += Vector3.up * 1.5f;
-                desiredPos += new Vector3(cam.Average.x, 1.5f, cam.Average.z);
-                bool gotHit = Physics.CheckBox(desiredPos, boxSize / 2f, Quaternion.identity, groundLayers);
-                //Physics check
-                //I'm not sure if I need the wait for fixed update...but I don't want to crash the game
-                yield return new WaitForFixedUpdate();
-                if (!gotHit)
-                {
-                    position = desiredPos;
-                    break;
-                }
-            }
-
-            //Now we spawn enemies
-            List<GameObject> enemyPool = enemiesByCost[allowedCosts[Random.Range(0, allowedCosts.Count)]];
-            GameObject enemy = enemyPool[Random.Range(0, enemyPool.Count)];
-
-            Instantiate(enemy, (Vector3)position, Quaternion.identity);
-            credits -= enemy.GetComponent<EnemyScript>().Cost;
-            //print("I got this far");
-            yield return null;
-        }
-        enemySpawnCoroutine = null;
     }
 }

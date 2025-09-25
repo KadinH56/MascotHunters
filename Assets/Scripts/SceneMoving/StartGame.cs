@@ -11,7 +11,7 @@ public class StartGame : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void LevelMove()
     {
-        if(button.tag == "1Player")
+        if (button.tag == "1Player")
         {
             GameInformation.NumPlayers = 1;
             SceneManager.LoadSceneAsync(1);
@@ -22,15 +22,5 @@ public class StartGame : MonoBehaviour
             GameInformation.NumPlayers = 2;
             SceneManager.LoadSceneAsync(1);
         }
-
-        if(GameInformation.NumPlayers % 2 != 0)
-        {
-            Debug.Log("Loading up a game with 1 player!");
-        }
-        else
-        {
-            Debug.Log("Loading up a game with 2 players!");
-        }
-        
     }
 }

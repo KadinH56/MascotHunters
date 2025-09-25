@@ -108,6 +108,7 @@ public class MainProcGen : MonoBehaviour
             StartCoroutine(QueueUnloadKey(pos));
         }
 
+        yield return null;
         GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
