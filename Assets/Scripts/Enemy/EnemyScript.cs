@@ -12,6 +12,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private float distanceFromPlayer = 0f;
     [SerializeField] private bool isBoss = false;
     private NavMeshAgent agent;
+    [SerializeField] private float projectileVelocity = 0f;
     [SerializeField] private GameObject projectile;
     [SerializeField] private float shootTimer;
 
@@ -49,7 +50,7 @@ public class EnemyScript : MonoBehaviour
 
         agent.SetDestination(target.transform.position);
 
-        if(shootCoroutine != null && projectile != null)
+        if(shootCoroutine == null && projectile != null)
         {
             shootCoroutine = StartCoroutine(Shoot());
         }
@@ -88,7 +89,14 @@ public class EnemyScript : MonoBehaviour
 
     public IEnumerator Shoot()
     {
+        print("Shoot");
         //Projectile code
+        Vector3 velocity = target.transform.position - transform.position;
+        velocity.Normalize();
+        GameObject proj = Instantiate(projectile, transform.position, Quaternion.identity);
+        proj.GetComponent<Rigidbody>().linearVelocity = velocity * projectileVelocity;
+        proj.GetComponent<Projectile>().Damage = enemyStats.Damage;
+
         yield return new WaitForSeconds(shootTimer);
         shootCoroutine = null;
     }
@@ -98,7 +106,6 @@ public class EnemyScript : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(meleeTime);
-            print("Melee Attack!");
             meleeBox.enabled = true;
             yield return new WaitForFixedUpdate();
             meleeBox.enabled = false;
