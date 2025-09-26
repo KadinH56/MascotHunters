@@ -235,10 +235,9 @@ MonoBehaviour:
     baseDamage: 4
     baseMovement: 5
   distanceFromPlayer: 8
-  isBoss: 0
   projectileVelocity: 10
   projectile: {fileID: 4408125041637714283, guid: da9f3936808796b41bed45b2661380fa, type: 3}
-  shootTimer: 3
+  shootTimer: 1
   isMelee: 0
   meleeTime: 0
   meleeBox: {fileID: 2008192815645434260}
