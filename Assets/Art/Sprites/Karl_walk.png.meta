@@ -43,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,20 +109,20 @@ TextureImporter:
       name: Karl_walk_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 62
-        height: 61
+        x: 2
+        y: 1
+        width: 60
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3583c599c9e3cf910800000000000000
-      internalID: 1872440387388061779
+      spriteID: 079c3ef858302244d9a90160f068e0ee
+      internalID: -339481165
       vertices: []
       indices: 
       edges: []
@@ -131,20 +131,20 @@ TextureImporter:
       name: Karl_walk_1
       rect:
         serializedVersion: 2
-        x: 65
-        y: 0
-        width: 62
-        height: 62
+        x: 66
+        y: 1
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 45c1ece2f33281da0800000000000000
-      internalID: -5973986151431791532
+      spriteID: 8b30ee3b0b2af3640ab18849a8289233
+      internalID: -885893694
       vertices: []
       indices: 
       edges: []
@@ -153,20 +153,20 @@ TextureImporter:
       name: Karl_walk_2
       rect:
         serializedVersion: 2
-        x: 129
-        y: 0
-        width: 62
-        height: 61
+        x: 130
+        y: 1
+        width: 60
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d1804ca0e7c925f60800000000000000
-      internalID: 8021645951460706333
+      spriteID: 870043633b5e2a14bb453c62995e57c5
+      internalID: -1991268323
       vertices: []
       indices: 
       edges: []
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ae62a89aaf8dec34cb87aa6fd31ef8b0
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Karl_walk_0: 1872440387388061779
-      Karl_walk_1: -5973986151431791532
-      Karl_walk_2: 8021645951460706333
+      Karl_walk_0: -339481165
+      Karl_walk_1: -885893694
+      Karl_walk_2: -1991268323
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

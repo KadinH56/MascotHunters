@@ -6,7 +6,13 @@ public class LadderRotate : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] private bool isRotating;
 
-    private EnemyScript enemyScript;
+    [SerializeField] private int baseDamage = 1;
+    private Stats playerStats;
+
+    private void Start()
+    {
+        playerStats = transform.parent.GetComponent<PlayerStatManager>().PlayerStats;
+    }
 
     /// <summary>
     /// If the bool is true, the ladder will rotate around the fixed object
@@ -23,8 +29,7 @@ public class LadderRotate : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Taking damage!");
-            other.gameObject.GetComponent<EnemyScript>().TakeDamage(1);   
+            other.gameObject.GetComponent<EnemyScript>().TakeDamage(Mathf.RoundToInt((baseDamage + playerStats.DamageModifierAdditive) * playerStats.DamageModifierMultiplicitive));   
         }
     }
 }

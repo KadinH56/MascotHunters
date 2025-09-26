@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: 10bc4007cf3b8f24a883dbdc14b47452
+guid: 5196bbc80646aa94a87a6c4d34f3b7f5
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -2387686764261116538
-    second: Female_Zombie_Walk_0
-  - first:
-      213: 1786163871667275970
-    second: Female_Zombie_Walk_1
-  - first:
-      213: -2643671010144806102
-    second: Female_Zombie_Walk_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,67 +97,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Female_Zombie_Walk_0
+      name: Mc_1_Sheet_0
       rect:
         serializedVersion: 2
-        x: 11
+        x: 14
         y: 0
-        width: 42
-        height: 44
+        width: 49
+        height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3f1fe92d007c3ef4f90b6b0a110edc10
-      internalID: -1700260491
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Female_Zombie_Walk_1
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 0
-        width: 42
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27c7e2f09d7386542bbc06e0eec09b37
-      internalID: -1102798737
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Female_Zombie_Walk_2
-      rect:
-        serializedVersion: 2
-        x: 139
-        y: 0
-        width: 42
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b7ba2a36287567458e1f0112420c292
-      internalID: 1112688346
+      spriteID: 54878062a6574ee40800000000000000
+      internalID: 5684797728413481029
       vertices: []
       indices: 
       edges: []
@@ -175,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cec7805c0ef57f04cb873ef43d40ddb5
+    spriteID: 8a594d2ebb2f60341b0d3514bd20e55f
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +132,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Female_Zombie_Walk_0: -1700260491
-      Female_Zombie_Walk_1: -1102798737
-      Female_Zombie_Walk_2: 1112688346
+      Mc_1_Sheet_0: 5684797728413481029
+      Mc_1_Sheet_1: -1490432877428568682
+      Mc_1_Sheet_2: 3212217844421224063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,8 +11,9 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private Stats enemyStats;
 
     [SerializeField] private float distanceFromPlayer = 0f;
-    [SerializeField] private bool isBoss = false;
+    //[SerializeField] private bool isBoss = false;
     private NavMeshAgent agent;
+    [SerializeField] private float projectileVelocity = 0f;
     [SerializeField] private GameObject projectile;
     [SerializeField] private float shootTimer;
 
@@ -20,9 +22,16 @@ public class EnemyScript : MonoBehaviour
 
     [SerializeField] private Collider meleeBox;
 
+    [SerializeField] private int cost = 1;
+
+    //[SerializeField] private float size = 2f;
+
     private Coroutine shootCoroutine;
 
     private PlayerMovement target;
+
+    public int Cost { get => cost; set => cost = value; }
+    //public float Size { get => size; set => size = value; }
 
     private void Start()
     {
@@ -39,7 +48,11 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
+    {
+        EnemyAI();
+    }
+    public virtual void EnemyAI()
     {
         if (target == null || !target.gameObject.activeSelf)
         {
@@ -49,7 +62,7 @@ public class EnemyScript : MonoBehaviour
 
         agent.SetDestination(target.transform.position);
 
-        if(shootCoroutine != null && projectile != null)
+        if(shootCoroutine == null && projectile != null)
         {
             shootCoroutine = StartCoroutine(Shoot());
         }
@@ -76,29 +89,36 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         enemyStats.Health -= damage;
 
         if(enemyStats.Health <= 0)
         {
+            GameInformation.EnemiesRemaining--;
+            FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();
             Destroy(gameObject);
         }
     }
 
-    public IEnumerator Shoot()
+    public virtual IEnumerator Shoot()
     {
         //Projectile code
+        Vector3 velocity = target.transform.position - transform.position;
+        velocity.Normalize();
+        GameObject proj = Instantiate(projectile, transform.position, Quaternion.identity);
+        proj.GetComponent<Rigidbody>().linearVelocity = velocity * projectileVelocity;
+        proj.GetComponent<Projectile>().Damage = enemyStats.Damage;
+
         yield return new WaitForSeconds(shootTimer);
         shootCoroutine = null;
     }
 
-    public IEnumerator MeleeAttack()
+    public virtual IEnumerator MeleeAttack()
     {
         while (true)
         {
             yield return new WaitForSeconds(meleeTime);
-            print("Melee Attack!");
             meleeBox.enabled = true;
             yield return new WaitForFixedUpdate();
             meleeBox.enabled = false;
