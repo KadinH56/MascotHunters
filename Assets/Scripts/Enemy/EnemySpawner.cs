@@ -71,6 +71,7 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(secondsBeforeNextWave);
+            GameInformation.TotalEnemies = 0;
 
             if(GameInformation.Wave % 5 != 0)
             {
@@ -124,10 +125,14 @@ public class EnemySpawner : MonoBehaviour
                     List<GameObject> enemyPool = enemiesByCost[allowedCosts[Random.Range(0, allowedCosts.Count)]];
                     GameObject enemy = enemyPool[Random.Range(0, enemyPool.Count)];
 
+                    //position += 3f * enemy.GetComponent<EnemyScript>().Size * Vector3.up / 4f;
+
                     Instantiate(enemy, (Vector3)position, Quaternion.identity);
                     credits -= enemy.GetComponent<EnemyScript>().Cost;
                     //print("I got this far");
                     yield return null;
+
+                    GameInformation.TotalEnemies++;
                 }
             }
             else
@@ -154,14 +159,19 @@ public class EnemySpawner : MonoBehaviour
                     }
                 }
 
+                //position += Vector3.up * boss.GetComponent<EnemyScript>().Size / 2f;
                 //Now we spawn boss
                 Instantiate(boss, (Vector3)position, Quaternion.identity);
+                GameInformation.TotalEnemies++;
             }
 
-                while (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
-                {
-                    yield return null;
-                }
+            GameInformation.EnemiesRemaining = GameInformation.TotalEnemies;
+            FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();
+
+            while (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
+            {
+                yield return null;
+            }
             GameInformation.Wave++;
             yield return null;
         }

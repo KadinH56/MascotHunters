@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,7 +11,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private Stats enemyStats;
 
     [SerializeField] private float distanceFromPlayer = 0f;
-    [SerializeField] private bool isBoss = false;
+    //[SerializeField] private bool isBoss = false;
     private NavMeshAgent agent;
     [SerializeField] private float projectileVelocity = 0f;
     [SerializeField] private GameObject projectile;
@@ -23,11 +24,14 @@ public class EnemyScript : MonoBehaviour
 
     [SerializeField] private int cost = 1;
 
+    //[SerializeField] private float size = 2f;
+
     private Coroutine shootCoroutine;
 
     private PlayerMovement target;
 
     public int Cost { get => cost; set => cost = value; }
+    //public float Size { get => size; set => size = value; }
 
     private void Start()
     {
@@ -44,7 +48,11 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
+    {
+        EnemyAI();
+    }
+    public virtual void EnemyAI()
     {
         if (target == null || !target.gameObject.activeSelf)
         {
@@ -81,17 +89,19 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         enemyStats.Health -= damage;
 
         if(enemyStats.Health <= 0)
         {
+            GameInformation.EnemiesRemaining--;
+            FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();
             Destroy(gameObject);
         }
     }
 
-    public IEnumerator Shoot()
+    public virtual IEnumerator Shoot()
     {
         //Projectile code
         Vector3 velocity = target.transform.position - transform.position;
@@ -104,7 +114,7 @@ public class EnemyScript : MonoBehaviour
         shootCoroutine = null;
     }
 
-    public IEnumerator MeleeAttack()
+    public virtual IEnumerator MeleeAttack()
     {
         while (true)
         {

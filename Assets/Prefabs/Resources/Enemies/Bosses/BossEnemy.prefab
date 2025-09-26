@@ -243,3 +243,4 @@ MonoBehaviour:
   meleeTime: 0.75
   meleeBox: {fileID: 2008192815645434260}
   cost: 0
+  size: 2
