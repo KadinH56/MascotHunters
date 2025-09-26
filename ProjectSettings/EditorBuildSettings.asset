@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: 4c74557eb892d1143a32f245378da8c6
   - enabled: 1
-    path: Assets/Scenes/TestingScenes/PlayerTest.unity
-    guid: 89aac4b86a066524fa1e45db80d0fd01
+    path: Assets/Scenes/TestingScenes/EnemyTest2.unity
+    guid: 3186a9a3646c2d2429bb34831647e6fc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -43,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,20 +109,20 @@ TextureImporter:
       name: Female_Zombie_Walk_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 11
         y: 0
-        width: 44
-        height: 45
+        width: 42
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6857055d98b3dded0800000000000000
-      internalID: -2387686764261116538
+      spriteID: 3f1fe92d007c3ef4f90b6b0a110edc10
+      internalID: -1700260491
       vertices: []
       indices: 
       edges: []
@@ -131,20 +131,20 @@ TextureImporter:
       name: Female_Zombie_Walk_1
       rect:
         serializedVersion: 2
-        x: 74
+        x: 75
         y: 0
-        width: 44
-        height: 45
+        width: 42
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2c84d59e39ab9c810800000000000000
-      internalID: 1786163871667275970
+      spriteID: 27c7e2f09d7386542bbc06e0eec09b37
+      internalID: -1102798737
       vertices: []
       indices: 
       edges: []
@@ -153,20 +153,20 @@ TextureImporter:
       name: Female_Zombie_Walk_2
       rect:
         serializedVersion: 2
-        x: 138
+        x: 139
         y: 0
-        width: 44
-        height: 44
+        width: 42
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a2b1259193bcf4bd0800000000000000
-      internalID: -2643671010144806102
+      spriteID: 3b7ba2a36287567458e1f0112420c292
+      internalID: 1112688346
       vertices: []
       indices: 
       edges: []
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cec7805c0ef57f04cb873ef43d40ddb5
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Female_Zombie_Walk_0: -2387686764261116538
-      Female_Zombie_Walk_1: 1786163871667275970
-      Female_Zombie_Walk_2: -2643671010144806102
+      Female_Zombie_Walk_0: -1700260491
+      Female_Zombie_Walk_1: -1102798737
+      Female_Zombie_Walk_2: 1112688346
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
