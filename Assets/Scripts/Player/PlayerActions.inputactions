@@ -16,36 +16,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Special",
-                    "type": "Button",
-                    "id": "2e5a99b7-f034-4fe8-baed-76288dbe5f01",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Roll",
                     "type": "Button",
                     "id": "1e0a48da-5cbf-43ad-b0e4-ab46a78bc6b4",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Restart",
-                    "type": "Button",
-                    "id": "c815f748-dba3-4f6c-98f0-113df594f9dd",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Quit",
-                    "type": "Button",
-                    "id": "32a48d9e-0523-47f6-888b-d31916cce44b",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -121,62 +94,55 @@
                 },
                 {
                     "name": "",
-                    "id": "7ca05829-c42d-43a5-95df-37b2a7d947f8",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard",
-                    "action": "Special",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a15b0054-16e3-421a-bdf1-c9536e3de92c",
-                    "path": "<Gamepad>/buttonSouth",
+                    "id": "123bed37-e547-4925-a3f7-f0d0bb9e0bad",
+                    "path": "<WebGLGamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Special",
+                    "action": "Roll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "0f599a69-43c8-44a3-bb4b-3f7c4965eb78",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard",
                     "action": "Roll",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
+                }
+            ]
+        },
+        {
+            "name": "ResetQuit",
+            "id": "a19eff71-aab2-4c77-90db-46cc2a503b92",
+            "actions": [
                 {
-                    "name": "",
-                    "id": "123bed37-e547-4925-a3f7-f0d0bb9e0bad",
-                    "path": "<WebGLGamepad>/rightTrigger",
-                    "interactions": "",
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "b5b6d2e9-9bb2-41d0-ba0c-2bb97c82669a",
+                    "expectedControlType": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Roll",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1932b989-d1b9-4faf-8ff4-532dfc7fe5f5",
-                    "path": "",
                     "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Restart",
-                    "isComposite": false,
-                    "isPartOfComposite": false
+                    "initialStateCheck": false
                 },
                 {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "bb557a50-8d21-4193-b0f0-83cfe4ad0936",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
                     "name": "",
-                    "id": "0099fb7e-d5ea-4e36-ada8-48fb220c59e9",
+                    "id": "b99cbd03-ad8a-4568-9033-019a8d168c6b",
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
@@ -187,18 +153,7 @@
                 },
                 {
                     "name": "",
-                    "id": "c40fdf31-16f3-42e3-980a-e593bbc86ba5",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Quit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "86746322-9c4d-4580-bb7a-9575418179d3",
+                    "id": "3934c701-bb37-4c5d-bd7e-3cfee5688815",
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",

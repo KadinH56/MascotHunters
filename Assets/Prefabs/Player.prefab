@@ -240,8 +240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3503ba9901560c44f869438913c0aa71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 1.5
-  dashTime: 0.5
+  dashSpeed: 50
+  dashTime: 0.4
   isRoll: 0
 --- !u!114 &7677238045681899569
 MonoBehaviour:
@@ -259,6 +259,7 @@ MonoBehaviour:
     baseMaxHealth: 100
     baseDamage: 0
     baseMovement: 8
+  healthBar: {fileID: 0}
 --- !u!1001 &491127998355535138
 PrefabInstance:
   m_ObjectHideFlags: 0
