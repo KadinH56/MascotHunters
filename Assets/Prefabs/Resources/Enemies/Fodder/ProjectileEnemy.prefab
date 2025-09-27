@@ -275,3 +275,4 @@ MonoBehaviour:
   meleeTime: 0
   meleeBox: {fileID: 2008192815645434260}
   cost: 2
+  healthBar: {fileID: 0}

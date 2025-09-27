@@ -8,6 +8,7 @@
 //  Special abilities, including dodge roll
 *****************************************************************************/
 
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -29,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
 
     private InputAction move;
     private InputAction roll;
+    private InputAction restart;
+    private InputAction quit;
 
     //Used to ID the player for local multiplayer. Set to 0 or 1 ingame
     private int playerID = -1;
@@ -55,10 +58,13 @@ public class PlayerMovement : MonoBehaviour
 
         move = pInput.currentActionMap.FindAction("Move");
         roll = pInput.currentActionMap.FindAction("Roll");
+        restart = pInput.currentActionMap.FindAction("Restart");
+        quit = pInput.currentActionMap.FindAction("Quit");
 
         //Creates the function when the button for the roll is pressed
         roll.started += Roll_started;
         cam = FindFirstObjectByType<CameraFollower>();
+
     }
 
     /// <summary>
