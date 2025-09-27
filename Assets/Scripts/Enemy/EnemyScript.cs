@@ -23,6 +23,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private Collider meleeBox;
 
     [SerializeField] private int cost = 1;
+    [SerializeField] private EnemyHealthBar healthBar;
 
     //[SerializeField] private float size = 2f;
 
@@ -45,6 +46,11 @@ public class EnemyScript : MonoBehaviour
         if (isMelee)
         {
             StartCoroutine(MeleeAttack());
+        }
+
+        if(healthBar != null)
+        {
+            healthBar.MaxHealth = enemyStats.MaxHealth;
         }
     }
 
@@ -95,6 +101,10 @@ public class EnemyScript : MonoBehaviour
 
         if(enemyStats.Health <= 0)
         {
+            if(healthBar != null)
+            {
+                healthBar.UpdateHealthbar(enemyStats.Health);
+            }
             GameInformation.EnemiesRemaining--;
             FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();
             Destroy(gameObject);
