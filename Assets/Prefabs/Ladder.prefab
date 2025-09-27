@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 5
   isRotating: 1
-  baseDamage: 8
+  baseDamage: 16
 --- !u!136 &8803964772248492814
 CapsuleCollider:
   m_ObjectHideFlags: 0

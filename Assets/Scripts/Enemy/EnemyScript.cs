@@ -99,12 +99,13 @@ public class EnemyScript : MonoBehaviour
     {
         enemyStats.Health -= damage;
 
-        if(enemyStats.Health <= 0)
+        if (healthBar != null)
         {
-            if(healthBar != null)
-            {
-                healthBar.UpdateHealthbar(enemyStats.Health);
-            }
+            healthBar.UpdateHealthbar(enemyStats.Health);
+        }
+
+        if (enemyStats.Health <= 0)
+        {
             GameInformation.EnemiesRemaining--;
             FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();
             Destroy(gameObject);
