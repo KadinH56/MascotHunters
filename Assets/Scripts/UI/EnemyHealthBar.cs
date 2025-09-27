@@ -16,5 +16,7 @@ public class EnemyHealthBar : MonoBehaviour
     public void UpdateHealthbar(int health)
     {
         bar.fillAmount = (float)health / maxHealth;
+
+        print(bar.fillAmount);
     }
 }
