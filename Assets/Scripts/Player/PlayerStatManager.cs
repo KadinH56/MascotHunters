@@ -1,9 +1,17 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerStatManager : MonoBehaviour
 {
+    public enum PLAYER_STATS
+    {
+        HEALTH,
+        DAMAGE,
+        MOVEMENT
+    }
+
     [SerializeField] private Stats playerStats;
     [SerializeField] private Image healthBar;
 
@@ -32,7 +40,7 @@ public class PlayerStatManager : MonoBehaviour
         }
     }
 
-    private void UpdateHealthBar()
+    public void UpdateHealthBar()
     {
         if (healthBar != null)
         {
@@ -46,5 +54,22 @@ public class PlayerStatManager : MonoBehaviour
         gameObject.SetActive(true);
         playerStats.Health = playerStats.MaxHealth;
         UpdateHealthBar();
+    }
+
+    public void TempPowerupIEnumerator(PLAYER_STATS statBuff, float duration, float level)
+    {
+        switch (statBuff)
+        {
+            case (PLAYER_STATS.MOVEMENT):
+                StartCoroutine(TempSpeedBuff(duration, level));
+                break;
+        }
+    }
+
+    private IEnumerator TempSpeedBuff(float duration, float level)
+    {
+        PlayerStats.TempMoveModifierMultiplicative *= level;
+        yield return new WaitForSeconds(duration);
+        PlayerStats.TempMoveModifierMultiplicative /= level;
     }
 }

@@ -455,6 +455,7 @@ MonoBehaviour:
   meleeBox: {fileID: 2008192815645434260}
   cost: 0
   healthBar: {fileID: 2110205051230298626}
+  itemDropChance: 1
 --- !u!1 &5958240348254958594
 GameObject:
   m_ObjectHideFlags: 0
