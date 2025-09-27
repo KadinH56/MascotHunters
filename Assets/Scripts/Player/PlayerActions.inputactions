@@ -95,7 +95,7 @@
                 {
                     "name": "",
                     "id": "123bed37-e547-4925-a3f7-f0d0bb9e0bad",
-                    "path": "<WebGLGamepad>/rightTrigger",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -117,7 +117,7 @@
             ]
         },
         {
-            "name": "ResetQuit",
+            "name": "UI",
             "id": "a19eff71-aab2-4c77-90db-46cc2a503b92",
             "actions": [
                 {
@@ -137,6 +137,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Start Player 1",
+                    "type": "Button",
+                    "id": "0bc79366-9625-47da-84ff-17ceb7c0b41c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Start Player 2",
+                    "type": "Button",
+                    "id": "4f721eb8-41bf-4b29-9ffa-ceff93879193",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -146,7 +164,7 @@
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";UI",
                     "action": "Restart",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -157,8 +175,30 @@
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "UI",
                     "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b5cfdab8-3118-4430-80a6-47b74ac847ed",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";UI",
+                    "action": "Start Player 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d1d0136b-b58d-4ec8-bf26-ad8e08b3dada",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";UI",
+                    "action": "Start Player 2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -183,6 +223,17 @@
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "bindingGroup": "UI",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
                     "isOptional": false,
                     "isOR": false
                 }

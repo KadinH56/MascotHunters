@@ -12,5 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TestingScenes/EnemyTest2.unity
     guid: 3186a9a3646c2d2429bb34831647e6fc
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: d4a270ae61ec8fb4c9bceb13094eb572, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

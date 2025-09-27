@@ -34,6 +34,8 @@ public class Stats
     private float movementModifierAdditive = 0f;
     private float movementModifierMultiplicitive = 1.0f;
 
+    private float tempMoveModifierMultiplicative = 1.0f;
+
     public int Health { get => health; set => health = value; }
     public int HealthModifierAdditive { get => healthModifierAdditive; set => healthModifierAdditive = value; }
     public float HealthModifierMultiplicitive { get => healthModifierMultiplicitive; set => healthModifierMultiplicitive = value; }
@@ -43,15 +45,13 @@ public class Stats
     /// Do NOT change baseMaxHealth directly
     /// </summary>
     public int MaxHealth { get => Mathf.RoundToInt((baseMaxHealth + HealthModifierAdditive) * HealthModifierMultiplicitive); }
-
-
     public float MovementModifierAdditive { get => movementModifierAdditive; set => movementModifierAdditive = value; }
     public float MovementModifierMultiplicitive { get => movementModifierMultiplicitive; set => movementModifierMultiplicitive = value; }
     /// <summary>
     /// Readonly. To Modify -> Change baseMovement in inspector or use MovementModifierAdditive or MovementModifierMultiplicitive in code.
     /// Do NOT change baseMovement directly
     /// </summary>
-    public float Movement { get => (baseMovement + MovementModifierAdditive) * MovementModifierMultiplicitive; }
+    public float Movement { get => (baseMovement + MovementModifierAdditive) * MovementModifierMultiplicitive * tempMoveModifierMultiplicative; }
     public int DamageModifierAdditive { get => damageModifierAdditive; set => damageModifierAdditive = value; }
     public float DamageModifierMultiplicitive { get => damageModifierMultiplicitive; set => damageModifierMultiplicitive = value; }
     /// <summary>
@@ -59,4 +59,9 @@ public class Stats
     /// Scales damage based on damage modifiers
     /// </summary>
     public int Damage { get => Mathf.RoundToInt((baseDamage + damageModifierAdditive) * damageModifierMultiplicitive); }
+
+    /// <summary>
+    /// Used specifically by powerups to create temporary duration
+    /// </summary>
+    public float TempMoveModifierMultiplicative { get => tempMoveModifierMultiplicative; set => tempMoveModifierMultiplicative = value; }
 }

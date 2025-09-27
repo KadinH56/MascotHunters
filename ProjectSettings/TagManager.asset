@@ -7,6 +7,7 @@ TagManager:
   - 1Player
   - 2Player
   - Enemy
+  - Pickup
   layers:
   - Default
   - TransparentFX

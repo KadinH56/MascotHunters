@@ -23,6 +23,12 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private Collider meleeBox;
 
     [SerializeField] private int cost = 1;
+    [SerializeField] private EnemyHealthBar healthBar;
+
+    /// <summary>
+    /// Bigger numbers mean less likely to drop an item
+    /// </summary>
+    [SerializeField] private int itemDropChance = 100;
 
     //[SerializeField] private float size = 2f;
 
@@ -45,6 +51,11 @@ public class EnemyScript : MonoBehaviour
         if (isMelee)
         {
             StartCoroutine(MeleeAttack());
+        }
+
+        if(healthBar != null)
+        {
+            healthBar.MaxHealth = enemyStats.MaxHealth;
         }
     }
 
@@ -93,12 +104,38 @@ public class EnemyScript : MonoBehaviour
     {
         enemyStats.Health -= damage;
 
-        if(enemyStats.Health <= 0)
+        if (healthBar != null)
         {
-            GameInformation.EnemiesRemaining--;
-            FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();
-            Destroy(gameObject);
+            healthBar.UpdateHealthbar(enemyStats.Health);
         }
+
+        if (enemyStats.Health <= 0)
+        {
+            KillEnemy();
+        }
+    }
+
+    public virtual void KillEnemy()
+    {
+        DropItem();
+
+        GameInformation.EnemiesRemaining--;
+        FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();
+        Destroy(gameObject);
+    }
+
+    private void DropItem()
+    {
+        if(Random.Range(0, itemDropChance) != 0)
+        {
+            return;
+        }
+
+        Object[] items = Resources.LoadAll("ItemDrops", typeof(GameObject));
+
+        GameObject item = (GameObject)items[Random.Range(0, items.Length)];
+
+        Instantiate(item, transform.position, Quaternion.identity);
     }
 
     public virtual IEnumerator Shoot()
