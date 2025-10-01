@@ -304,7 +304,7 @@
                 {
                     "name": "",
                     "id": "b99cbd03-ad8a-4568-9033-019a8d168c6b",
-                    "path": "<Keyboard>/5",
+                    "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": ";UI",
@@ -337,7 +337,7 @@
                 {
                     "name": "",
                     "id": "d1d0136b-b58d-4ec8-bf26-ad8e08b3dada",
-                    "path": "<Keyboard>/tab",
+                    "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": ";UI",
