@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 85bda21055a21d747b43ca2af899faff
+guid: 3e801bfa1e2a12b44938ddd66eb90939
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -43,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,20 +109,20 @@ TextureImporter:
       name: Cynthia_Walk_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 57
-        height: 62
+        x: 3
+        y: 3
+        width: 55
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7eaf13211828e6000800000000000000
-      internalID: 31105738305829607
+      spriteID: c7f505ee2dd53fb4f9539fa0242eb5e2
+      internalID: 1820971271
       vertices: []
       indices: 
       edges: []
@@ -131,20 +131,20 @@ TextureImporter:
       name: Cynthia_Walk_1
       rect:
         serializedVersion: 2
-        x: 66
-        y: 2
-        width: 57
-        height: 62
+        x: 67
+        y: 3
+        width: 55
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4db6660f632bca0b0800000000000000
-      internalID: -5715997878008779820
+      spriteID: 43b9fbe7c996c9145a7f2aaf04defe96
+      internalID: -1204333159
       vertices: []
       indices: 
       edges: []
@@ -153,20 +153,20 @@ TextureImporter:
       name: Cynthia_Walk_2
       rect:
         serializedVersion: 2
-        x: 130
-        y: 2
-        width: 57
-        height: 62
+        x: 131
+        y: 3
+        width: 55
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 26150809ce0e4ca60800000000000000
-      internalID: 7693521370096882018
+      spriteID: 107f8072d1524114e98e36a7024266d1
+      internalID: -441381034
       vertices: []
       indices: 
       edges: []
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 39b10a0661381064a9756d0dbe894629
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cynthia_Walk_0: 31105738305829607
-      Cynthia_Walk_1: -5715997878008779820
-      Cynthia_Walk_2: 7693521370096882018
+      Cynthia_Walk_0: 1820971271
+      Cynthia_Walk_1: -1204333159
+      Cynthia_Walk_2: -441381034
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

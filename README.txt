@@ -1,0 +1,3 @@
+Bugs - Small lag-spikes when generating new chunks due to navmesh. Going to look into saving navmeshes alongside the chunks that get generated.
+
+Notes - This is going to be a build of the game that is meant for PC testing, due to how PlayerInputs work. We will likely set up a second branch or something that has the Input Map for the arcade machines. This build should work with both WASD and Space, as well as controller's left stick and right trigger

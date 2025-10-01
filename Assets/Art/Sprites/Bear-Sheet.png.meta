@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,20 +112,20 @@ TextureImporter:
       name: Bear-Sheet_0
       rect:
         serializedVersion: 2
-        x: 15
+        x: 16
         y: 0
-        width: 36
-        height: 54
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4d2ec16691a73e6f0800000000000000
-      internalID: -656546871160020268
+      spriteID: 769e8e9691714f642a5bb873e8ae6327
+      internalID: 247946294
       vertices: []
       indices: 
       edges: []
@@ -134,20 +134,20 @@ TextureImporter:
       name: Bear-Sheet_1
       rect:
         serializedVersion: 2
-        x: 84
+        x: 85
         y: 0
-        width: 32
-        height: 56
+        width: 30
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 20f4f65be720c8860800000000000000
-      internalID: 7533399019917102850
+      spriteID: f5b4c6a6518438b4f9539bf1b14ced28
+      internalID: -841523898
       vertices: []
       indices: 
       edges: []
@@ -156,20 +156,20 @@ TextureImporter:
       name: Bear-Sheet_2
       rect:
         serializedVersion: 2
-        x: 143
+        x: 144
         y: 0
-        width: 36
-        height: 54
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: edbeeb69660e4d0f0800000000000000
-      internalID: -1093002078323807266
+      spriteID: 8c90db8d27c3f0a4ab06966bfc5311dc
+      internalID: -1777161785
       vertices: []
       indices: 
       edges: []
@@ -178,20 +178,20 @@ TextureImporter:
       name: Bear-Sheet_3
       rect:
         serializedVersion: 2
-        x: 212
+        x: 213
         y: 0
-        width: 32
-        height: 56
+        width: 30
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: da52aa8196ab35090800000000000000
-      internalID: -8046883148632808019
+      spriteID: b2efeb2dece6c984ab2d20bcd116fbb7
+      internalID: 429042294
       vertices: []
       indices: 
       edges: []
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cf2cf178302c7a24eab9d73fd6df14bd
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bear-Sheet_0: -656546871160020268
-      Bear-Sheet_1: 7533399019917102850
-      Bear-Sheet_2: -1093002078323807266
-      Bear-Sheet_3: -8046883148632808019
+      Bear-Sheet_0: 247946294
+      Bear-Sheet_1: -841523898
+      Bear-Sheet_2: -1777161785
+      Bear-Sheet_3: 429042294
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

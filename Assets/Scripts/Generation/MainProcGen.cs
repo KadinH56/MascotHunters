@@ -50,18 +50,15 @@ public class MainProcGen : MonoBehaviour
 
         chunkNoise.SetSeed(seed);
         //StartCoroutine(Generate(Vector3.zero));
-    }
 
-    public void StartGeneration(Vector3 position)
-    {
-        StartCoroutine(Generate(position));
+        FindFirstObjectByType<EnemySpawner>().StartSpawningEnemies();
     }
 
     /// <summary>
     /// Generate the actual game
     /// </summary>
     /// <param name="position">Player position</param>
-    public IEnumerator Generate(Vector3 position)
+    public void Generate(Vector3 position)
     {
         position /= chunkSize;
 
@@ -79,6 +76,7 @@ public class MainProcGen : MonoBehaviour
 
                 if (loadedMap.ContainsKey(pos))
                 {
+                    loadedMap[pos].SetActive(true);
                     continue;
                 }
                 //Load Gameobject code
@@ -91,8 +89,7 @@ public class MainProcGen : MonoBehaviour
 
                 loadedMap.Add(pos, gameObject);
 
-                yield return null;
-            }
+               }
         }
 
         //Unload uneeded chunks
@@ -103,19 +100,10 @@ public class MainProcGen : MonoBehaviour
                 continue;
             }
 
-            StartCoroutine(QueueUnloadKey(pos));
+            loadedMap[pos].SetActive(false);
         }
 
         GetComponent<NavMeshSurface>().BuildNavMesh();
-        FindFirstObjectByType<EnemySpawner>().StartSpawningEnemies();
-    }
-
-    private IEnumerator QueueUnloadKey(Vector2Int unloadChunk)
-    {
-        yield return new WaitForEndOfFrame();
-        
-        Destroy(loadedMap[unloadChunk]);
-        loadedMap.Remove(unloadChunk);
     }
 
     /// <summary>
