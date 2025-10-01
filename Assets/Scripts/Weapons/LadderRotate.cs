@@ -29,7 +29,8 @@ public class LadderRotate : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<EnemyScript>().TakeDamage(Mathf.RoundToInt((baseDamage + playerStats.DamageModifierAdditive) * playerStats.DamageModifierMultiplicitive));   
+            other.gameObject.GetComponent<EnemyScript>().TakeDamage(Mathf.RoundToInt((baseDamage + 
+                playerStats.DamageModifierAdditive) * playerStats.DamageModifierMultiplicitive));   
         }
     }
 }
