@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private PlayerStatManager statManager;
 
-    [SerializeField] private float playerSpeed = 8f;
+    //[SerializeField] private float playerSpeed = 8f;
     [SerializeField] private float dashSpeed = 5f;
     [SerializeField] private float dashTime = 1f;
     [SerializeField] private bool isRoll;
