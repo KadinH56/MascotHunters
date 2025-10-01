@@ -134,9 +134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca16e054db9e854ea92d51b4ac43544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseDamage: 2
+  pMovement: {fileID: 0}
   rotationSpeed: 5
   isRotating: 1
-  baseDamage: 16
 --- !u!136 &8803964772248492814
 CapsuleCollider:
   m_ObjectHideFlags: 0

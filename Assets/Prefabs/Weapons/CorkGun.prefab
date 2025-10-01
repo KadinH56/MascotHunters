@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e1aaa35067cca428547dea25f7be0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 1
+  baseDamage: 6
   pMovement: {fileID: 0}
   projectile: {fileID: 1697002737279475803, guid: f5029fba2aeabaf49b39aa6e0609ea9b, type: 3}
   shootTime: 0
