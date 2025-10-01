@@ -58,11 +58,13 @@ public class PlayerSpawner : MonoBehaviour
             {
                 string scheme = "MainControlScheme";
 
-                //foreach(InputDevice device in InputSystem.devices)
-                //{
-                //    print(device);
-                //}
+                foreach (InputDevice device in InputSystem.devices)
+                {
+                    print(device);
+                }
                 print(InputSystem.GetDevice<Gamepad>());
+
+                print(InputSystem.devices.Count);
 
                 InputDevice[] devices = new InputDevice[1];
                 if (InputSystem.devices.Count > 1)

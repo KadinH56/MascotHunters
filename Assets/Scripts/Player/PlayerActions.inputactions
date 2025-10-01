@@ -87,7 +87,7 @@
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": ";MainControlScheme",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -208,7 +208,7 @@
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Gamepad;MainControlScheme",
                     "action": "Roll",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -368,6 +368,11 @@
                     "devicePath": "<Keyboard>",
                     "isOptional": true,
                     "isOR": false
+                },
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": true,
+                    "isOR": false
                 }
             ]
         },
@@ -399,17 +404,6 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        },
-        {
-            "name": "Gamepad",
-            "bindingGroup": "Gamepad",
-            "devices": [
-                {
-                    "devicePath": "<Gamepad>",
                     "isOptional": false,
                     "isOR": false
                 }
