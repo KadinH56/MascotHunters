@@ -224,11 +224,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerProj: 1
-  despawnTime: 2
+  despawnTime: 1
   explosionDamageMultiplier: 0
   sprites: []
   projectileCollider: {fileID: 5486933696565816482}
-  explosionCollider: {fileID: 0}
+  explosionCollider: {fileID: -8423249759304264921}
 --- !u!136 &5486933696565816482
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -296,7 +296,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}

@@ -11,21 +11,23 @@ public class CorkGunProjectile : Projectile
 
     public override void OnKill(bool hitTarget)
     {
-        if (hitTarget)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        base.OnKill(hitTarget);
+        //Lookat later when upgrade stuff
+        //if (hitTarget)
+        //{
+        //    Destroy(gameObject);
+        //    return;
+        //}
 
-        Damage = Mathf.RoundToInt(Damage * explosionDamageMultiplier);
-        foreach (GameObject sprite in sprites)
-        {
-            sprite.SetActive(false);
-        }
-        projectileCollider.enabled = false;
-        explosionCollider.enabled = true;
+        //Damage = Mathf.RoundToInt(Damage * explosionDamageMultiplier);
+        //foreach (GameObject sprite in sprites)
+        //{
+        //    sprite.SetActive(false);
+        //}
+        //projectileCollider.enabled = false;
+        //explosionCollider.enabled = true;
 
-        StartCoroutine(DestroyMe());
+        //StartCoroutine(DestroyMe());
     }
 
     private IEnumerator DestroyMe()
