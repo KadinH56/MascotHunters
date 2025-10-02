@@ -6,7 +6,7 @@ public class HammerHit : MonoBehaviour
 {
     private Stats playerStats;
     [SerializeField] private int baseDamage = 3;
-    private int timer = 3;
+    [SerializeField] private int hitCountdown = 15;
 
     void Start()
     {
@@ -17,10 +17,10 @@ public class HammerHit : MonoBehaviour
     {
         //timer and Time.DeltaTime seconds countdown goes here
 
-        if(timer >= 0)
+        if(hitCountdown == 0)
         {
             StartCoroutine("HammerDamage");
-            timer = 3;
+            hitCountdown = 15;
         }
     }
 
