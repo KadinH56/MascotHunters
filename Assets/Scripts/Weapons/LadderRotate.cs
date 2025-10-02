@@ -1,18 +1,10 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class LadderRotate : MonoBehaviour
+public class LadderRotate : WeaponBase
 {
     [SerializeField] private float rotationSpeed;
     [SerializeField] private bool isRotating;
-
-    [SerializeField] private int baseDamage = 1;
-    private Stats playerStats;
-
-    private void Start()
-    {
-        playerStats = transform.parent.GetComponent<PlayerStatManager>().PlayerStats;
-    }
 
     /// <summary>
     /// If the bool is true, the ladder will rotate around the fixed object
@@ -29,8 +21,7 @@ public class LadderRotate : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<EnemyScript>().TakeDamage(Mathf.RoundToInt((baseDamage + 
-                playerStats.DamageModifierAdditive) * playerStats.DamageModifierMultiplicitive));   
+            other.gameObject.GetComponent<EnemyScript>().TakeDamage(CalculateDamage());   
         }
     }
 }
