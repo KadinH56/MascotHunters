@@ -2,40 +2,32 @@ using System.Collections;
 using UnityEngine;
 using static PlayerStatManager;
 
-public class HammerHit : MonoBehaviour
+public class HammerHit : WeaponBase
 {
-    private Stats playerStats;
-    [SerializeField] private int baseDamage = 3;
     [SerializeField] private int hitCountdown = 15;
+    [SerializeField] private bool isHitting = false;
+    [SerializeField] private GameObject hitCircle;
 
     void Start()
     {
-        playerStats = transform.parent.GetComponent<PlayerStatManager>().PlayerStats;
-    }
+        hitCircle.GetComponent<SpriteRenderer>().enabled = false;
+        hitCircle.GetComponent<CapsuleCollider>().enabled = false;
 
-    void FixedUpdate()
-    {
-        //timer and Time.DeltaTime seconds countdown goes here
-
-        if(hitCountdown == 0)
-        {
-            StartCoroutine("HammerDamage");
-            hitCountdown = 15;
-        }
+        StartCoroutine(HammerDamage());
     }
 
     private IEnumerator HammerDamage()
     {
-        Debug.Log("Hammer activated!");
-        yield return null;
-    }
+        yield return new WaitForSeconds(hitCountdown);
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
+        while (isHitting == true)
         {
-            other.gameObject.GetComponent<EnemyScript>().TakeDamage(Mathf.RoundToInt((baseDamage +
-                playerStats.DamageModifierAdditive) * playerStats.DamageModifierMultiplicitive));
+            Debug.Log("Hammer activated!");
+            hitCircle.GetComponent<SpriteRenderer>().enabled = true;
+            hitCircle.GetComponent <CapsuleCollider>().enabled = true;
+            //hitCircle.GetComponent<HitCircle>().Damage = CalculateDamage; IDK
+            hitCircle.GetComponent<Rigidbody>().position = pMovement.Facing;
+            hitCountdown--;
         }
     }
 }
