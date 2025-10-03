@@ -8,11 +8,9 @@
 //  Special abilities, including dodge roll
 *****************************************************************************/
 
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(Rigidbody))]
@@ -30,13 +28,12 @@ public class PlayerMovement : MonoBehaviour
 
     private InputAction move;
     private InputAction roll;
-    private InputAction restart;
-    private InputAction quit;
 
     //Used to ID the player for local multiplayer. Set to 0 or 1 ingame
     private int playerID = -1;
 
     private Vector3 moveDir;
+    private Vector3 facing = Vector3.right;
 
     private CameraFollower cam;
 
@@ -44,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     /// Used by the Player Manager to set the player ID to 0 or 1
     /// </summary>
     public int PlayerID { get => playerID; set => playerID = value; }
+    public Vector3 Facing { get => facing; set => facing = value; }
 
     /// <summary>
     /// Sets some private variables and starts the action map
@@ -58,8 +56,6 @@ public class PlayerMovement : MonoBehaviour
 
         move = pInput.currentActionMap.FindAction("Move");
         roll = pInput.currentActionMap.FindAction("Roll");
-        restart = pInput.currentActionMap.FindAction("Restart");
-        quit = pInput.currentActionMap.FindAction("Quit");
 
         //Creates the function when the button for the roll is pressed
         roll.started += Roll_started;
@@ -102,6 +98,11 @@ public class PlayerMovement : MonoBehaviour
         if (!isRoll)
         {
             moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
+        }
+
+        if(moveDir != Vector3.zero)
+        {
+            facing = moveDir;
         }
 
         pRigidBody.linearVelocity = Vector3.MoveTowards(pRigidBody.linearVelocity, moveDir * statManager.PlayerStats.Movement, 1f);
