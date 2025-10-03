@@ -180,6 +180,7 @@ Transform:
   - {fileID: 8594981977544908782}
   - {fileID: 2920243330972393856}
   - {fileID: 7774297327544149318}
+  - {fileID: 8602915353598003324}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &5423109812335188466
@@ -392,6 +393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CorkGun
       objectReference: {fileID: 0}
+    - target: {fileID: 7961224399997987244, guid: f2e11fce714fbe94089d09a9eadd723e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8185104160216591052, guid: f2e11fce714fbe94089d09a9eadd723e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -441,4 +446,86 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8185104160216591052, guid: f2e11fce714fbe94089d09a9eadd723e, type: 3}
   m_PrefabInstance: {fileID: 1906305666243465098}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9175536314653141070
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3387858530456264924}
+    m_Modifications:
+    - target: {fileID: 591585930900299826, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591585930900299826, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591585930900299826, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591585930900299826, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 591585930900299826, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591585930900299826, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591585930900299826, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591585930900299826, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591585930900299826, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591585930900299826, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225385550678140505, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: pMovement
+      value: 
+      objectReference: {fileID: 2040649314549149523}
+    - target: {fileID: 2225385550678140505, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: baseDamage
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225385550678140505, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: hitCountdown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278385395933206272, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111164344291852885, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: m_Center.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940688666742109886, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+      propertyPath: m_Name
+      value: HammerCircle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+--- !u!4 &8602915353598003324 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 591585930900299826, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
+  m_PrefabInstance: {fileID: 9175536314653141070}
   m_PrefabAsset: {fileID: 0}
