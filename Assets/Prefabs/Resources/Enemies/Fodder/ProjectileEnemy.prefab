@@ -130,7 +130,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 25
   m_Sprite: {fileID: 429042294, guid: 69ce9c0a1b65e554cb425648ba9c7e05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -276,3 +276,4 @@ MonoBehaviour:
   meleeBox: {fileID: 2008192815645434260}
   cost: 2
   healthBar: {fileID: 0}
+  itemDropChance: 100
