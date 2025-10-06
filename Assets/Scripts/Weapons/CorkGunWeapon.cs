@@ -5,8 +5,8 @@ public class CorkGunWeapon : WeaponBase
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private float shootTime;
-
     [SerializeField] private float shootSpeed;
+
     private void Start()
     {
         StartCoroutine(Shoot());
