@@ -14,6 +14,10 @@ public class HammerHit : WeaponBase
     [SerializeField] private SpriteRenderer hitRenderer;
     [SerializeField] private LayerMask enemyLayers;
 
+    Animator animator;
+
+    bool animating = false;
+
 
     void Start()
     {
@@ -24,9 +28,11 @@ public class HammerHit : WeaponBase
         //hitRenderer = GetComponent<SpriteRenderer>();
 
         //hitCollider.enabled = false;
-        hitRenderer.enabled = false;
+        //hitRenderer.enabled = false;
 
+        animator = GetComponent<Animator>();
         StartCoroutine(HammerDamage());
+        StartCoroutine(HammerMovement());
     }
 
     private IEnumerator HammerDamage()
@@ -36,29 +42,43 @@ public class HammerHit : WeaponBase
             //Debug.Log("Hammer activated!");
             //hitCircle.GetComponent<SpriteRenderer>().enabled = true;
             //hitCircle.GetComponent <CapsuleCollider>().enabled = true;
-            ////hitCircle.GetComponent<HitCircle>().Damage = CalculateDamage; IDK
+            //hitCircle.GetComponent<HitCircle>().Damage = CalculateDamage; IDK
             //hitCircle.GetComponent<Rigidbody>().position = pMovement.Facing;
             //hitCountdown--;
-
             yield return new WaitForSeconds(hitCountdown);
-            transform.rotation = Quaternion.Euler(0, Mathf.Atan2(-pMovement.Facing.z, pMovement.Facing.x) * Mathf.Rad2Deg, 0);
+            animating = true;
+            animator.SetBool("Hit", true);
 
-            //print("Hit");
-            //hitCollider.enabled = true;
-            hitRenderer.enabled = true;
-            //yield return new WaitForSeconds(0.1f);
-            Collider[] enemies = Physics.OverlapSphere(hitRenderer.transform.position, circleRadius, enemyLayers);
-            yield return new WaitForFixedUpdate();
-            foreach (Collider enemy in enemies)
-            {
-                if (enemy.gameObject.CompareTag("Enemy"))
-                {
-                    enemy.gameObject.GetComponent<EnemyScript>().TakeDamage(CalculateDamage());
-                }
-            }
             //hitCollider.enabled = false;
             //yield return new WaitForSeconds(1f);
-            hitRenderer.enabled = false;
+            //hitRenderer.enabled = false;
+        }
+    }
+
+    private IEnumerator HammerMovement()
+    {
+        while (true)
+        {
+            if (animating)
+            {
+                hitRenderer.transform.localPosition = new(circleDistance, 0);
+                transform.rotation = Quaternion.Euler(0, Mathf.Atan2(-pMovement.Facing.z, pMovement.Facing.x) * Mathf.Rad2Deg, 0);
+            }
+            yield return null;
+        }
+    }
+
+    public void HitEvent()
+    {
+        animator.SetBool("Hit", false);
+        animating = false;
+        Collider[] enemies = Physics.OverlapSphere(hitRenderer.transform.position, circleRadius, enemyLayers);
+        foreach (Collider enemy in enemies)
+        {
+            if (enemy.gameObject.CompareTag("Enemy"))
+            {
+                enemy.gameObject.GetComponent<EnemyScript>().TakeDamage(CalculateDamage());
+            }
         }
     }
 
