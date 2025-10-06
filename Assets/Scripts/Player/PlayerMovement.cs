@@ -129,8 +129,11 @@ public class PlayerMovement : MonoBehaviour
 
         if(moveDir == Vector3.zero)
         {
+            animator.SetBool("IsMoving", false);
             return;
         }
+
+        animator.SetBool("IsMoving", !isRoll);
 
         Vector3 average = Vector3.zero;
         float size = 0f;
@@ -143,10 +146,7 @@ public class PlayerMovement : MonoBehaviour
 
             average += player.transform.position;
             size += 1f;
-        }
-
-        bool isMoving = moveDir != Vector3.zero && !isRoll;
-        animator.SetBool("IsMoving", isMoving);
+        }        
 
         average /= size;
 
