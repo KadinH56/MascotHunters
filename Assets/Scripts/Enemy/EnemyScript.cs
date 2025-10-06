@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements.Experimental;
 
 /// <summary>
 /// Simple enemy AI
@@ -24,6 +25,9 @@ public class EnemyScript : MonoBehaviour
 
     [SerializeField] private int cost = 1;
     [SerializeField] private EnemyHealthBar healthBar;
+
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     /// <summary>
     /// Bigger numbers mean less likely to drop an item
