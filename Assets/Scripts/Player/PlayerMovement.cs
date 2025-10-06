@@ -9,6 +9,7 @@
 *****************************************************************************/
 
 using System.Collections;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -38,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     private CameraFollower cam;
 
     [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    private bool facingRight = true;
 
     /// <summary>
     /// Used by the Player Manager to set the player ID to 0 or 1
@@ -134,6 +137,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
         animator.SetBool("IsMoving", !isRoll);
+
+        if (facing.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
+        }
 
         Vector3 average = Vector3.zero;
         float size = 0f;

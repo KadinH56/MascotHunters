@@ -301,7 +301,8 @@ MonoBehaviour:
   dashSpeed: 50
   dashTime: 0.4
   isRoll: 0
-  animator: {fileID: 0}
+  animator: {fileID: 698033908845542131}
+  spriteRenderer: {fileID: 680136096779187297}
 --- !u!114 &7677238045681899569
 MonoBehaviour:
   m_ObjectHideFlags: 0
