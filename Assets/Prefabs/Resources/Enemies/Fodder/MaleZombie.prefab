@@ -181,7 +181,6 @@ MonoBehaviour:
     baseDamage: 5
     baseMovement: 6
   distanceFromPlayer: 0
-  isBoss: 0
   projectileVelocity: 0
   projectile: {fileID: 0}
   shootTimer: 0
@@ -189,6 +188,8 @@ MonoBehaviour:
   meleeTime: 1
   meleeBox: {fileID: 2008192815645434260}
   cost: 1
+  healthBar: {fileID: 0}
+  itemDropChance: 100
 --- !u!1 &9132983214157869824
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +265,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 25
   m_Sprite: {fileID: 909550678, guid: 15094dc5a667a0b45a2f47095c986d3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

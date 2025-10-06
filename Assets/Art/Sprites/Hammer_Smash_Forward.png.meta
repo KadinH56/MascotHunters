@@ -43,9 +43,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 64
@@ -97,23 +97,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mc_1_Sheet_0
+      name: Hammer_Smash_Forward_0
       rect:
         serializedVersion: 2
-        x: 14
+        x: 0
         y: 0
-        width: 49
-        height: 59
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.75, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 54878062a6574ee40800000000000000
-      internalID: 5684797728413481029
+      spriteID: 3a5aec8cbd216b24a9bbad86ea3c933c
+      internalID: 1992183248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer_Smash_Forward_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.75, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f104ebb34e0b2864c88b8b63c6b21535
+      internalID: -356710601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer_Smash_Forward_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.75, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8dc12a02d5fde54e91d7cb7f4de01b6
+      internalID: -410686585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer_Smash_Forward_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.75, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ecf7391c6efdff4da85c2f5436bf7c0
+      internalID: 1418321087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer_Smash_Forward_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.75, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4db48d99a76feec43a921d118cf4d078
+      internalID: -800180727
       vertices: []
       indices: 
       edges: []
@@ -132,9 +220,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mc_1_Sheet_0: 5684797728413481029
-      Mc_1_Sheet_1: -1490432877428568682
-      Mc_1_Sheet_2: 3212217844421224063
+      Hammer_Smash_Forward_0: 1992183248
+      Hammer_Smash_Forward_1: -356710601
+      Hammer_Smash_Forward_2: -410686585
+      Hammer_Smash_Forward_3: 1418321087
+      Hammer_Smash_Forward_4: -800180727
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
