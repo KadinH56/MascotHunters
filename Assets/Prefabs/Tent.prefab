@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9099709044615506224}
   - component: {fileID: 4767130631277892629}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TentInside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,6 +147,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8177768119044159957, guid: 6455e5bf203c98b4b87af8a166258f2d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -3430194010389569662, guid: 6455e5bf203c98b4b87af8a166258f2d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -155,9 +159,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tent
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6455e5bf203c98b4b87af8a166258f2d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6799132606074611835, guid: 6455e5bf203c98b4b87af8a166258f2d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.0531
+      objectReference: {fileID: 0}
+    - target: {fileID: 8606177506485225649, guid: 6455e5bf203c98b4b87af8a166258f2d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -169,6 +181,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6455e5bf203c98b4b87af8a166258f2d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4243405226200631679}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6455e5bf203c98b4b87af8a166258f2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2443234904819108308}
   m_SourcePrefab: {fileID: 100100000, guid: 6455e5bf203c98b4b87af8a166258f2d, type: 3}
 --- !u!1 &7371484944378919004 stripped
 GameObject:
@@ -196,6 +211,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.03300006, y: 0.045796294, z: 0.029065272}
   m_Center: {x: -0.0030503846, y: 0.022041675, z: 0.00005844193}
+--- !u!208 &2443234904819108308
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7371484944378919004}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.01650003, y: 0.022898145, z: 0.014532635}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.0030503846, y: 0.022041675, z: 0.00005844193}
+  m_TimeToStationary: 0.5
 --- !u!4 &7856272456735531750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6455e5bf203c98b4b87af8a166258f2d, type: 3}
