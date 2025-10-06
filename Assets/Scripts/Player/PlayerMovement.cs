@@ -9,6 +9,7 @@
 *****************************************************************************/
 
 using System.Collections;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -37,6 +38,10 @@ public class PlayerMovement : MonoBehaviour
 
     private CameraFollower cam;
 
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    private bool facingRight = true;
+
     /// <summary>
     /// Used by the Player Manager to set the player ID to 0 or 1
     /// </summary>
@@ -60,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
         //Creates the function when the button for the roll is pressed
         roll.started += Roll_started;
         cam = FindFirstObjectByType<CameraFollower>();
+
+        //animator = GetComponent<Animator>();
 
     }
 
@@ -125,7 +132,19 @@ public class PlayerMovement : MonoBehaviour
 
         if(moveDir == Vector3.zero)
         {
+            animator.SetBool("IsMoving", false);
             return;
+        }
+
+        animator.SetBool("IsMoving", !isRoll);
+
+        if (facing.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
         }
 
         Vector3 average = Vector3.zero;
@@ -139,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
 
             average += player.transform.position;
             size += 1f;
-        }
+        }        
 
         average /= size;
 
