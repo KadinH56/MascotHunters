@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: f3f820fb726abc44fad13fb6e652d906
+guid: 2ff7f00226603a540a81c38c49398226
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 5867195017607691739
-    second: Male_Zombie_Walk_0
-  - first:
-      213: 1535323790440567944
-    second: Male_Zombie_Walk_1
-  - first:
-      213: -8459196566393096217
-    second: Male_Zombie_Walk_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,67 +97,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Male_Zombie_Walk_0
+      name: Mc_1_Sheet_0
       rect:
         serializedVersion: 2
-        x: 11
+        x: 14
         y: 0
-        width: 42
-        height: 43
+        width: 49
+        height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: fa4d21287dcaf8d4189e3cc925c6b20a
-      internalID: 68512435
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Zombie_Walk_1
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 0
-        width: 42
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bacacf62da0c8bc4eb9712eac0750f7e
-      internalID: -1542759976
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Zombie_Walk_2
-      rect:
-        serializedVersion: 2
-        x: 139
-        y: 0
-        width: 42
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fdaee5982d36d0643a5fa3d8007c0556
-      internalID: 909550678
+      spriteID: 54878062a6574ee40800000000000000
+      internalID: 5684797728413481029
       vertices: []
       indices: 
       edges: []
@@ -175,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d0822be7eb82d45489f219e645b650d8
+    spriteID: 8a594d2ebb2f60341b0d3514bd20e55f
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +132,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Male_Zombie_Walk_0: 68512435
-      Male_Zombie_Walk_1: -1542759976
-      Male_Zombie_Walk_2: 909550678
+      Mc_1_Sheet_0: 5684797728413481029
+      Mc_1_Sheet_1: -1490432877428568682
+      Mc_1_Sheet_2: 3212217844421224063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
