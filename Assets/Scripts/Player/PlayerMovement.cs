@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     private CameraFollower cam;
 
-    private Animator animator;
+    [SerializeField] private Animator animator;
 
     /// <summary>
     /// Used by the Player Manager to set the player ID to 0 or 1
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         roll.started += Roll_started;
         cam = FindFirstObjectByType<CameraFollower>();
 
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
 
     }
 
