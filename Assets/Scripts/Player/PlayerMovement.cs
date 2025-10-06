@@ -37,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
 
     private CameraFollower cam;
 
+    private Animator animator;
+
     /// <summary>
     /// Used by the Player Manager to set the player ID to 0 or 1
     /// </summary>
@@ -60,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
         //Creates the function when the button for the roll is pressed
         roll.started += Roll_started;
         cam = FindFirstObjectByType<CameraFollower>();
+
+        animator = GetComponent<Animator>();
 
     }
 
@@ -140,6 +144,9 @@ public class PlayerMovement : MonoBehaviour
             average += player.transform.position;
             size += 1f;
         }
+
+        bool isMoving = moveDir != Vector3.zero && !isRoll;
+        animator.SetBool("IsMoving", isMoving);
 
         average /= size;
 
