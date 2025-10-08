@@ -41,11 +41,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    private WeaponManager weaponManager;
+
     /// <summary>
     /// Used by the Player Manager to set the player ID to 0 or 1
     /// </summary>
     public int PlayerID { get => playerID; set => playerID = value; }
     public Vector3 Facing { get => facing; set => facing = value; }
+    public WeaponManager WeaponManager { get => weaponManager; set => weaponManager = value; }
 
     /// <summary>
     /// Sets some private variables and starts the action map
@@ -64,6 +67,8 @@ public class PlayerMovement : MonoBehaviour
         //Creates the function when the button for the roll is pressed
         roll.started += Roll_started;
         cam = FindFirstObjectByType<CameraFollower>();
+
+        weaponManager = GetComponent<WeaponManager>();
 
         //animator = GetComponent<Animator>();
 
