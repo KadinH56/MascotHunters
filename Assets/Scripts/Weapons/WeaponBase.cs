@@ -13,7 +13,7 @@ public class WeaponBase : MonoBehaviour
 
     private void Awake()
     {
-        playerStats = transform.parent.GetComponent<PlayerStatManager>().PlayerStats;
+        playerStats = transform.parent.parent.GetComponent<PlayerStatManager>().PlayerStats;
     }
 
     /// <summary>
