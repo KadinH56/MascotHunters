@@ -75,6 +75,15 @@ public class EnemyScript : MonoBehaviour
             return;
         }
 
+        if (agent.velocity.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
+        }
+
         agent.SetDestination(target.transform.position);
 
         if(shootCoroutine == null && projectile != null)

@@ -277,5 +277,5 @@ MonoBehaviour:
   cost: 2
   healthBar: {fileID: 0}
   animator: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 2139181303718269317}
   itemDropChance: 100
