@@ -365,6 +365,7 @@ MonoBehaviour:
     baseDamage: 0
     baseMovement: 8
   healthBar: {fileID: 0}
+  mainMenu: {fileID: 0}
 --- !u!1001 &491127998355535138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -387,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7961224399997987244, guid: 712e40bc711677349adc2af1901d357f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8185104160216591052, guid: 712e40bc711677349adc2af1901d357f, type: 3}
       propertyPath: m_LocalScale.x
@@ -595,7 +596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8940688666742109886, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
