@@ -189,6 +189,8 @@ MonoBehaviour:
   meleeBox: {fileID: 2008192815645434260}
   cost: 1
   healthBar: {fileID: 0}
+  animator: {fileID: 6583614894638680438}
+  spriteRenderer: {fileID: 104976642992649390}
   itemDropChance: 100
 --- !u!1 &9132983214157869824
 GameObject:
@@ -200,6 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2527952284541566291}
   - component: {fileID: 104976642992649390}
+  - component: {fileID: 6583614894638680438}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -267,7 +270,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 25
   m_Sprite: {fileID: 1112688346, guid: 10bc4007cf3b8f24a883dbdc14b47452, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.24644153, g: 0.6679245, b: 0.23566392, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -277,3 +280,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6583614894638680438
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9132983214157869824}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c2507b01309743448b4e1d6da1a3477, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

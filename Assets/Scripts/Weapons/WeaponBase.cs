@@ -5,10 +5,15 @@ public class WeaponBase : MonoBehaviour
     [SerializeField] protected int baseDamage = 1;
     [SerializeField] protected PlayerMovement pMovement;
 
+    [SerializeField] protected int weaponLevel = 1;
+
     protected Stats playerStats;
+
+    public int WeaponLevel { get => weaponLevel; set => weaponLevel = value; }
+
     private void Awake()
     {
-        playerStats = transform.parent.GetComponent<PlayerStatManager>().PlayerStats;
+        playerStats = transform.parent.parent.GetComponent<PlayerStatManager>().PlayerStats;
     }
 
     /// <summary>
@@ -21,6 +26,11 @@ public class WeaponBase : MonoBehaviour
         damage = baseDamage + playerStats.DamageModifierAdditive;
 
         damage = Mathf.RoundToInt(damage * playerStats.DamageModifierMultiplicitive);
-        return damage; //Mathf.RoundToInt((baseDamage + playerStats.DamageModifierAdditive) * playerStats.DamageModifierMultiplicitive);
+        return damage;
+    }
+
+    public virtual void LevelUpWeapon()
+    {
+        
     }
 }
