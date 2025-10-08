@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 3970185624203628926}
   - component: {fileID: 2139181303718269317}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,7 +132,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 25
   m_Sprite: {fileID: 429042294, guid: 69ce9c0a1b65e554cb425648ba9c7e05, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9622642, g: 0.60096115, b: 0.8323229, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -276,4 +276,6 @@ MonoBehaviour:
   meleeBox: {fileID: 2008192815645434260}
   cost: 2
   healthBar: {fileID: 0}
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 2139181303718269317}
   itemDropChance: 100
