@@ -39,6 +39,7 @@ public class HammerHit : WeaponBase
 
         LevelupDescriptions.Add(1, "Get a Strength Hammer");
         levelupDescriptions.Add(2, "Increase Hammer Size");
+        weaponLevel = 1;
     }
 
     private IEnumerator HammerDamage()

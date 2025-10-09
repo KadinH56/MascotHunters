@@ -16,6 +16,7 @@ public class CorkGunWeapon : WeaponBase
 
         LevelupDescriptions.Add(1, "Get a Cork Gun");
         LevelupDescriptions.Add(2, "Reduce Reload Time (100% -> 90%)");
+        weaponLevel = 1;
     }
 
     private IEnumerator Shoot()

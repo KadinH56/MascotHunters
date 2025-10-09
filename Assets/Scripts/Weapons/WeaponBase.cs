@@ -6,7 +6,7 @@ public class WeaponBase : MonoBehaviour
     [SerializeField] protected int baseDamage = 1;
     [SerializeField] protected PlayerMovement pMovement;
 
-    [SerializeField] protected int weaponLevel = 1;
+    [SerializeField] protected int weaponLevel = 0;
 
     [SerializeField] protected Dictionary<int, string> levelupDescriptions = new Dictionary<int, string>();
 

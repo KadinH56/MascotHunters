@@ -12,6 +12,7 @@ public class LadderRotate : WeaponBase
     {
         LevelupDescriptions.Add(1, "Get a Spinning Ladder");
         LevelupDescriptions.Add(2, "Add a Second Ladder");
+        weaponLevel = 1;
     }
 
     /// <summary>
