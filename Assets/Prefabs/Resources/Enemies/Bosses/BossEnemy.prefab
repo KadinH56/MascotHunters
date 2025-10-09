@@ -480,6 +480,7 @@ MonoBehaviour:
   healthBar: {fileID: 2110205051230298626}
   animator: {fileID: 1386265369327549993}
   spriteRenderer: {fileID: 821021272953717337}
+  enemyDeath: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
   itemDropChance: 1
 --- !u!1 &5958240348254958594
 GameObject:
