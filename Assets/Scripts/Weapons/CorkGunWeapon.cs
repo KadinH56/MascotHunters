@@ -7,6 +7,8 @@ public class CorkGunWeapon : WeaponBase
     [SerializeField] private float shootTime;
     [SerializeField] private float shootSpeed;
 
+    [SerializeField] private AudioClip shootSound;
+
     private void Start()
     {
         StartCoroutine(Shoot());
@@ -19,6 +21,7 @@ public class CorkGunWeapon : WeaponBase
             yield return new WaitForSeconds(shootTime);
 
             GameObject proj = Instantiate(projectile, transform.position, transform.rotation);
+            AudioSource.PlayClipAtPoint(shootSound, transform.position);
 
             proj.GetComponent<CorkGunProjectile>().Damage = CalculateDamage();
             proj.GetComponent<Rigidbody>().linearVelocity = shootSpeed * pMovement.Facing;

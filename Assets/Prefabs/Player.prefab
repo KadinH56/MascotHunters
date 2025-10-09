@@ -348,6 +348,8 @@ MonoBehaviour:
   isRoll: 0
   animator: {fileID: 698033908845542131}
   spriteRenderer: {fileID: 680136096779187297}
+  rollSound: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+  moveSound: {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
 --- !u!114 &7677238045681899569
 MonoBehaviour:
   m_ObjectHideFlags: 0

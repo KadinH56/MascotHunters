@@ -4,6 +4,7 @@ public class LadderRotate : WeaponBase
 {
     [SerializeField] private float rotationSpeed;
     [SerializeField] private bool isRotating;
+    [SerializeField] private AudioClip ladderHit;
 
     /// <summary>
     /// If the bool is true, the ladder will rotate around the fixed object
@@ -20,7 +21,8 @@ public class LadderRotate : WeaponBase
     {
         if(other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<EnemyScript>().TakeDamage(CalculateDamage());   
+            other.gameObject.GetComponent<EnemyScript>().TakeDamage(CalculateDamage());
+            AudioSource.PlayClipAtPoint(ladderHit, transform.position);
         }
     }
 }

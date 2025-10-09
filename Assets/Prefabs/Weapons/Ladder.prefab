@@ -136,8 +136,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 2
   pMovement: {fileID: 0}
+  weaponLevel: 1
   rotationSpeed: 5
   isRotating: 1
+  ladderHit: {fileID: 8300000, guid: 130a177e727814a2ea78a886ab72213d, type: 3}
 --- !u!136 &8803964772248492814
 CapsuleCollider:
   m_ObjectHideFlags: 0
