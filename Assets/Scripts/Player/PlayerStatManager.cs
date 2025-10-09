@@ -38,7 +38,7 @@ public class PlayerStatManager : MonoBehaviour
         if (playerStats.Health <= 0)
         {
             gameObject.SetActive(false);
-            mainMenu.SetActive(true);
+            //mainMenu.SetActive(true);
         }
     }
 

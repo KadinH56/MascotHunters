@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Pool;
+using UnityEngine.UI;
 
 public class UpgradeSystem : MonoBehaviour
 {
@@ -15,12 +16,23 @@ public class UpgradeSystem : MonoBehaviour
 
     [SerializeField] private GameObject UpgradeMenu;
 
+    [SerializeField] private Image[] upgradeImages;
+
+    //Oh Dead God the serializedFields
+    [SerializeField] private Sprite blueCow;
+    [SerializeField] private Sprite steroids;
+    [SerializeField] private Sprite medkit;
+    [SerializeField] private Sprite ladder;
+    [SerializeField] private Sprite  corkGun;
+    [SerializeField] private Sprite hammer;
+
     public void StartUpgrades(bool firstUpgrade = false)
     {
         StartCoroutine(Upgrade(firstUpgrade));
     }
     public IEnumerator Upgrade(bool firstUpgrade)
     {
+        yield return null;
         PlayerMovement[] players = new PlayerMovement[2];
         foreach (PlayerMovement player in FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None))
         {
@@ -38,15 +50,33 @@ public class UpgradeSystem : MonoBehaviour
                 {
                     "Ladder",
                     "CorkGun",
-                    "Hammer",
+                    "Hammer"
                 };
+
+                for (int j = 0; j < upgrades.Length; j++)
+                {
+                    switch (upgrades[j])
+                    {
+                        case "Ladder":
+                            upgradeImages[j].sprite = ladder;
+                            break;
+                        case "Hammer":
+                            upgradeImages[j].sprite = hammer;
+                            break;
+                        case "CorkGun":
+                            upgradeImages[j].sprite = corkGun;
+                            break;
+                    }
+                }
             }
             else
             {
-                List<string> pool = new();
-                pool.Add("Health");
-                pool.Add("Damage");
-                pool.Add("Speed");
+                List<string> pool = new()
+                {
+                    "Health",
+                    "Damage",
+                    "Speed"
+                };
 
                 pool.AddRange(GetPossiblePlayerWeaponUpgrades(players[i]));
 
@@ -54,6 +84,29 @@ public class UpgradeSystem : MonoBehaviour
                 {
                     upgrades[j] = pool[Random.Range(0, pool.Count)];
                     pool.Remove(upgrades[j]);
+
+                    //print(upgrades[j]);
+                    switch (upgrades[j])
+                    {
+                        case "Ladder":
+                            upgradeImages[j].sprite = ladder;
+                            break;
+                        case "Hammer":
+                            upgradeImages[j].sprite = hammer;
+                            break;
+                        case "CorkGun":
+                            upgradeImages[j].sprite = corkGun;
+                            break;
+                        case "Health":
+                            upgradeImages[j].sprite = medkit;
+                            break;
+                        case "Damage":
+                            upgradeImages[j].sprite = steroids;
+                            break;
+                        case "Speed":
+                            upgradeImages[j].sprite = blueCow;
+                            break;
+                    }
                 }
             }
 
@@ -128,7 +181,7 @@ public class UpgradeSystem : MonoBehaviour
             return;
         }
 
-        currentPlayer.WeaponManager.transform.Find(upgrades[id]).GetComponent<WeaponBase>().LevelUpWeapon();
+        currentPlayer.WeaponManager.WeaponUpgrade(upgrades[id]);
     }
 
     private List<string> GetPossiblePlayerWeaponUpgrades(PlayerMovement player)
@@ -148,6 +201,10 @@ public class UpgradeSystem : MonoBehaviour
 
         foreach (WeaponStat weap in weaponStats)
         {
+            if(weap.Level > 1)
+            {
+                continue;
+            }
             weapons.Add(weap.Weapon);
         }
 

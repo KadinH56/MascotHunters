@@ -348,6 +348,7 @@ MonoBehaviour:
   isRoll: 0
   animator: {fileID: 698033908845542131}
   spriteRenderer: {fileID: 680136096779187297}
+  weaponManager: {fileID: 284896115691116450}
 --- !u!114 &7677238045681899569
 MonoBehaviour:
   m_ObjectHideFlags: 0
