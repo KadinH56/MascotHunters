@@ -41,6 +41,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    [SerializeField] private AudioClip rollSound;
+    [SerializeField] private AudioClip moveSound;
+
+    private WeaponManager weaponManager;
     [SerializeField] private WeaponManager weaponManager;
 
     /// <summary>
@@ -85,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         isRoll = true;
-
+        AudioSource.PlayClipAtPoint(rollSound, transform.position);
         //Vector3 moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
         //pRigidBody.AddForce(new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed));
         moveDir *= dashSpeed;
@@ -97,7 +101,6 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator Roll()
     {
         yield return new WaitForSeconds(dashTime);
-
         isRoll = false;
     }
 
@@ -117,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         pRigidBody.linearVelocity = Vector3.MoveTowards(pRigidBody.linearVelocity, moveDir * statManager.PlayerStats.Movement, 1f);
+        
         //if (Vector2.Distance(new(transform.position.x, transform.position.z), new(cam.transform.position.x - cam.OffSet.x, cam.transform.position.z - cam.OffSet.z)) > cam.MaxCameraDistance)
         //{
         //    //Vector3 position = (cam.transform.position - cam.OffSet) + transform.position;

@@ -8,10 +8,13 @@ public class CorkGunProjectile : Projectile
     [SerializeField] private GameObject[] sprites;
     [SerializeField] private Collider projectileCollider;
     [SerializeField] private Collider explosionCollider;
+    [SerializeField] private AudioClip bulletHitSound;
 
     public override void OnKill(bool hitTarget)
     {
         base.OnKill(hitTarget);
+        AudioSource.PlayClipAtPoint(bulletHitSound, transform.position);
+
         //Lookat later when upgrade stuff
         //if (hitTarget)
         //{

@@ -4,6 +4,7 @@ public class LadderRotate : WeaponBase
 {
     [SerializeField] private float rotationSpeed;
     [SerializeField] private bool isRotating;
+    [SerializeField] private AudioClip ladderHit;
 
     [SerializeField] private GameObject secondLadderObject;
     [SerializeField] private Collider secondLadderCollider;
@@ -30,7 +31,8 @@ public class LadderRotate : WeaponBase
     {
         if(other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<EnemyScript>().TakeDamage(CalculateDamage());   
+            other.gameObject.GetComponent<EnemyScript>().TakeDamage(CalculateDamage());
+            AudioSource.PlayClipAtPoint(ladderHit, transform.position);
         }
     }
 
