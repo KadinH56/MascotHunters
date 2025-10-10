@@ -25,6 +25,8 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private float secondsBeforeNextWave = 2.5f;
 
+    private List<GameObject> players = new List<GameObject>();
+
     private List<Object> bosses;
 
     private CameraFollower cam;
@@ -54,7 +56,7 @@ public class EnemySpawner : MonoBehaviour
 
         cam = FindFirstObjectByType<CameraFollower>();
 
-        GameInformation.Wave = 5;
+        GameInformation.Wave = 1;
     }
     public void StartSpawningEnemies()
     {
@@ -71,6 +73,14 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(secondsBeforeNextWave);
+            if(players.Count == 0)
+            {
+                foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+                {
+                    players.Add(player);
+                    print(player);
+                }
+            }
             GameInformation.TotalEnemies = 0;
 
             if(GameInformation.Wave % 5 != 0)
@@ -171,6 +181,24 @@ public class EnemySpawner : MonoBehaviour
             while (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
             {
                 yield return null;
+            }
+
+            GameObject deadplayer = null;
+            GameObject alivePlayer = null;
+            foreach(GameObject player in players)
+            {
+                if (player.activeSelf)
+                {
+                    alivePlayer = player;
+                    continue;
+                }
+                print("this runs");
+                deadplayer = player;
+                player.GetComponent<PlayerStatManager>().OnAlive(false);
+            }
+            if(deadplayer != null)
+            {
+                deadplayer.transform.position = alivePlayer.transform.position;
             }
 
             if (GameInformation.Wave % 5 == 0)
