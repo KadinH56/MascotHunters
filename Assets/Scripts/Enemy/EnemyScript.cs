@@ -26,8 +26,8 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private int cost = 1;
     [SerializeField] private EnemyHealthBar healthBar;
 
-    [SerializeField] private Animator animator;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] protected Animator animator;
+    [SerializeField] protected SpriteRenderer spriteRenderer;
 
     [SerializeField] private AudioClip enemyDeath;
 
@@ -65,7 +65,7 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         EnemyAI();
     }

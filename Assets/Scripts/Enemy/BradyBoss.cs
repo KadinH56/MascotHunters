@@ -16,8 +16,12 @@ public class BradyBoss : EnemyScript
 
     [SerializeField] private float timeBetweenChomps = 0.5f;
     [SerializeField] private int numChomps = 3;
+    [SerializeField] private int numAttacksPerChomp = 2;
 
     [SerializeField] private LayerMask playerLayer;
+
+    [SerializeField] private float chompSize = 3f;
+    [SerializeField] private GameObject chompCircle;
 
     private STATE_MACHINE state = STATE_MACHINE.FOLLOW;
 
@@ -67,6 +71,12 @@ public class BradyBoss : EnemyScript
             return;
         }
 
+        if(attackCoroutine != null)
+        {
+            return;
+        }
+
+        timeLeft = Mathf.RoundToInt(timeBetweenAttacks * 60);
         state = STATE_MACHINE.FOLLOW;
         attacking = false;
     }
@@ -81,7 +91,9 @@ public class BradyBoss : EnemyScript
 
     private IEnumerator ChompAttack()
     {
-        attacking = false;
+        chompCircle.SetActive(true);
+        chompCircle.transform.localScale = Vector3.one * chompSize;
+        attacking = true;
         for (int i = 0; i < numChomps; i++)
         {
             if (target == null)
@@ -94,20 +106,56 @@ public class BradyBoss : EnemyScript
             direction.y = 0;
             direction.Normalize();
             GetComponent<Rigidbody>().linearVelocity = dashSpeedModifier * enemyStats.Movement * direction;
+
+            if (GetComponent<Rigidbody>().linearVelocity.x > 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else
+            {
+                spriteRenderer.flipX = true;
+            }
+
+            StartCoroutine(Chomp());
             yield return new WaitForSeconds(timeBetweenChomps);
         }
 
         GetComponent<Rigidbody>().linearVelocity = Vector2.zero;
-
+        chompCircle.SetActive(false);
         attackCoroutine = null;
+    }
+
+    private IEnumerator Chomp()
+    {
+        for (int i = 0; i < numAttacksPerChomp; i++)
+        {
+            animator.SetBool("Attacking", true);
+            Collider[] players = Physics.OverlapSphere(transform.position, chompSize, playerLayer, QueryTriggerInteraction.Collide);
+            foreach(Collider player in players)
+            {
+                player.transform.parent.GetComponent<PlayerStatManager>().TakeDamage(enemyStats.Damage);
+            }
+            yield return new WaitForSeconds(timeBetweenChomps / numAttacksPerChomp);
+            animator.SetBool("Attacking", false);
+        }
     }
 
     private void Follow()
     {
+        //print(timeLeft);
         if(target == null)
         {
             FindTarget();
             return;
+        }
+
+        if (agent.velocity.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
         }
 
         //State Machine stuff
