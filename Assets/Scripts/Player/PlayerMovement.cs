@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip rollSound;
     [SerializeField] private AudioClip moveSound;
 
-    private WeaponManager weaponManager;
     [SerializeField] private WeaponManager weaponManager;
 
     /// <summary>
