@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b337a5b06f3c7d4419087be1597ca151
+guid: 6651c85718d639840be85be10486239b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -97,111 +97,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: brady_attack_0
+      name: Mc_1_Sheet_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 1
+        x: 14
+        y: 0
         width: 49
-        height: 62
+        height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f5d544298a11a31419cbe57d3e87b240
-      internalID: 390192949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: brady_attack_1
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 1
-        width: 50
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c6539d78d3ae324798d2206dc451fcf
-      internalID: -286115870
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: brady_attack_2
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 1
-        width: 50
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77e86bebc5392ef4b8ac7db2cc31e8c3
-      internalID: -100318036
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: brady_attack_3
-      rect:
-        serializedVersion: 2
-        x: 196
-        y: 1
-        width: 54
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69a6af8be28cf074289c2e42c2838176
-      internalID: 866258918
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: brady_attack_4
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 1
-        width: 57
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 300248a26cbf4eb4fa8e320fa5abedda
-      internalID: -696843392
+      spriteID: 54878062a6574ee40800000000000000
+      internalID: 5684797728413481029
       vertices: []
       indices: 
       edges: []
@@ -220,11 +132,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      brady_attack_0: 390192949
-      brady_attack_1: -286115870
-      brady_attack_2: -100318036
-      brady_attack_3: 866258918
-      brady_attack_4: -696843392
+      Mc_1_Sheet_0: 5684797728413481029
+      Mc_1_Sheet_1: -1490432877428568682
+      Mc_1_Sheet_2: 3212217844421224063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
