@@ -10,6 +10,9 @@ public class HammerHit : WeaponBase
     [SerializeField] private float circleDistance;
     [SerializeField] private float circleRadius = 3f;
 
+    private float circleDistanceModifier = 1f;
+    private float circleRadiusModifier = 1f;
+
     //private CapsuleCollider hitCollider;
     [SerializeField] private SpriteRenderer hitRenderer;
     [SerializeField] private LayerMask enemyLayers;
@@ -33,6 +36,10 @@ public class HammerHit : WeaponBase
         animator = GetComponent<Animator>();
         StartCoroutine(HammerDamage());
         StartCoroutine(HammerMovement());
+
+        LevelupDescriptions.Add(1, "Get a Strength Hammer");
+        levelupDescriptions.Add(2, "Increase Hammer Size");
+        weaponLevel = 1;
     }
 
     private IEnumerator HammerDamage()
@@ -61,7 +68,7 @@ public class HammerHit : WeaponBase
         {
             if (animating)
             {
-                hitRenderer.transform.localPosition = new(circleDistance, 0);
+                hitRenderer.transform.localPosition = new(circleDistance * circleDistanceModifier, 0);
                 transform.rotation = Quaternion.Euler(0, Mathf.Atan2(-pMovement.Facing.z, pMovement.Facing.x) * Mathf.Rad2Deg, 0);
             }
             yield return null;
@@ -72,7 +79,7 @@ public class HammerHit : WeaponBase
     {
         animator.SetBool("Hit", false);
         animating = false;
-        Collider[] enemies = Physics.OverlapSphere(hitRenderer.transform.position, circleRadius, enemyLayers);
+        Collider[] enemies = Physics.OverlapSphere(hitRenderer.transform.position, circleRadius * circleRadiusModifier, enemyLayers);
         foreach (Collider enemy in enemies)
         {
             if (enemy.gameObject.CompareTag("Enemy"))
@@ -80,6 +87,12 @@ public class HammerHit : WeaponBase
                 enemy.gameObject.GetComponent<EnemyScript>().TakeDamage(CalculateDamage());
             }
         }
+    }
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(hitRenderer.transform.position, circleRadius * circleRadiusModifier);
     }
 
     //private void OnTriggerEnter(Collider other)
@@ -90,4 +103,16 @@ public class HammerHit : WeaponBase
     //        other.gameObject.GetComponent<EnemyScript>().TakeDamage(CalculateDamage());
     //    }
     //}
+
+    public override void LevelUpWeapon()
+    {
+        weaponLevel++;
+        switch (weaponLevel)
+        {
+            case 2:
+                //speedModifier = 0.9f;
+                circleRadiusModifier = 1.15f;
+                break;
+        }
+    }
 }

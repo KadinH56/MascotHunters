@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 3
   pMovement: {fileID: 0}
+  weaponLevel: 1
   hitCountdown: 0
   circleDistance: 1
   circleRadius: 6
