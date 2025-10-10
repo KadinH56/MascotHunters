@@ -348,6 +348,7 @@ MonoBehaviour:
   weaponLevel: 1
   rotationSpeed: 5
   isRotating: 1
+  ladderHit: {fileID: 8300000, guid: 130a177e727814a2ea78a886ab72213d, type: 3}
   secondLadderObject: {fileID: 0}
   secondLadderCollider: {fileID: 0}
 --- !u!136 &8803964772248492814

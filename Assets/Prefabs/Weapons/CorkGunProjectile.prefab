@@ -229,6 +229,7 @@ MonoBehaviour:
   sprites: []
   projectileCollider: {fileID: 5486933696565816482}
   explosionCollider: {fileID: -8423249759304264921}
+  bulletHitSound: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
 --- !u!136 &5486933696565816482
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -278,4 +278,5 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   animator: {fileID: 0}
   spriteRenderer: {fileID: 2139181303718269317}
+  enemyDeath: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
   itemDropChance: 100

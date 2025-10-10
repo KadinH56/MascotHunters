@@ -10,6 +10,8 @@ public class CorkGunWeapon : WeaponBase
     private float speedModifier = 1f;
     private float timeModifier = 1f;
 
+    [SerializeField] private AudioClip shootSound;
+
     private void Start()
     {
         StartCoroutine(Shoot());
@@ -26,6 +28,7 @@ public class CorkGunWeapon : WeaponBase
             yield return new WaitForSeconds(initShootTime * timeModifier);
 
             GameObject proj = Instantiate(projectile, transform.position, transform.rotation);
+            AudioSource.PlayClipAtPoint(shootSound, transform.position);
 
             proj.GetComponent<CorkGunProjectile>().Damage = CalculateDamage();
             proj.GetComponent<Rigidbody>().linearVelocity = initShootSpeed * speedModifier * pMovement.Facing;
@@ -34,11 +37,12 @@ public class CorkGunWeapon : WeaponBase
 
     public override void LevelUpWeapon()
     {
+        print("Leveled Up");
         weaponLevel++;
         switch (weaponLevel)
         {
             case 2:
-                speedModifier = 0.9f;
+                timeModifier = 0.9f;
                 break;
         }
     }

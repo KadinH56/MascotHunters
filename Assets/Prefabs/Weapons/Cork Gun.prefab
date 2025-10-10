@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 12
   pMovement: {fileID: 0}
+  weaponLevel: 1
   projectile: {fileID: 1697002737279475803, guid: f5029fba2aeabaf49b39aa6e0609ea9b, type: 3}
   shootTime: 0
   shootSpeed: 0
+  shootSound: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}

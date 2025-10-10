@@ -17,6 +17,8 @@ public class HammerHit : WeaponBase
     [SerializeField] private SpriteRenderer hitRenderer;
     [SerializeField] private LayerMask enemyLayers;
 
+    [SerializeField] private AudioClip hammerHitSound;
+
     Animator animator;
 
     bool animating = false;
@@ -55,6 +57,8 @@ public class HammerHit : WeaponBase
             yield return new WaitForSeconds(hitCountdown);
             animating = true;
             animator.SetBool("Hit", true);
+            AudioSource.PlayClipAtPoint(hammerHitSound, transform.position);
+
 
             //hitCollider.enabled = false;
             //yield return new WaitForSeconds(1f);
