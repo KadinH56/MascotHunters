@@ -5,8 +5,10 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
     private string[] weapons = new string[2];
+    [SerializeField] private WeaponBase[] weaponScripts;
 
     public string[] Weapons { get => weapons; set => weapons = value; }
+    public WeaponBase[] WeaponScripts { get => weaponScripts; set => weaponScripts = value; }
 
     public void WeaponUpgrade(string newWeapon)
     {
@@ -43,9 +45,11 @@ public class WeaponManager : MonoBehaviour
                 continue;
             }
 
-            WeaponStat stat = new();
-            stat.Weapon = weapons[i];
-            stat.Level = transform.Find(weapons[i]).GetComponent<WeaponBase>().WeaponLevel;
+            WeaponStat stat = new()
+            {
+                Weapon = weapons[i],
+                Level = transform.Find(weapons[i]).GetComponent<WeaponBase>().WeaponLevel
+            };
 
             if (transform.Find(weapons[i]).GetComponent<WeaponBase>().LevelupDescriptions.Count > 0)
             {

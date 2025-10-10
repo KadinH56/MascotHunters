@@ -69,6 +69,7 @@ public class EnemyScript : MonoBehaviour
     {
         EnemyAI();
     }
+
     public virtual void EnemyAI()
     {
         if (target == null || !target.gameObject.activeSelf)

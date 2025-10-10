@@ -190,6 +190,12 @@ public class UpgradeSystem : MonoBehaviour
         WeaponManager manager = player.WeaponManager;
 
         WeaponStat[] weaponStats = manager.GetWeapons();
+        WeaponBase[] allWeapons = manager.transform.GetComponentsInChildren<WeaponBase>();
+
+        foreach (WeaponBase weapon in allWeapons)
+        {
+            print(weapon.name);
+        }
 
         if (weaponStats.Contains(null))
         {
@@ -201,6 +207,7 @@ public class UpgradeSystem : MonoBehaviour
 
         foreach (WeaponStat weap in weaponStats)
         {
+            print(weap.Level);
             if(weap.Level > 1)
             {
                 continue;
