@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 5423109812335188466}
   - component: {fileID: 4738731235073089122}
   - component: {fileID: 495433689344277891}
-  - component: {fileID: 19061732425654056}
+  - component: {fileID: 1422769064820262064}
   m_Layer: 7
   m_Name: BossEnemy
   m_TagString: Enemy
@@ -453,7 +453,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &19061732425654056
+--- !u!114 &1422769064820262064
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -462,19 +462,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5593190870652179328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15305c538c044344a8a3962a27aaa6b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 23cea37ce2939e34485e72ddc52f1342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats:
     baseMaxHealth: 50
-    baseDamage: 5
+    baseDamage: 8
     baseMovement: 6
   distanceFromPlayer: 0
   projectileVelocity: 0
   projectile: {fileID: 0}
   shootTimer: 0
   isMelee: 1
-  meleeTime: 0.75
+  meleeTime: 5
   meleeBox: {fileID: 2008192815645434260}
   cost: 0
   healthBar: {fileID: 2110205051230298626}
@@ -482,6 +482,15 @@ MonoBehaviour:
   spriteRenderer: {fileID: 821021272953717337}
   enemyDeath: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
   itemDropChance: 1
+  canAttackDistance: 6
+  timeBetweenAttacks: 1
+  pauseTime: 1
+  dashSpeedModifier: 2.5
+  timeBetweenChomps: 0.5
+  numChomps: 3
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &5958240348254958594
 GameObject:
   m_ObjectHideFlags: 0

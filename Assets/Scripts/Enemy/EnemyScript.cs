@@ -9,11 +9,11 @@ using UnityEngine.UIElements.Experimental;
 /// </summary>
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField] private Stats enemyStats;
+    [SerializeField] protected Stats enemyStats;
 
     [SerializeField] private float distanceFromPlayer = 0f;
     //[SerializeField] private bool isBoss = false;
-    private NavMeshAgent agent;
+    protected NavMeshAgent agent;
     [SerializeField] private float projectileVelocity = 0f;
     [SerializeField] private GameObject projectile;
     [SerializeField] private float shootTimer;
@@ -38,9 +38,9 @@ public class EnemyScript : MonoBehaviour
 
     //[SerializeField] private float size = 2f;
 
-    private Coroutine shootCoroutine;
+    protected Coroutine shootCoroutine;
 
-    private PlayerMovement target;
+    protected PlayerMovement target;
 
     public int Cost { get => cost; set => cost = value; }
     //public float Size { get => size; set => size = value; }
@@ -97,7 +97,7 @@ public class EnemyScript : MonoBehaviour
     /// <summary>
     /// Finds a target
     /// </summary>
-    private void FindTarget()
+    protected void FindTarget()
     {
         foreach(GameObject player in GameObject.FindGameObjectsWithTag("Player"))
         {
