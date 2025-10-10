@@ -29,6 +29,8 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    [SerializeField] private AudioClip enemyDeath;
+
     /// <summary>
     /// Bigger numbers mean less likely to drop an item
     /// </summary>
@@ -73,6 +75,15 @@ public class EnemyScript : MonoBehaviour
         {
             FindTarget();
             return;
+        }
+
+        if (agent.velocity.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
         }
 
         agent.SetDestination(target.transform.position);
@@ -122,7 +133,7 @@ public class EnemyScript : MonoBehaviour
     public virtual void KillEnemy()
     {
         DropItem();
-
+        AudioSource.PlayClipAtPoint(enemyDeath, transform.position);
         GameInformation.EnemiesRemaining--;
         FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();
         Destroy(gameObject);

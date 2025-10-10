@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponBase : MonoBehaviour
@@ -5,11 +6,14 @@ public class WeaponBase : MonoBehaviour
     [SerializeField] protected int baseDamage = 1;
     [SerializeField] protected PlayerMovement pMovement;
 
-    [SerializeField] protected int weaponLevel = 1;
+    [SerializeField] protected int weaponLevel = 0;
+
+    [SerializeField] protected Dictionary<int, string> levelupDescriptions = new Dictionary<int, string>();
 
     protected Stats playerStats;
 
     public int WeaponLevel { get => weaponLevel; set => weaponLevel = value; }
+    public Dictionary<int, string> LevelupDescriptions { get => levelupDescriptions; set => levelupDescriptions = value; }
 
     private void Awake()
     {
