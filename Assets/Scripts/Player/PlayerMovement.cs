@@ -99,7 +99,9 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator Roll()
     {
+        animator.SetBool("IsRolling", true);
         yield return new WaitForSeconds(dashTime);
+        animator.SetBool("IsRolling", false);
         isRoll = false;
     }
 

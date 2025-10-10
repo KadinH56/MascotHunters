@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -97,23 +97,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mc_1_Sheet_0
+      name: Mc_1_Roll_0
       rect:
         serializedVersion: 2
-        x: 14
+        x: 15
         y: 0
-        width: 49
-        height: 59
+        width: 33
+        height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 54878062a6574ee40800000000000000
-      internalID: 5684797728413481029
+      spriteID: 3b576ce5c0a9c6047bec763b7fce8974
+      internalID: -1652409025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mc_1_Roll_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 51
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5487cd762096b4b8d21124b6b4a77a
+      internalID: 340196787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mc_1_Roll_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 0
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95aeb74c8dfecce48a4c0905b3586167
+      internalID: -250185114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mc_1_Roll_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 0
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b591a2fad2a8d844a9f31f2b52864e7
+      internalID: -1038471531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mc_1_Roll_4
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0
+        width: 38
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e037a112379e8a5418f96772d92fa9ce
+      internalID: -2041414755
       vertices: []
       indices: 
       edges: []
@@ -132,9 +220,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mc_1_Sheet_0: 5684797728413481029
-      Mc_1_Sheet_1: -1490432877428568682
-      Mc_1_Sheet_2: 3212217844421224063
+      Mc_1_Roll_0: -1652409025
+      Mc_1_Roll_1: 340196787
+      Mc_1_Roll_2: -250185114
+      Mc_1_Roll_3: -1038471531
+      Mc_1_Roll_4: -2041414755
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

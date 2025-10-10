@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -97,23 +97,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mc_1_Sheet_0
+      name: Female_Zombie_Attack_0
       rect:
         serializedVersion: 2
-        x: 14
+        x: 11
         y: 0
-        width: 49
-        height: 59
+        width: 42
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 54878062a6574ee40800000000000000
-      internalID: 5684797728413481029
+      spriteID: a9d1b76c6920f7641877894e4ab65641
+      internalID: -1056522411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Female_Zombie_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85bf2fa230a9d0742bcf3f64f4dbd2a9
+      internalID: -1753506202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Female_Zombie_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 0
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 302376264c2ce7e4883d06a3c42c9c80
+      internalID: -439597297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Female_Zombie_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 0
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b44a0b5247f9f49ad831d6344f0bc2
+      internalID: 355973568
       vertices: []
       indices: 
       edges: []
@@ -132,9 +198,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mc_1_Sheet_0: 5684797728413481029
-      Mc_1_Sheet_1: -1490432877428568682
-      Mc_1_Sheet_2: 3212217844421224063
+      Female_Zombie_Attack_0: -1056522411
+      Female_Zombie_Attack_1: -1753506202
+      Female_Zombie_Attack_2: -439597297
+      Female_Zombie_Attack_3: 355973568
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

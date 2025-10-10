@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -97,23 +97,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mc_1_Sheet_0
+      name: Male_Zombie_Attack_0
       rect:
         serializedVersion: 2
-        x: 14
+        x: 11
         y: 0
-        width: 49
-        height: 59
+        width: 42
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 54878062a6574ee40800000000000000
-      internalID: 5684797728413481029
+      spriteID: ce0682166180751479b2e9335ac7def9
+      internalID: 578521556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Zombie_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c1a35bcf63c24648975d8e3bf1c891c
+      internalID: -154981685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Zombie_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 0
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a82955bc9102ebd43bebf9d0b4e5783d
+      internalID: -528274377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Zombie_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 0
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c483fec778cef2f48b81a19a16f9979d
+      internalID: -206888038
       vertices: []
       indices: 
       edges: []
@@ -132,9 +198,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mc_1_Sheet_0: 5684797728413481029
-      Mc_1_Sheet_1: -1490432877428568682
-      Mc_1_Sheet_2: 3212217844421224063
+      Male_Zombie_Attack_0: 578521556
+      Male_Zombie_Attack_1: -154981685
+      Male_Zombie_Attack_2: -528274377
+      Male_Zombie_Attack_3: -206888038
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -65,6 +65,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3970185624203628926}
   - component: {fileID: 2139181303718269317}
+  - component: {fileID: 6217990835424741818}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -142,6 +143,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6217990835424741818
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966754930276769831}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 532d3ebc9ed8eef4c9dd05c1c5a9645b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5593190870652179328
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +299,7 @@ MonoBehaviour:
   meleeBox: {fileID: 2008192815645434260}
   cost: 2
   healthBar: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 6217990835424741818}
   spriteRenderer: {fileID: 2139181303718269317}
   enemyDeath: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
   itemDropChance: 100
