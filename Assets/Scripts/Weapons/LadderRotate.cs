@@ -6,6 +6,16 @@ public class LadderRotate : WeaponBase
     [SerializeField] private bool isRotating;
     [SerializeField] private AudioClip ladderHit;
 
+    [SerializeField] private GameObject secondLadderObject;
+    [SerializeField] private Collider secondLadderCollider;
+
+    private void Start()
+    {
+        LevelupDescriptions.Add(1, "Get a Spinning Ladder");
+        LevelupDescriptions.Add(2, "Add a Second Ladder");
+        weaponLevel = 1;
+    }
+
     /// <summary>
     /// If the bool is true, the ladder will rotate around the fixed object
     /// </summary>
@@ -23,6 +33,19 @@ public class LadderRotate : WeaponBase
         {
             other.gameObject.GetComponent<EnemyScript>().TakeDamage(CalculateDamage());
             AudioSource.PlayClipAtPoint(ladderHit, transform.position);
+        }
+    }
+
+    public override void LevelUpWeapon()
+    {
+        weaponLevel++;
+        switch (weaponLevel)
+        {
+            case 2:
+                //speedModifier = 0.9f;
+                secondLadderCollider.enabled = true;
+                secondLadderObject.SetActive(true);
+                break;
         }
     }
 }

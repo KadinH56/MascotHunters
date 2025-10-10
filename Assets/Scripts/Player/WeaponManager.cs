@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
@@ -44,6 +46,15 @@ public class WeaponManager : MonoBehaviour
             WeaponStat stat = new();
             stat.Weapon = weapons[i];
             stat.Level = transform.Find(weapons[i]).GetComponent<WeaponBase>().WeaponLevel;
+
+            if (transform.Find(weapons[i]).GetComponent<WeaponBase>().LevelupDescriptions.Count > 0)
+            {
+                stat.NextLevelDescription = transform.Find(weapons[i]).GetComponent<WeaponBase>().LevelupDescriptions[stat.Level];
+            }
+            else
+            {
+                stat.NextLevelDescription = "Get a " + stat.Weapon;
+            }
         }
 
         return stats;

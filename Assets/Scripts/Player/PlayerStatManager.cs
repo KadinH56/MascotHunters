@@ -14,6 +14,7 @@ public class PlayerStatManager : MonoBehaviour
 
     [SerializeField] private Stats playerStats;
     [SerializeField] private Image healthBar;
+    [SerializeField] private GameObject mainMenu;
 
     /// <summary>
     /// Used to modify player stats or utilize the values
@@ -37,6 +38,7 @@ public class PlayerStatManager : MonoBehaviour
         if (playerStats.Health <= 0)
         {
             gameObject.SetActive(false);
+            //mainMenu.SetActive(true);
         }
     }
 

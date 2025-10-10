@@ -350,6 +350,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 680136096779187297}
   rollSound: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
   moveSound: {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
+  weaponManager: {fileID: 284896115691116450}
 --- !u!114 &7677238045681899569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +368,7 @@ MonoBehaviour:
     baseDamage: 0
     baseMovement: 8
   healthBar: {fileID: 0}
+  mainMenu: {fileID: 0}
 --- !u!1001 &491127998355535138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -389,7 +391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7961224399997987244, guid: 712e40bc711677349adc2af1901d357f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8185104160216591052, guid: 712e40bc711677349adc2af1901d357f, type: 3}
       propertyPath: m_LocalScale.x

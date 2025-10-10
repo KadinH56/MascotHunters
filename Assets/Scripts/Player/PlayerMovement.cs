@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip moveSound;
 
     private WeaponManager weaponManager;
+    [SerializeField] private WeaponManager weaponManager;
 
     /// <summary>
     /// Used by the Player Manager to set the player ID to 0 or 1
@@ -71,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         roll.started += Roll_started;
         cam = FindFirstObjectByType<CameraFollower>();
 
-        weaponManager = GetComponent<WeaponManager>();
+        //weaponManager = GetComponent<WeaponManager>();
 
         //animator = GetComponent<Animator>();
 

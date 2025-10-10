@@ -172,6 +172,12 @@ public class EnemySpawner : MonoBehaviour
             {
                 yield return null;
             }
+
+            if (GameInformation.Wave % 5 == 0)
+            {
+                FindFirstObjectByType<UpgradeSystem>().StartUpgrades();
+            }
+
             GameInformation.Wave++;
             yield return null;
         }

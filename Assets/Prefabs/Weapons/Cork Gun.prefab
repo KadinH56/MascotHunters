@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8185104160216591052}
   - component: {fileID: 941309019423940563}
   m_Layer: 0
-  m_Name: CorkGun
+  m_Name: Cork Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
