@@ -302,4 +302,5 @@ MonoBehaviour:
   animator: {fileID: 6217990835424741818}
   spriteRenderer: {fileID: 2139181303718269317}
   enemyDeath: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+  bloodPrefab: {fileID: 8582095781730894252, guid: 8f0c80c787765d344a6bb9c5aa8a99f4, type: 3}
   itemDropChance: 100

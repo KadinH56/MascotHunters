@@ -1,5 +1,6 @@
 using System.Collections;
 using Unity.IO.LowLevel.Unsafe;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements.Experimental;
@@ -30,6 +31,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] protected SpriteRenderer spriteRenderer;
 
     [SerializeField] private AudioClip enemyDeath;
+    [SerializeField] private GameObject bloodPrefab;
 
     /// <summary>
     /// Bigger numbers mean less likely to drop an item
@@ -128,8 +130,12 @@ public class EnemyScript : MonoBehaviour
 
         if (enemyStats.Health <= 0)
         {
+            Instantiate(bloodPrefab, transform.position, Quaternion.identity);
             KillEnemy();
+            return;
         }
+
+        StartCoroutine(HitFX());
     }
 
     public virtual void KillEnemy()
@@ -185,5 +191,18 @@ public class EnemyScript : MonoBehaviour
         {
             other.transform.parent.GetComponent<PlayerStatManager>().TakeDamage(enemyStats.Damage);
         }
+    }
+
+    private IEnumerator HitFX()
+    {
+        foreach(string property in spriteRenderer.material.GetPropertyNames(MaterialPropertyType.Float))
+        {
+            print(property);
+        }
+        spriteRenderer.material.SetFloat("_HitFlash", 1);
+        Instantiate(bloodPrefab, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.material.SetFloat("_HitFlash", 0);
+
     }
 }
