@@ -129,14 +129,14 @@ public class BradyBoss : EnemyScript
     {
         for (int i = 0; i < numAttacksPerChomp; i++)
         {
-            animator.SetBool("Attacking", true);
+            animator.SetBool("Attack", true);
             Collider[] players = Physics.OverlapSphere(transform.position, chompSize, playerLayer, QueryTriggerInteraction.Collide);
             foreach(Collider player in players)
             {
                 player.transform.parent.GetComponent<PlayerStatManager>().TakeDamage(enemyStats.Damage);
             }
             yield return new WaitForSeconds(timeBetweenChomps / numAttacksPerChomp);
-            animator.SetBool("Attacking", false);
+            animator.SetBool("Attack", false);
         }
     }
 
