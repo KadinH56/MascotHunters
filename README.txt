@@ -5,5 +5,10 @@ Notes - This is going to be a build of the game that is meant for PC testing, du
 Controls 
 
 Keyboard and mouse 
-Player One- WASD = Up, Left, Down, and up. Shift = Roll
-Player Two- Arrows = Up, Left, Down, and up. Space = Roll
+Player One- WASD = Up, Left, Down, and Up. Shift = Roll. Selection 1, 2, and 3 = Z, X, and C.
+Player Two- Arrows = Up, Left, Down, and Up. Space = Roll. Selection 1, 2, and 3 = , ; . ; and /. 
+
+
+Arcade (not complete) 
+Player One- First joystick = Up, Left, Down, and Up. Button One = Roll. Selection 1, 2, and 3 = Top three player one buttons.
+Player Two- Second Joystick = Up, Left, Down, and Up. P2 Button One = Roll. Selection 1, 2, and Top three player two buttons.

@@ -257,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkSize: 50
   loadedChunkDistance: 4
-  biomes: 3
+  biomes: 2
   parentTransform: {fileID: 50576275}
 --- !u!114 &50576278
 MonoBehaviour:

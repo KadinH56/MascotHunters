@@ -137,7 +137,7 @@ MonoBehaviour:
   pMovement: {fileID: 0}
   weaponLevel: 1
   hitCountdown: 0
-  circleDistance: 1
+  circleDistance: 0.75
   circleRadius: 6
   hitRenderer: {fileID: 8723430650086231407}
   enemyLayers:
