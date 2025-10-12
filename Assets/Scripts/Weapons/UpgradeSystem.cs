@@ -187,32 +187,41 @@ public class UpgradeSystem : MonoBehaviour
     private List<string> GetPossiblePlayerWeaponUpgrades(PlayerMovement player)
     {
         List<string> weapons = new();
+        List<string> allWeapons = new()
+        {
+            "Hammer",
+            "Ladder",
+            "CorkGun"
+        };
+        List<string> evaluatedWeapons = new();
         WeaponManager manager = player.WeaponManager;
 
         WeaponStat[] weaponStats = manager.GetWeapons();
-        WeaponBase[] allWeapons = manager.transform.GetComponentsInChildren<WeaponBase>();
 
-        foreach (WeaponBase weapon in allWeapons)
+        foreach (WeaponStat stat in weaponStats)
         {
-            print(weapon.name);
+            print(stat);
+            if(stat == null)
+            {
+                continue;
+            }
+
+            if(stat.Level < 2)
+            {
+                weapons.Add(stat.Weapon);
+            }
+            evaluatedWeapons.Add(stat.Weapon);
         }
 
         if (weaponStats.Contains(null))
         {
-            weapons.Add("CorkGun");
-            weapons.Add("Hammer");
-            weapons.Add("Ladder");
-            return weapons;
-        }
-
-        foreach (WeaponStat weap in weaponStats)
-        {
-            print(weap.Level);
-            if(weap.Level > 1)
+            foreach(string weap in allWeapons)
             {
-                continue;
+                if (!evaluatedWeapons.Contains(weap))
+                {
+                    weapons.Add(weap);
+                }
             }
-            weapons.Add(weap.Weapon);
         }
 
         return weapons;

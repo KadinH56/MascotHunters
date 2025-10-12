@@ -37,12 +37,11 @@ public class CorkGunWeapon : WeaponBase
 
     public override void LevelUpWeapon()
     {
-        print("Leveled Up");
         weaponLevel++;
         switch (weaponLevel)
         {
             case 2:
-                timeModifier = 0.9f;
+                timeModifier = 0.75f;
                 break;
         }
     }

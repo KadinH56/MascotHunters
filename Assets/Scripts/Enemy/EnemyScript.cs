@@ -195,10 +195,6 @@ public class EnemyScript : MonoBehaviour
 
     private IEnumerator HitFX()
     {
-        foreach(string property in spriteRenderer.material.GetPropertyNames(MaterialPropertyType.Float))
-        {
-            print(property);
-        }
         spriteRenderer.material.SetFloat("_HitFlash", 1);
         Instantiate(bloodPrefab, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.1f);

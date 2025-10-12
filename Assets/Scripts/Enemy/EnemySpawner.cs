@@ -78,7 +78,6 @@ public class EnemySpawner : MonoBehaviour
                 foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
                 {
                     players.Add(player);
-                    print(player);
                 }
             }
             GameInformation.TotalEnemies = 0;
@@ -192,7 +191,6 @@ public class EnemySpawner : MonoBehaviour
                     alivePlayer = player;
                     continue;
                 }
-                print("this runs");
                 deadplayer = player;
                 player.GetComponent<PlayerStatManager>().OnAlive(false);
             }
