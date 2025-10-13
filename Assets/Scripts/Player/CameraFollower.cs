@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraFollower : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class CameraFollower : MonoBehaviour
     public Vector3 Average { get => average; set => average = value; }
 
     private Vector2Int? lastGeneration = null;
+    [SerializeField] private float waitTime = 0.5f;
+    private bool lost = false;
 
     private void Start()
     {
@@ -27,6 +31,10 @@ public class CameraFollower : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        if (lost)
+        {
+            return;
+        }
         //Get the average distance 
         List<Vector3> positions = new();
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
@@ -41,6 +49,7 @@ public class CameraFollower : MonoBehaviour
 
         if(positions.Count == 0)
         {
+            StartCoroutine(Lose());
             return;
         }
 
@@ -73,5 +82,13 @@ public class CameraFollower : MonoBehaviour
             generation.Generate(transform.position - OffSet);
             lastGeneration = currentPosition;
         }
+    }
+
+    private IEnumerator Lose()
+    {
+        lost = true;
+        yield return new WaitForSeconds(waitTime);
+
+        SceneManager.LoadScene(0);
     }
 }
