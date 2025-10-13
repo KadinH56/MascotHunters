@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,8 @@ public class PlayerStatManager : MonoBehaviour
     [SerializeField] private Stats playerStats;
     [SerializeField] private Image healthBar;
     [SerializeField] private GameObject mainMenu;
+
+    [SerializeField, MinMaxRangeSlider(0f, 1f)] private float percentOfHealthRegainedOnRessurect = 0.5f;
 
     /// <summary>
     /// Used to modify player stats or utilize the values
@@ -51,11 +54,20 @@ public class PlayerStatManager : MonoBehaviour
         }
     }
 
-    public void OnAlive()
+    public void OnAlive(bool fullRevive = true)
     {
         gameObject.SetActive(true);
-        playerStats.Health = playerStats.MaxHealth;
-        UpdateHealthBar();
+        if (fullRevive)
+        {
+            playerStats.Health = playerStats.MaxHealth;
+        } 
+        else
+        {
+            playerStats.Health = Mathf.RoundToInt(playerStats.MaxHealth * percentOfHealthRegainedOnRessurect);
+        }
+
+
+            UpdateHealthBar();
     }
 
     public void TempPowerupIEnumerator(PLAYER_STATS statBuff, float duration, float level)

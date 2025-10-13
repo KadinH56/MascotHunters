@@ -25,6 +25,11 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private float secondsBeforeNextWave = 2.5f;
 
+    [SerializeField] private int enemyCap = 75;
+    [SerializeField] private float upgradeAmount = 0.1f;
+
+    private List<GameObject> players = new();
+
     private List<Object> bosses;
 
     private CameraFollower cam;
@@ -71,6 +76,13 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(secondsBeforeNextWave);
+            if(players.Count == 0)
+            {
+                foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+                {
+                    players.Add(player);
+                }
+            }
             GameInformation.TotalEnemies = 0;
 
             if(GameInformation.Wave % 5 != 0)
@@ -79,7 +91,7 @@ public class EnemySpawner : MonoBehaviour
                 credits *= GameInformation.NumPlayers;
 
                 int highestCost = costsInOrder[0];
-                while (credits > 0)
+                while (credits > 0 && GameInformation.TotalEnemies < enemyCap)
                 {
                     if (highestCost > credits)
                     {
@@ -134,6 +146,25 @@ public class EnemySpawner : MonoBehaviour
 
                     GameInformation.TotalEnemies++;
                 }
+
+                while(credits > 0)
+                {
+                    List<string> stats = new()
+                    {
+                        "Health",
+                        "Damage",
+                        "Speed"
+                    };
+
+                    string stat = stats[Random.Range(0, stats.Count)];
+
+                    foreach(EnemyScript enemy in FindObjectsByType<EnemyScript>(FindObjectsSortMode.None))
+                    {
+                        enemy.Upgrade(stat, upgradeAmount);
+                    }
+                    credits--;
+                    yield return null;
+                }
             }
             else
             {
@@ -171,6 +202,23 @@ public class EnemySpawner : MonoBehaviour
             while (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
             {
                 yield return null;
+            }
+
+            GameObject deadplayer = null;
+            GameObject alivePlayer = null;
+            foreach(GameObject player in players)
+            {
+                if (player.activeSelf)
+                {
+                    alivePlayer = player;
+                    continue;
+                }
+                deadplayer = player;
+                player.GetComponent<PlayerStatManager>().OnAlive(false);
+            }
+            if(deadplayer != null)
+            {
+                deadplayer.transform.position = alivePlayer.transform.position;
             }
 
             if (GameInformation.Wave % 5 == 0)

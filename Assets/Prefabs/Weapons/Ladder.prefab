@@ -349,8 +349,8 @@ MonoBehaviour:
   rotationSpeed: 5
   isRotating: 1
   ladderHit: {fileID: 8300000, guid: 130a177e727814a2ea78a886ab72213d, type: 3}
-  secondLadderObject: {fileID: 0}
-  secondLadderCollider: {fileID: 0}
+  secondLadderObject: {fileID: 6094443659894826703}
+  secondLadderCollider: {fileID: 2427854215721208144}
 --- !u!136 &8803964772248492814
 CapsuleCollider:
   m_ObjectHideFlags: 0
