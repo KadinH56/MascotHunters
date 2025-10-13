@@ -210,6 +210,7 @@ MonoBehaviour:
   maxCameraDistance: 15
   cameraHeightMin: 10
   offSet: {x: 0, y: 10, z: -20}
+  waitTime: 1.5
 --- !u!1 &50576274
 GameObject:
   m_ObjectHideFlags: 0
