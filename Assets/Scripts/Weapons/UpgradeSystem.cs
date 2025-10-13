@@ -200,7 +200,6 @@ public class UpgradeSystem : MonoBehaviour
 
         foreach (WeaponStat stat in weaponStats)
         {
-            print(stat);
             if(stat == null)
             {
                 continue;

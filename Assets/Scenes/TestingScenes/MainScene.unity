@@ -345,6 +345,8 @@ MonoBehaviour:
     m_Bits: 8
   boxSize: {x: 1.5, y: 1, z: 1.5}
   secondsBeforeNextWave: 2.5
+  enemyCap: 40
+  upgradeAmount: 0.01
 --- !u!1 &281915999
 GameObject:
   m_ObjectHideFlags: 0

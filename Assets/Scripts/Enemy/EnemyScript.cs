@@ -201,4 +201,24 @@ public class EnemyScript : MonoBehaviour
         spriteRenderer.material.SetFloat("_HitFlash", 0);
 
     }
+
+    /// <summary>
+    /// Upgrades the enemy
+    /// </summary>
+    public void Upgrade(string stat, float amount)
+    {
+        switch (stat)
+        {
+            case "Damage":
+                enemyStats.DamageModifierMultiplicitive += amount;
+                break;
+            case "Health":
+                enemyStats.HealthModifierMultiplicitive += amount;
+                enemyStats.Health = enemyStats.MaxHealth;
+                break;
+            case "Speed":
+                enemyStats.MovementModifierMultiplicitive += amount;
+                break;
+        }
+    }
 }

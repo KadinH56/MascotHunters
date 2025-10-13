@@ -25,7 +25,10 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private float secondsBeforeNextWave = 2.5f;
 
-    private List<GameObject> players = new List<GameObject>();
+    [SerializeField] private int enemyCap = 75;
+    [SerializeField] private float upgradeAmount = 0.1f;
+
+    private List<GameObject> players = new();
 
     private List<Object> bosses;
 
@@ -88,7 +91,7 @@ public class EnemySpawner : MonoBehaviour
                 credits *= GameInformation.NumPlayers;
 
                 int highestCost = costsInOrder[0];
-                while (credits > 0)
+                while (credits > 0 && GameInformation.TotalEnemies < enemyCap)
                 {
                     if (highestCost > credits)
                     {
@@ -142,6 +145,25 @@ public class EnemySpawner : MonoBehaviour
                     yield return null;
 
                     GameInformation.TotalEnemies++;
+                }
+
+                while(credits > 0)
+                {
+                    List<string> stats = new()
+                    {
+                        "Health",
+                        "Damage",
+                        "Speed"
+                    };
+
+                    string stat = stats[Random.Range(0, stats.Count)];
+
+                    foreach(EnemyScript enemy in FindObjectsByType<EnemyScript>(FindObjectsSortMode.None))
+                    {
+                        enemy.Upgrade(stat, upgradeAmount);
+                    }
+                    credits--;
+                    yield return null;
                 }
             }
             else

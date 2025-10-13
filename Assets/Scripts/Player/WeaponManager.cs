@@ -51,8 +51,6 @@ public class WeaponManager : MonoBehaviour
                 Level = transform.Find(weapons[i]).GetComponent<WeaponBase>().WeaponLevel
             };
 
-            print(stat);
-
             if (transform.Find(weapons[i]).GetComponent<WeaponBase>().LevelupDescriptions.Count > 0)
             {
                 stat.NextLevelDescription = transform.Find(weapons[i]).GetComponent<WeaponBase>().LevelupDescriptions[stat.Level];
