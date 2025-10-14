@@ -11,10 +11,13 @@ public class Projectile : MonoBehaviour
     public int Damage { get => damage; set => damage = value; }
 
     [SerializeField] private float despawnTime = 1.5f;
+    private Rigidbody rb;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
         StartCoroutine(Despawner());
+        transform.rotation = Quaternion.Euler(0, -Mathf.Atan2(rb.linearVelocity.z, rb.linearVelocity.x) * Mathf.Rad2Deg, 0);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,6 +28,7 @@ public class Projectile : MonoBehaviour
             {
                 other.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
                 OnKill(true);
+                return;
             }
         }
 
@@ -33,6 +37,11 @@ public class Projectile : MonoBehaviour
             other.transform.parent.GetComponent<PlayerStatManager>().TakeDamage(damage);
             OnKill(true);
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        OnKill(true);
     }
 
     public virtual IEnumerator Despawner()
