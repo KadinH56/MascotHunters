@@ -31,7 +31,7 @@ public class CorkGunWeapon : WeaponBase
             AudioSource.PlayClipAtPoint(shootSound, transform.position);
 
             proj.GetComponent<CorkGunProjectile>().Damage = CalculateDamage();
-            proj.GetComponent<Rigidbody>().linearVelocity = initShootSpeed * speedModifier * pMovement.Facing;
+            proj.GetComponent<Rigidbody>().linearVelocity = initShootSpeed * speedModifier * pMovement.Facing.normalized;
         }
     }
 
@@ -44,5 +44,8 @@ public class CorkGunWeapon : WeaponBase
                 timeModifier = 0.75f;
                 break;
         }
+
+        StopAllCoroutines();
+        StartCoroutine(Shoot());
     }
 }
