@@ -7,6 +7,5 @@ public class Health : PickupBase
     public override void Effect(PlayerStatManager player)
     {
         player.PlayerStats.Health += healthRegained;
-        player.UpdateHealthBar();
     }
 }
