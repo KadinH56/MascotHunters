@@ -12,7 +12,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(PlayerInputManager))]
 public class PlayerSpawner : MonoBehaviour
 {
     /// <summary>
@@ -52,7 +51,7 @@ public class PlayerSpawner : MonoBehaviour
                 {
                     InputSystem.GetDevice<Keyboard>()
                 };
-                player.GetComponent<PlayerInput>().SwitchCurrentControlScheme(i == 0 ? "ArcadeA" : "ArcadeB", devices);
+                player.GetComponent<PlayerStatManager>().SetControls(i == 0 ? "ArcadeA" : "ArcadeB", devices);
             }
             else
             {

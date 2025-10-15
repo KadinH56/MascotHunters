@@ -136,7 +136,7 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard2;ArcadeB",
+                    "groups": ";Keyboard2;ArcadeA",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -147,7 +147,7 @@
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard2;ArcadeB",
+                    "groups": ";Keyboard2;ArcadeA",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -158,7 +158,7 @@
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard2;ArcadeB",
+                    "groups": ";Keyboard2;ArcadeA",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -169,7 +169,7 @@
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard2;ArcadeB",
+                    "groups": ";Keyboard2;ArcadeA",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -191,7 +191,7 @@
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";ArcadeA",
+                    "groups": ";ArcadeB",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -202,7 +202,7 @@
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";ArcadeA",
+                    "groups": ";ArcadeB",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -213,7 +213,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";ArcadeA",
+                    "groups": ";ArcadeB",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -224,7 +224,7 @@
                     "path": "<Keyboard>/g",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";ArcadeA",
+                    "groups": ";ArcadeB",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
