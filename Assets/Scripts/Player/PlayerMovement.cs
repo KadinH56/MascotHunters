@@ -9,6 +9,7 @@
 *****************************************************************************/
 
 using System.Collections;
+using System.Threading;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Used to ID the player for local multiplayer. Set to 0 or 1 ingame
     private int playerID = -1;
+    private float rollTimer;
 
     private Vector3 moveDir;
     private Vector3 facing = Vector3.right;
@@ -87,22 +89,34 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        isRoll = true;
-        AudioSource.PlayClipAtPoint(rollSound, transform.position);
-        //Vector3 moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
-        //pRigidBody.AddForce(new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed));
-        moveDir *= dashSpeed;
 
-        //Starts the coroutine
-        StartCoroutine(Roll());
+        if(rollTimer <= 0)
+        {
+            isRoll = true;
+            AudioSource.PlayClipAtPoint(rollSound, transform.position);
+            //Vector3 moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
+            //pRigidBody.AddForce(new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed));
+            moveDir *= dashSpeed;
+
+            //Starts the coroutine
+            StartCoroutine(Roll());
+        }
+        else
+        {
+            Debug.Log("Cannot roll right now!");
+        }
     }
 
     private IEnumerator Roll()
     {
-        animator.SetBool("IsRolling", true);
-        yield return new WaitForSeconds(dashTime);
-        animator.SetBool("IsRolling", false);
-        isRoll = false;
+        if(isRoll == true)
+        {
+            animator.SetBool("IsRolling", true);
+            yield return new WaitForSeconds(dashTime);
+            animator.SetBool("IsRolling", false);
+            isRoll = false;
+            rollTimer = 1.25f;
+        }
     }
 
     /// <summary>
@@ -110,6 +124,11 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
+        if (rollTimer > 0)
+        {
+            rollTimer -= Time.deltaTime;
+        }
+
         if (!isRoll)
         {
             moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
