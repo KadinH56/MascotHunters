@@ -914,7 +914,7 @@ MonoBehaviour:
   playerHealthBars:
   - {fileID: 1037776966}
   - {fileID: 838192262}
-  arcadeBuild: 0
+  arcadeBuild: 1
 --- !u!1 &849931504
 GameObject:
   m_ObjectHideFlags: 0
