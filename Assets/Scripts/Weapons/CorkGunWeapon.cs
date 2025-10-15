@@ -14,11 +14,16 @@ public class CorkGunWeapon : WeaponBase
 
     private void Start()
     {
-        StartCoroutine(Shoot());
+        //StartCoroutine(Shoot());
 
         LevelupDescriptions.Add(1, "Get a Cork Gun");
         LevelupDescriptions.Add(2, "Reduce Reload Time (100% -> 90%)");
         weaponLevel = 1;
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(Shoot());
     }
 
     private IEnumerator Shoot()

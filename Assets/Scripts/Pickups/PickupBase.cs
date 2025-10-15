@@ -9,7 +9,7 @@ public class PickupBase : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("PlayerHurt"))
         {
             Effect(other.gameObject.transform.parent.GetComponent<PlayerStatManager>());
             Destroy(gameObject);

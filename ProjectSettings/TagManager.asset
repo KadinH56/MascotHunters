@@ -8,6 +8,7 @@ TagManager:
   - 2Player
   - Enemy
   - Pickup
+  - PlayerHurt
   layers:
   - Default
   - TransparentFX
