@@ -80,7 +80,7 @@ public class PlayerSpawner : MonoBehaviour
                 }
                 //print(devices[0]);
 
-                player.GetComponent<PlayerInput>().SwitchCurrentControlScheme(scheme, devices);
+                player.GetComponent<PlayerStatManager>().SetControls(scheme, devices);//.SwitchCurrentControlScheme(scheme, devices);
             }
 
             player.GetComponent<PlayerMovement>().PlayerID = i;
