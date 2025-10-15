@@ -46,6 +46,8 @@ public class PlayerStatManager : MonoBehaviour
 
     public void SetControls(string scheme, InputDevice[] device)
     {
+        print(scheme);
+        print(device);
         this.scheme = scheme;
         this.device = device;
         ApplyControls();
