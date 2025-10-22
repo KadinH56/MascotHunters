@@ -36,12 +36,16 @@ public class HammerHit : WeaponBase
         //hitRenderer.enabled = false;
 
         animator = GetComponent<Animator>();
-        StartCoroutine(HammerDamage());
-        StartCoroutine(HammerMovement());
 
         LevelupDescriptions.Add(1, "Get a Strength Hammer");
         levelupDescriptions.Add(2, "Increase Hammer Size");
         weaponLevel = 1;
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(HammerDamage());
+        StartCoroutine(HammerMovement());
     }
 
     private IEnumerator HammerDamage()

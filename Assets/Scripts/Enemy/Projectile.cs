@@ -32,7 +32,7 @@ public class Projectile : MonoBehaviour
             }
         }
 
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("PlayerHurt"))
         {
             other.transform.parent.GetComponent<PlayerStatManager>().TakeDamage(damage);
             OnKill(true);

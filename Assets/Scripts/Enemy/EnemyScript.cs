@@ -1,6 +1,4 @@
 using System.Collections;
-using Unity.IO.LowLevel.Unsafe;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements.Experimental;
@@ -187,7 +185,7 @@ public class EnemyScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("PlayerHurt"))
         {
             other.transform.parent.GetComponent<PlayerStatManager>().TakeDamage(enemyStats.Damage);
         }

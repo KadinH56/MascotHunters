@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlayerStatManager : MonoBehaviour
@@ -17,7 +18,9 @@ public class PlayerStatManager : MonoBehaviour
     [SerializeField] private Image healthBar;
     [SerializeField] private GameObject mainMenu;
 
-    [SerializeField, MinMaxRangeSlider(0f, 1f)] private float percentOfHealthRegainedOnRessurect = 0.5f;
+    [SerializeField] private float percentOfHealthRegainedOnRessurect = 0.5f;
+    private string scheme;
+    private InputDevice[] device;
 
     /// <summary>
     /// Used to modify player stats or utilize the values
@@ -25,10 +28,6 @@ public class PlayerStatManager : MonoBehaviour
     public Stats PlayerStats { get => playerStats; set => playerStats = value; }
     public Image HealthBar { get => healthBar; set => healthBar = value; }
 
-    private void Start()
-    {
-        //OnAlive();
-    }
     /// <summary>
     /// Take damage
     /// </summary>
@@ -43,6 +42,20 @@ public class PlayerStatManager : MonoBehaviour
             gameObject.SetActive(false);
             //mainMenu.SetActive(true);
         }
+    }
+
+    public void SetControls(string scheme, InputDevice[] device)
+    {
+        print(scheme);
+        print(device);
+        this.scheme = scheme;
+        this.device = device;
+        ApplyControls();
+    }
+
+    private void ApplyControls()
+    {
+        GetComponent<PlayerInput>().SwitchCurrentControlScheme(scheme, device);
     }
 
     public void UpdateHealthBar()
@@ -67,7 +80,8 @@ public class PlayerStatManager : MonoBehaviour
         }
 
 
-            UpdateHealthBar();
+        UpdateHealthBar();
+        ApplyControls();
     }
 
     public void TempPowerupIEnumerator(PLAYER_STATS statBuff, float duration, float level)
