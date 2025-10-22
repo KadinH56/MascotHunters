@@ -173,7 +173,7 @@ public class PlayerMovement : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
-
+    
         Vector3 average = Vector3.zero;
         float size = 0f;
         foreach(GameObject player in GameObject.FindGameObjectsWithTag("Player"))
@@ -196,5 +196,6 @@ public class PlayerMovement : MonoBehaviour
             direction *= cam.MaxCameraDistance;
             transform.position = average + direction;
         }
+
     }
 }
