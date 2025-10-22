@@ -197,7 +197,6 @@ public class EnemyScript : MonoBehaviour
         Instantiate(bloodPrefab, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.1f);
         spriteRenderer.material.SetFloat("_HitFlash", 0);
-
     }
 
     /// <summary>

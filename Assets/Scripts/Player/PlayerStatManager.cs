@@ -28,6 +28,8 @@ public class PlayerStatManager : MonoBehaviour
     public Stats PlayerStats { get => playerStats; set => playerStats = value; }
     public Image HealthBar { get => healthBar; set => healthBar = value; }
 
+    [SerializeField] protected SpriteRenderer spriteRenderer;
+
     /// <summary>
     /// Take damage
     /// </summary>
@@ -42,6 +44,8 @@ public class PlayerStatManager : MonoBehaviour
             gameObject.SetActive(false);
             //mainMenu.SetActive(true);
         }
+        
+        StartCoroutine(HitFX());
     }
 
     public void SetControls(string scheme, InputDevice[] device)
@@ -100,4 +104,12 @@ public class PlayerStatManager : MonoBehaviour
         yield return new WaitForSeconds(duration);
         PlayerStats.TempMoveModifierMultiplicative /= level;
     }
+
+    private IEnumerator HitFX()
+    {
+        spriteRenderer.material.SetFloat("_HitFlash", 1);
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.material.SetFloat("_HitFlash", 0);
+    }
+
 }
