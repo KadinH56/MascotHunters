@@ -12,6 +12,14 @@ public class CynthiaBoss : EnemyScript
 
     private STATE_MACHINE state = STATE_MACHINE.FOLLOW;
     private Coroutine attacking = null;
+    private Coroutine shooting = null;
+
+    [SerializeField] private int numProjectilesInBigAttack;
+    [SerializeField] private float timeBetweenBigShots;
+    [SerializeField] private float timeBetweenSmallShots;
+
+    [SerializeField] private float pauseTimeBeforeAttack;
+    [SerializeField] private float pauseTimeAfterAttack;
 
     public override void EnemyAI()
     {
@@ -30,18 +38,31 @@ public class CynthiaBoss : EnemyScript
     {
         if(attacking == null)
         {
-
+            attacking = StartCoroutine(BigAttack());
         }
     }
 
     private void Follow()
     {
-        
+        if (target == null || !target.gameObject.activeSelf)
+        {
+            FindTarget();
+            return;
+        }
+
+        if (shooting == null)
+        {
+            shooting = StartCoroutine(Shoot());
+        }
+
+        agent.SetDestination(target.transform.position);
     }
 
     private IEnumerator BigAttack()
     {
         yield return null;
+
+        StartCoroutine(PauseCoroutine(STATE_MACHINE.FOLLOW, pauseTimeAfterAttack));
     }
 
     private IEnumerator PauseCoroutine(STATE_MACHINE newState, float timeToPause)
