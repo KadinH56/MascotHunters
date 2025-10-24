@@ -364,7 +364,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5593190870652179328}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -391,12 +391,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CynthiaBoss
   enemyStats:
     baseMaxHealth: 80
-    baseDamage: 1
-    baseMovement: 2
-  distanceFromPlayer: 4
+    baseDamage: 6
+    baseMovement: 8
+  distanceFromPlayer: 8
   projectileVelocity: 40
-  projectile: {fileID: 4408125041637714283, guid: da9f3936808796b41bed45b2661380fa, type: 3}
-  shootTimer: 0
+  projectile: {fileID: 4408125041637714283, guid: 4848717d30beb4649b94d823fd0e675f, type: 3}
+  shootTimer: 1.5
   isMelee: 0
   meleeTime: 0
   meleeBox: {fileID: 0}
@@ -407,11 +407,13 @@ MonoBehaviour:
   enemyDeath: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
   bloodPrefab: {fileID: 8582095781730894252, guid: 8f0c80c787765d344a6bb9c5aa8a99f4, type: 3}
   itemDropChance: 100
-  numProjectilesInBigAttack: 0
-  timeBetweenBigShots: 0
-  timeBetweenSmallShots: 0
-  pauseTimeBeforeAttack: 0
-  pauseTimeAfterAttack: 0
+  numProjectilesInBigAttack: 8
+  numBigAttacks: 3
+  timeBetweenBigShots: 0.75
+  pauseTimeBeforeAttack: 2
+  pauseTimeAfterAttack: 1
+  timeBeforeBigAttack: 4
+  maxTargetDistance: 12
 --- !u!1 &5958240348254958594
 GameObject:
   m_ObjectHideFlags: 0
