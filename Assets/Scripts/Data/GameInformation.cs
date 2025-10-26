@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public static class GameInformation
 {
     private static int numPlayers = 1;
