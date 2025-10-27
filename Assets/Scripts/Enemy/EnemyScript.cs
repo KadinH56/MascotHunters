@@ -13,9 +13,9 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private float distanceFromPlayer = 0f;
     //[SerializeField] private bool isBoss = false;
     protected NavMeshAgent agent;
-    [SerializeField] private float projectileVelocity = 0f;
-    [SerializeField] private GameObject projectile;
-    [SerializeField] private float shootTimer;
+    [SerializeField] protected float projectileVelocity = 0f;
+    [SerializeField] protected GameObject projectile;
+    [SerializeField] protected float shootTimer;
 
     [SerializeField] private bool isMelee = true;
     [SerializeField] private float meleeTime = 5f;
@@ -30,6 +30,7 @@ public class EnemyScript : MonoBehaviour
 
     [SerializeField] private AudioClip enemyDeath;
     [SerializeField] private GameObject bloodPrefab;
+    [SerializeField] private GameObject permanentBloodPrefab;
 
     /// <summary>
     /// Bigger numbers mean less likely to drop an item
@@ -129,6 +130,7 @@ public class EnemyScript : MonoBehaviour
         if (enemyStats.Health <= 0)
         {
             Instantiate(bloodPrefab, transform.position, Quaternion.identity);
+            Instantiate(permanentBloodPrefab, transform.position, Quaternion.identity);
             KillEnemy();
             return;
         }
