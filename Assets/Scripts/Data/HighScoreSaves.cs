@@ -75,5 +75,13 @@ public static class SaveSystem
 
             //data.LoadData();
         }
+        else
+        {
+            HighScore tempScore = new()
+            {
+                
+
+            };
+        }
     }
 }
