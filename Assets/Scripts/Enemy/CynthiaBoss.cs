@@ -82,6 +82,7 @@ public class CynthiaBoss : EnemyScript
         float angle = 0;
         for (int i = 0; i < numBigAttacks; i++)
         {
+            animator.SetBool("Attack", true);
             angle = Random.Range(0, 360f / numProjectilesInBigAttack);
 
             for (int j = 0; j < numProjectilesInBigAttack; j++)
@@ -97,6 +98,7 @@ public class CynthiaBoss : EnemyScript
         }
         StartCoroutine(PauseCoroutine(STATE_MACHINE.FOLLOW, pauseTimeAfterAttack));
         attacking = null;
+        animator.SetBool("Attack", false);
     }
 
     private IEnumerator PauseCoroutine(STATE_MACHINE newState, float timeToPause)
@@ -112,6 +114,7 @@ public class CynthiaBoss : EnemyScript
     public override IEnumerator Shoot()
     {
         {
+            animator.SetBool("Shoot", true);
             //Projectile code
             Vector3 velocity = target.transform.position - transform.position;
             velocity.Normalize();
@@ -121,6 +124,7 @@ public class CynthiaBoss : EnemyScript
 
             yield return new WaitForSeconds(shootTimer);
             shootCoroutine = null;
+            animator.SetBool("Shoot", false);
         }
     }
 }
