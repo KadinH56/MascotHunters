@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float despawnTime = 1.5f;
     private Rigidbody rb;
 
-    private void Start()
+    public void Start()
     {
         rb = GetComponent<Rigidbody>();
         StartCoroutine(Despawner());
