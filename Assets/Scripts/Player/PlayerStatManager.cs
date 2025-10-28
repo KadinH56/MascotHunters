@@ -36,6 +36,8 @@ public class PlayerStatManager : MonoBehaviour
     /// <param name="damage">Amount of damage</param>
     public void TakeDamage(int damage)
     {
+        StartCoroutine(HitFX());
+
         playerStats.Health -= damage;
         UpdateHealthBar();
 
@@ -44,14 +46,10 @@ public class PlayerStatManager : MonoBehaviour
             gameObject.SetActive(false);
             //mainMenu.SetActive(true);
         }
-        
-        StartCoroutine(HitFX());
     }
 
     public void SetControls(string scheme, InputDevice[] device)
     {
-        print(scheme);
-        print(device);
         this.scheme = scheme;
         this.device = device;
         ApplyControls();
