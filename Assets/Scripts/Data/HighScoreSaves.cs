@@ -3,19 +3,21 @@ using System.IO;
 
 public class HighScore
 {
-    public string initials;
-    public int score;
+    public string[] initials;
+    public int[] score;
 }
 
 public static class SaveSystem
 {
-    private static HighScore[] highScores = new HighScore[10];
+    private static HighScore highScores;
+
+    public static HighScore HighScores { get => highScores; }
 
     public static int GetNewScorePosition(int score)
     {
-        for (int i = 0; i < highScores.Length; i++)
+        for (int i = 0; i < highScores.score.Length; i++)
         {
-            if (highScores[i].score == score)
+            if (highScores.score[i] < score)
             {
                 return i;
             }
@@ -26,16 +28,15 @@ public static class SaveSystem
 
     public static void SetNewHighScore(int position, int score, string initials)
     {
-        HighScore newHighScore = new()
+        //HighScore originalHighScores = highScores.Clone();
+        HighScore newHighScores = new HighScore()
         {
-            initials = initials,
-            score = score
+            score = new int[10],
+            initials = new string[10]
         };
 
-        HighScore[] originalHighScores = (HighScore[])highScores.Clone();
-
         bool inserted = false;
-        for (int i = 0; i < originalHighScores.Length; i++)
+        for (int i = 0; i < highScores.score.Length; i++)
         {
             int pos = i;
             if (inserted)
@@ -45,13 +46,20 @@ public static class SaveSystem
 
             if(i == position)
             {
-                highScores[i] = newHighScore;
+                newHighScores.score[i] = score;
+                newHighScores.initials[i] = initials;
                 inserted = true;
                 continue;
             }
 
-            highScores[i] = originalHighScores[pos];
+            newHighScores.score[i] = highScores.score[pos];
+            newHighScores.initials[i] = highScores.initials[pos];
+            Debug.Log(highScores.score[i]);
+            Debug.Log(highScores.initials[i]);
+            Debug.Log(pos);
         }
+
+        highScores = newHighScores;
     }
     public static void SaveGame()
     {
@@ -71,17 +79,27 @@ public static class SaveSystem
         if (File.Exists(saveFilePath))
         {
             string loadedData = File.ReadAllText(saveFilePath);
-            highScores = JsonUtility.FromJson<HighScore[]>(loadedData);
+            highScores = JsonUtility.FromJson<HighScore>(loadedData);
 
             //data.LoadData();
         }
         else
         {
-            HighScore tempScore = new()
-            {
-                
+            HighScore temp = new();
 
-            };
+            temp.score = new int[10];
+            temp.initials = new string[10];
+
+            for (int i = 0; i < 10; i++)
+            {
+                temp.score[i] = 0;
+                temp.initials[i] = "...";
+            }
+
+            highScores = temp;
+
+            SaveGame();
         }
+
     }
 }
