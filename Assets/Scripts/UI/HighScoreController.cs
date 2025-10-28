@@ -192,6 +192,8 @@ public class HighScoreController : MonoBehaviour
             yield return null;
         }
 
+        gameText.text = initials + endText;
+
         SaveSystem.SetNewHighScore(verticalPosition, GameInformation.Wave, initials);
         SaveSystem.SaveGame();
 

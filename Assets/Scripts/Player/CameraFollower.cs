@@ -89,6 +89,6 @@ public class CameraFollower : MonoBehaviour
         lost = true;
         yield return new WaitForSeconds(waitTime);
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 }

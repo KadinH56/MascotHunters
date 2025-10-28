@@ -54,9 +54,6 @@ public static class SaveSystem
 
             newHighScores.score[i] = highScores.score[pos];
             newHighScores.initials[i] = highScores.initials[pos];
-            Debug.Log(highScores.score[i]);
-            Debug.Log(highScores.initials[i]);
-            Debug.Log(pos);
         }
 
         highScores = newHighScores;
