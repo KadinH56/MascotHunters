@@ -10,6 +10,8 @@ public class CorkGunWeapon : WeaponBase
     private float speedModifier = 1f;
     private float timeModifier = 1f;
 
+    [SerializeField] private float maxDistance = 32;
+
     [SerializeField] private AudioClip shootSound;
 
     private void Start()
@@ -35,8 +37,31 @@ public class CorkGunWeapon : WeaponBase
             GameObject proj = Instantiate(projectile, transform.position, transform.rotation);
             AudioSource.PlayClipAtPoint(shootSound, transform.position);
 
+            GameObject target = null;
+            float distance = maxDistance;
+            foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+            {
+                if(Vector2.Distance(transform.position, enemy.transform.position) < distance)
+                {
+                    target = enemy;
+                    distance = Vector2.Distance(transform.position, enemy.transform.position);
+                }
+            }
+
+            Vector3 velo = Vector3.zero;
+
             proj.GetComponent<CorkGunProjectile>().Damage = CalculateDamage();
-            proj.GetComponent<Rigidbody>().linearVelocity = initShootSpeed * speedModifier * pMovement.Facing.normalized;
+            if(target == null)
+            {
+                velo = pMovement.Facing.normalized;
+            }
+            else
+            {
+                velo = target.transform.position - transform.position;
+                velo.Normalize();
+            }
+
+            proj.GetComponent<Rigidbody>().linearVelocity = initShootSpeed * speedModifier * velo;
         }
     }
 
