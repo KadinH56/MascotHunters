@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CynthiaWalk
+  m_Name: PlayerTwoWalk
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1820971271, guid: 3e801bfa1e2a12b44938ddd66eb90939, type: 3}
+      value: {fileID: -746870793, guid: 804d427c9a05cac42ba8c6c32b2b62ca, type: 3}
     - time: 0.083333336
-      value: {fileID: -1204333159, guid: 3e801bfa1e2a12b44938ddd66eb90939, type: 3}
+      value: {fileID: -1122513857, guid: 804d427c9a05cac42ba8c6c32b2b62ca, type: 3}
     - time: 0.16666667
-      value: {fileID: -441381034, guid: 3e801bfa1e2a12b44938ddd66eb90939, type: 3}
+      value: {fileID: 2014191752, guid: 804d427c9a05cac42ba8c6c32b2b62ca, type: 3}
+    - time: 0.25
+      value: {fileID: 260826173, guid: 804d427c9a05cac42ba8c6c32b2b62ca, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,15 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1820971271, guid: 3e801bfa1e2a12b44938ddd66eb90939, type: 3}
-    - {fileID: -1204333159, guid: 3e801bfa1e2a12b44938ddd66eb90939, type: 3}
-    - {fileID: -441381034, guid: 3e801bfa1e2a12b44938ddd66eb90939, type: 3}
+    - {fileID: -746870793, guid: 804d427c9a05cac42ba8c6c32b2b62ca, type: 3}
+    - {fileID: -1122513857, guid: 804d427c9a05cac42ba8c6c32b2b62ca, type: 3}
+    - {fileID: 2014191752, guid: 804d427c9a05cac42ba8c6c32b2b62ca, type: 3}
+    - {fileID: 260826173, guid: 804d427c9a05cac42ba8c6c32b2b62ca, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.25
+    m_StopTime: 0.33333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

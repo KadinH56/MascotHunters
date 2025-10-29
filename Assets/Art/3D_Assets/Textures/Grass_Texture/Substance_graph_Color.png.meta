@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 804d427c9a05cac42ba8c6c32b2b62ca
+guid: c4f13ade7b4ce7f4ea8b691382994798
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -97,89 +97,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mc_2_SpriteSheet_0
+      name: Mc_1_Sheet_0
       rect:
         serializedVersion: 2
-        x: 15
+        x: 14
         y: 0
-        width: 36
-        height: 57
+        width: 49
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0f4e536780de5a645a4a4763e2f50354
-      internalID: -746870793
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mc_2_SpriteSheet_1
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 0
-        width: 36
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de5a3ff33f70ae84db0eb453cf9451ac
-      internalID: -1122513857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mc_2_SpriteSheet_2
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 0
-        width: 36
-        height: 57
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37960734b0c723045b098b92d4f7c58b
-      internalID: 2014191752
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mc_2_SpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 207
-        y: 0
-        width: 36
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 595cb57450e493d469adc93f759aae03
-      internalID: 260826173
+      spriteID: 54878062a6574ee40800000000000000
+      internalID: 5684797728413481029
       vertices: []
       indices: 
       edges: []
@@ -196,14 +130,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Mc_2_SpriteSheet_0: -746870793
-      Mc_2_SpriteSheet_1: -1122513857
-      Mc_2_SpriteSheet_2: 2014191752
-      Mc_2_SpriteSheet_3: 260826173
+      Mc_1_Sheet_0: 5684797728413481029
+      Mc_1_Sheet_1: -1490432877428568682
+      Mc_1_Sheet_2: 3212217844421224063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

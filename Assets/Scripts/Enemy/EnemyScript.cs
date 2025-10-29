@@ -130,7 +130,7 @@ public class EnemyScript : MonoBehaviour
         if (enemyStats.Health <= 0)
         {
             Instantiate(bloodPrefab, transform.position, Quaternion.identity);
-            Instantiate(permanentBloodPrefab, transform.position, Quaternion.identity);
+            Instantiate(permanentBloodPrefab, transform.position + Vector3.down, Quaternion.Euler(90,0,0));
             KillEnemy();
             return;
         }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 804d427c9a05cac42ba8c6c32b2b62ca
+guid: 7cfa06bf2b0d206419dac297a12f6a17
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mc_2_SpriteSheet_0
+      name: Cynthia_Attack_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 0
-        width: 36
-        height: 57
+        x: 3
+        y: 3
+        width: 55
+        height: 60
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,20 +112,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f4e536780de5a645a4a4763e2f50354
-      internalID: -746870793
+      spriteID: b1a1b6bb683ae9f498214cb39aa2e086
+      internalID: 1961755573
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_2_SpriteSheet_1
+      name: Cynthia_Attack_1
       rect:
         serializedVersion: 2
-        x: 79
-        y: 0
-        width: 36
-        height: 58
+        x: 64
+        y: 3
+        width: 55
+        height: 60
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de5a3ff33f70ae84db0eb453cf9451ac
-      internalID: -1122513857
+      spriteID: 29e944804175dd54797fcc76393b13a0
+      internalID: -1867337426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_2_SpriteSheet_2
+      name: Cynthia_Attack_2
       rect:
         serializedVersion: 2
-        x: 143
-        y: 0
-        width: 36
-        height: 57
+        x: 128
+        y: 3
+        width: 53
+        height: 60
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37960734b0c723045b098b92d4f7c58b
-      internalID: 2014191752
+      spriteID: 917802042b003a64ab3f05e32f07cd6d
+      internalID: 802322703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mc_2_SpriteSheet_3
+      name: Cynthia_Attack_3
       rect:
         serializedVersion: 2
-        x: 207
-        y: 0
-        width: 36
-        height: 58
+        x: 192
+        y: 3
+        width: 52
+        height: 60
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,8 +178,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 595cb57450e493d469adc93f759aae03
-      internalID: 260826173
+      spriteID: 23b6e52a2aa7c404786f893b9b7b08f8
+      internalID: -1319208838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cynthia_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ac742d478f7bb14e93a150b29ccff83
+      internalID: 336816519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cynthia_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 2
+        width: 52
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dacef0f4474f9964bad3d6c735557bb7
+      internalID: -503992871
       vertices: []
       indices: 
       edges: []
@@ -200,10 +244,12 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Mc_2_SpriteSheet_0: -746870793
-      Mc_2_SpriteSheet_1: -1122513857
-      Mc_2_SpriteSheet_2: 2014191752
-      Mc_2_SpriteSheet_3: 260826173
+      Cynthia_Attack_0: 1961755573
+      Cynthia_Attack_1: -1867337426
+      Cynthia_Attack_2: 802322703
+      Cynthia_Attack_3: -1319208838
+      Cynthia_Attack_4: 336816519
+      Cynthia_Attack_5: -503992871
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
