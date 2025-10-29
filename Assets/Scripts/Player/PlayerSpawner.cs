@@ -36,6 +36,7 @@ public class PlayerSpawner : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        GameInformation.IsArcadeBuild = arcadeBuild;
         ////For each player playing, spawn their object
         ////Also sets some internal stuff
         for (int i = 0; i < GameInformation.NumPlayers; i++)
