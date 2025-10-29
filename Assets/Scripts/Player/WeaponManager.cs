@@ -65,4 +65,14 @@ public class WeaponManager : MonoBehaviour
 
         return stats;
     }
+
+    public int GetLevelNext(string weapon)
+    {
+        if(transform.Find(weapon) != null)
+        {
+            return transform.Find(weapon).GetComponent<WeaponBase>().WeaponLevel + 1;
+        }
+
+        return 1;
+    }
 }

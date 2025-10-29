@@ -1,10 +1,8 @@
-using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Pool;
 using UnityEngine.UI;
 
 public class UpgradeSystem : MonoBehaviour
@@ -18,13 +16,20 @@ public class UpgradeSystem : MonoBehaviour
 
     [SerializeField] private Image[] upgradeImages;
 
-    //Oh Dead God the serializedFields
-    [SerializeField] private Sprite blueCow;
-    [SerializeField] private Sprite steroids;
-    [SerializeField] private Sprite medkit;
-    [SerializeField] private Sprite ladder;
-    [SerializeField] private Sprite  corkGun;
-    [SerializeField] private Sprite hammer;
+    [SerializeField] private UpgradeData[] upgradeData;
+
+    private Dictionary<string, UpgradeData> upgradeNames = new();
+
+    private string[] descriptions = new string[3];
+    private string[] names = new string[3];
+
+    private void Start()
+    {
+        foreach(UpgradeData upgrade in upgradeData)
+        {
+            upgradeNames.Add(upgrade.UpgradeName, upgrade);
+        }
+    }
 
     public void StartUpgrades(bool firstUpgrade = false)
     {
@@ -43,6 +48,8 @@ public class UpgradeSystem : MonoBehaviour
         Time.timeScale = 0.0f;
         for (int i = 0; i < GameInformation.NumPlayers; i++)
         {
+
+
             upgrades = new string[3];
             if (firstUpgrade)
             {
@@ -58,13 +65,13 @@ public class UpgradeSystem : MonoBehaviour
                     switch (upgrades[j])
                     {
                         case "Ladder":
-                            upgradeImages[j].sprite = ladder;
+                            upgradeImages[j].sprite = upgradeNames["Spinning Ladder"].Sprite;
                             break;
                         case "Hammer":
-                            upgradeImages[j].sprite = hammer;
+                            upgradeImages[j].sprite = upgradeNames["Hammer"].Sprite;
                             break;
                         case "CorkGun":
-                            upgradeImages[j].sprite = corkGun;
+                            upgradeImages[j].sprite = upgradeNames["Cork Gun"].Sprite;
                             break;
                     }
                 }
@@ -85,28 +92,41 @@ public class UpgradeSystem : MonoBehaviour
                     upgrades[j] = pool[Random.Range(0, pool.Count)];
                     pool.Remove(upgrades[j]);
 
+                    UpgradeData data = null;
+                    int level = 1;
+
                     //print(upgrades[j]);
                     switch (upgrades[j])
                     {
                         case "Ladder":
-                            upgradeImages[j].sprite = ladder;
+                            data = upgradeNames["Spinning Ladder"];
+                            level = currentPlayer.WeaponManager.GetLevelNext("Ladder");
                             break;
                         case "Hammer":
-                            upgradeImages[j].sprite = hammer;
+                            data = upgradeNames["Hammer"];
+                            level = currentPlayer.WeaponManager.GetLevelNext("Hammer");
                             break;
                         case "CorkGun":
-                            upgradeImages[j].sprite = corkGun;
+                            data = upgradeNames["Cork Gun"];
+                            level = currentPlayer.WeaponManager.GetLevelNext("CorkGun");
                             break;
                         case "Health":
-                            upgradeImages[j].sprite = medkit;
+                            data = upgradeNames["Medkit"];
                             break;
                         case "Damage":
-                            upgradeImages[j].sprite = steroids;
+                            data = upgradeNames["Steroids"];
                             break;
                         case "Speed":
-                            upgradeImages[j].sprite = blueCow;
+                            data = upgradeNames["BlueCow"];
                             break;
                     }
+                    if(data == null)
+                    {
+                        throw new System.Exception("You forgot to set something, didn't you?");
+                    }
+                    upgradeImages[j].sprite = data.Sprite;
+                    names[j] = data.UpgradeName;
+                    descriptions[j] = data.Descriptions[level - 1];
                 }
             }
 
