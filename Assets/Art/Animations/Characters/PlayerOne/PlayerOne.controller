@@ -143,7 +143,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mc_1_Sheet_0
+  m_Name: PlayerOne
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsMoving
