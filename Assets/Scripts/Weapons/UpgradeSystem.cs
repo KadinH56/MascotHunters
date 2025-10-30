@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -18,11 +19,16 @@ public class UpgradeSystem : MonoBehaviour
 
     [SerializeField] private UpgradeData[] upgradeData;
 
+    [SerializeField] private TMP_Text nameText;
+
+    [SerializeField] private TMP_Text descriptionText;
+
     private Dictionary<string, UpgradeData> upgradeNames = new();
 
     private string[] descriptions = new string[3];
     private string[] names = new string[3];
 
+    private int buttonHit = 0;
     private void Start()
     {
         foreach(UpgradeData upgrade in upgradeData)
@@ -48,36 +54,40 @@ public class UpgradeSystem : MonoBehaviour
         Time.timeScale = 0.0f;
         for (int i = 0; i < GameInformation.NumPlayers; i++)
         {
+            buttonHit = -1;
+            currentPlayer = players[i];
 
+            descriptionText.gameObject.SetActive(false);
+            nameText.gameObject.SetActive(false);
 
             upgrades = new string[3];
-            if (firstUpgrade)
-            {
-                upgrades = new[]
-                {
-                    "Ladder",
-                    "CorkGun",
-                    "Hammer"
-                };
+            //if (firstUpgrade)
+            //{
+            //    upgrades = new[]
+            //    {
+            //        "Ladder",
+            //        "CorkGun",
+            //        "Hammer"
+            //    };
 
-                for (int j = 0; j < upgrades.Length; j++)
-                {
-                    switch (upgrades[j])
-                    {
-                        case "Ladder":
-                            upgradeImages[j].sprite = upgradeNames["Spinning Ladder"].Sprite;
-                            break;
-                        case "Hammer":
-                            upgradeImages[j].sprite = upgradeNames["Hammer"].Sprite;
-                            break;
-                        case "CorkGun":
-                            upgradeImages[j].sprite = upgradeNames["Cork Gun"].Sprite;
-                            break;
-                    }
-                }
-            }
-            else
-            {
+            //    for (int j = 0; j < upgrades.Length; j++)
+            //    {
+            //        switch (upgrades[j])
+            //        {
+            //            case "Ladder":
+            //                upgradeImages[j].sprite = upgradeNames["Spinning Ladder"].Sprite;
+            //                break;
+            //            case "Hammer":
+            //                upgradeImages[j].sprite = upgradeNames["Hammer"].Sprite;
+            //                break;
+            //            case "CorkGun":
+            //                upgradeImages[j].sprite = upgradeNames["Cork Gun"].Sprite;
+            //                break;
+            //        }
+            //    }
+            //}
+            //else
+            //{
                 List<string> pool = new()
                 {
                     "Health",
@@ -93,7 +103,7 @@ public class UpgradeSystem : MonoBehaviour
                     pool.Remove(upgrades[j]);
 
                     UpgradeData data = null;
-                    int level = 1;
+                    int level = 0;
 
                     //print(upgrades[j]);
                     switch (upgrades[j])
@@ -109,6 +119,10 @@ public class UpgradeSystem : MonoBehaviour
                         case "CorkGun":
                             data = upgradeNames["Cork Gun"];
                             level = currentPlayer.WeaponManager.GetLevelNext("CorkGun");
+                            break;
+                        case "Bat":
+                            data = upgradeNames["Baseball Bat"];
+                            level = currentPlayer.WeaponManager.GetLevelNext("Bat");
                             break;
                         case "Health":
                             data = upgradeNames["Medkit"];
@@ -126,11 +140,10 @@ public class UpgradeSystem : MonoBehaviour
                     }
                     upgradeImages[j].sprite = data.Sprite;
                     names[j] = data.UpgradeName;
-                    descriptions[j] = data.Descriptions[level - 1];
+                    descriptions[j] = data.Descriptions[level];
                 }
-            }
+            //}
 
-            currentPlayer = players[i];
             PlayerInput pInput = currentPlayer.GetComponent<PlayerInput>();
             InputAction selectA = pInput.currentActionMap.FindAction("Selection1");
             InputAction selectB = pInput.currentActionMap.FindAction("Selection2");
@@ -160,16 +173,43 @@ public class UpgradeSystem : MonoBehaviour
     //Darn you unity input system
     private void SelectC_started(InputAction.CallbackContext obj)
     {
+        if(buttonHit != 2)
+        {
+            descriptionText.text = descriptions[2];
+            nameText.text = names[2];
+            buttonHit = 2;
+            descriptionText.gameObject.SetActive(true);
+            nameText.gameObject.SetActive(true);
+            return;
+        }
         SelectWeapon(2);
     }
 
     private void SelectB_started(InputAction.CallbackContext obj)
     {
+        if (buttonHit != 1)
+        {
+            descriptionText.text = descriptions[1];
+            nameText.text = names[1];
+            buttonHit = 1;
+            descriptionText.gameObject.SetActive(true);
+            nameText.gameObject.SetActive(true);
+            return;
+        }
         SelectWeapon(1);
     }
 
     private void SelectA_started(InputAction.CallbackContext obj)
     {
+        if (buttonHit != 0)
+        {
+            descriptionText.text = descriptions[0];
+            nameText.text = names[0];
+            buttonHit = 0;
+            descriptionText.gameObject.SetActive(true);
+            nameText.gameObject.SetActive(true);
+            return;
+        }
         SelectWeapon(0);
     }
 

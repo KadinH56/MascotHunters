@@ -17,4 +17,4 @@ MonoBehaviour:
   descriptions:
   - Get a Cork Gun
   - Cork Gun shoots faster
-  sprite: {fileID: 1210340196, guid: f26a597572f5e914daeb176971dcbd79, type: 3}
+  sprite: {fileID: 21300000, guid: 9a0800ced92200b42be4f4052d24b327, type: 3}

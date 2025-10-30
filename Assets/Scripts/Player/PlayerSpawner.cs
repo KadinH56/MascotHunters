@@ -101,7 +101,7 @@ public class PlayerSpawner : MonoBehaviour
             }
             player.GetComponent<PlayerStatManager>().OnAlive();
 
-            FindFirstObjectByType<UpgradeSystem>().StartUpgrades(true);
+            //<UpgradeSystem>().StartUpgrades(true);
         }
         //Update, I got it to work
         //Apparently control schemes are a thing, and the bane of my existence

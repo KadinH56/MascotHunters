@@ -5,6 +5,8 @@ public class BatHit : WeaponBase
 {
     //private CapsuleCollider hitCollider;
     [SerializeField] private LayerMask enemyLayers;
+    [SerializeField] private int numHits;
+    [SerializeField] private float delayBetweenHits = 0.5f;
 
     Animator animator;
 
@@ -25,7 +27,7 @@ public class BatHit : WeaponBase
         animator = GetComponent<Animator>();
 
         LevelupDescriptions.Add(1, "Get a Baseball Bat");
-        //levelupDescriptions.Add(2, "Increase Hammer Size");
+        levelupDescriptions.Add(2, "Increase Hammer Size");
         weaponLevel = 1;
     }
 
@@ -34,12 +36,18 @@ public class BatHit : WeaponBase
 
     }
 
+    private IEnumerator BattingTime()
+    {
+        yield return null;
+    }
+
     public override void LevelUpWeapon()
     {
         weaponLevel++;
         switch (weaponLevel)
         {
             case 2:
+                numHits++;
                 break;
         }
     }

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4746227391703693586}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -99,8 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 591585930900299826}
-  - component: {fileID: 2225385550678140505}
-  - component: {fileID: 790046347908656689}
+  - component: {fileID: 5755371334443875113}
   m_Layer: 8
   m_Name: Bat
   m_TagString: Untagged
@@ -118,13 +117,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6278385395933206272}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2225385550678140505
+--- !u!114 &5755371334443875113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,39 +132,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8940688666742109886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 246a2f5f44d9d914b8944137a2e68b03, type: 3}
+  m_Script: {fileID: 11500000, guid: 291f56c76a20076449020e324e75643c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 3
+  m_EditorClassIdentifier: Assembly-CSharp::BatHit
+  baseDamage: 4
   pMovement: {fileID: 0}
-  weaponLevel: 1
-  hitCountdown: 0
-  circleDistance: 0.75
-  circleRadius: 6
-  hitRenderer: {fileID: 8723430650086231407}
+  weaponLevel: 0
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
-  hammerHitSound: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
---- !u!95 &790046347908656689
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8940688666742109886}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 424a6a8226804b2408bcaa411a93ad73, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  numHits: 2
+  delayBetweenHits: 0.5

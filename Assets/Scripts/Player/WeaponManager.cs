@@ -68,11 +68,11 @@ public class WeaponManager : MonoBehaviour
 
     public int GetLevelNext(string weapon)
     {
-        if(transform.Find(weapon) != null)
+        if(transform.Find(weapon) != null && transform.Find(weapon).gameObject.activeSelf)
         {
-            return transform.Find(weapon).GetComponent<WeaponBase>().WeaponLevel + 1;
+            return transform.Find(weapon).GetComponent<WeaponBase>().WeaponLevel;
         }
 
-        return 1;
+        return 0;
     }
 }
