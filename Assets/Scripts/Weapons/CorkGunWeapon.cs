@@ -10,6 +10,8 @@ public class CorkGunWeapon : WeaponBase
     private float speedModifier = 1f;
     private float timeModifier = 1f;
 
+    [SerializeField] private float maxDistance = 32;
+
     [SerializeField] private AudioClip shootSound;
 
     private void Start()
@@ -17,7 +19,7 @@ public class CorkGunWeapon : WeaponBase
         //StartCoroutine(Shoot());
 
         LevelupDescriptions.Add(1, "Get a Cork Gun");
-        LevelupDescriptions.Add(2, "Reduce Reload Time (100% -> 90%)");
+        LevelupDescriptions.Add(2, "Reduce Reload Time (100% -> 75%)");
         weaponLevel = 1;
     }
 
@@ -35,8 +37,31 @@ public class CorkGunWeapon : WeaponBase
             GameObject proj = Instantiate(projectile, transform.position, transform.rotation);
             AudioSource.PlayClipAtPoint(shootSound, transform.position);
 
+            GameObject target = null;
+            float distance = maxDistance;
+            foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+            {
+                if(Vector3.Distance(transform.position, enemy.transform.position) < distance)
+                {
+                    target = enemy;
+                    distance = Vector3.Distance(transform.position, enemy.transform.position);
+                }
+            }
+
+            Vector3 velo = Vector3.zero;
+
             proj.GetComponent<CorkGunProjectile>().Damage = CalculateDamage();
-            proj.GetComponent<Rigidbody>().linearVelocity = initShootSpeed * speedModifier * pMovement.Facing.normalized;
+            if(target == null)
+            {
+                velo = pMovement.Facing.normalized;
+            }
+            else
+            {
+                velo = target.transform.position - transform.position;
+                velo.Normalize();
+            }
+
+            proj.GetComponent<Rigidbody>().linearVelocity = initShootSpeed * speedModifier * velo;
         }
     }
 
