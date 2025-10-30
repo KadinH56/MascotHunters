@@ -251,7 +251,8 @@ public class UpgradeSystem : MonoBehaviour
         {
             "Hammer",
             "Ladder",
-            "CorkGun"
+            "CorkGun",
+            "Bat"
         };
         List<string> evaluatedWeapons = new();
         WeaponManager manager = player.WeaponManager;

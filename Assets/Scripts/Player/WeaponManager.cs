@@ -10,6 +10,11 @@ public class WeaponManager : MonoBehaviour
     public string[] Weapons { get => weapons; set => weapons = value; }
     public WeaponBase[] WeaponScripts { get => weaponScripts; set => weaponScripts = value; }
 
+    private void Start()
+    {
+        weapons[0] = "Bat";
+    }
+
     public void WeaponUpgrade(string newWeapon)
     {
         if (weapons[0] == newWeapon || weapons[1] == newWeapon)

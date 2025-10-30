@@ -41,10 +41,10 @@ public class CorkGunWeapon : WeaponBase
             float distance = maxDistance;
             foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
             {
-                if(Vector2.Distance(transform.position, enemy.transform.position) < distance)
+                if(Vector3.Distance(transform.position, enemy.transform.position) < distance)
                 {
                     target = enemy;
-                    distance = Vector2.Distance(transform.position, enemy.transform.position);
+                    distance = Vector3.Distance(transform.position, enemy.transform.position);
                 }
             }
 
