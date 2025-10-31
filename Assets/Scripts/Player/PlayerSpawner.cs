@@ -36,6 +36,7 @@ public class PlayerSpawner : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        GameInformation.IsArcadeBuild = arcadeBuild;
         ////For each player playing, spawn their object
         ////Also sets some internal stuff
         for (int i = 0; i < GameInformation.NumPlayers; i++)
@@ -100,7 +101,7 @@ public class PlayerSpawner : MonoBehaviour
             }
             player.GetComponent<PlayerStatManager>().OnAlive();
 
-            FindFirstObjectByType<UpgradeSystem>().StartUpgrades(true);
+            //<UpgradeSystem>().StartUpgrades(true);
         }
         //Update, I got it to work
         //Apparently control schemes are a thing, and the bane of my existence

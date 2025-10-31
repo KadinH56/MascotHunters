@@ -10,6 +10,11 @@ public class WeaponManager : MonoBehaviour
     public string[] Weapons { get => weapons; set => weapons = value; }
     public WeaponBase[] WeaponScripts { get => weaponScripts; set => weaponScripts = value; }
 
+    private void Start()
+    {
+        weapons[0] = "Bat";
+    }
+
     public void WeaponUpgrade(string newWeapon)
     {
         if (weapons[0] == newWeapon || weapons[1] == newWeapon)
@@ -64,5 +69,15 @@ public class WeaponManager : MonoBehaviour
         }
 
         return stats;
+    }
+
+    public int GetLevelNext(string weapon)
+    {
+        if(transform.Find(weapon) != null && transform.Find(weapon).gameObject.activeSelf)
+        {
+            return transform.Find(weapon).GetComponent<WeaponBase>().WeaponLevel;
+        }
+
+        return 0;
     }
 }

@@ -30,6 +30,7 @@ public class EnemyScript : MonoBehaviour
 
     [SerializeField] private AudioClip enemyDeath;
     [SerializeField] private GameObject bloodPrefab;
+    [SerializeField] private GameObject permanentBloodPrefab;
 
     /// <summary>
     /// Bigger numbers mean less likely to drop an item
@@ -129,6 +130,7 @@ public class EnemyScript : MonoBehaviour
         if (enemyStats.Health <= 0)
         {
             Instantiate(bloodPrefab, transform.position, Quaternion.identity);
+            Instantiate(permanentBloodPrefab, transform.position + Vector3.down, Quaternion.Euler(90,0,0));
             KillEnemy();
             return;
         }
