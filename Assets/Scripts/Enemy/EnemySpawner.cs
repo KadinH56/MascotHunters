@@ -62,7 +62,7 @@ public class EnemySpawner : MonoBehaviour
 
         cam = FindFirstObjectByType<CameraFollower>();
 
-        GameInformation.Wave = 1;
+        GameInformation.Wave = 5;
 
         StartCoroutine(EnemySpawn());
     }
