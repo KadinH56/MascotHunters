@@ -51,7 +51,7 @@ public class MainProcGen : MonoBehaviour
         chunkNoise.SetSeed(seed);
         //StartCoroutine(Generate(Vector3.zero));
 
-        FindFirstObjectByType<EnemySpawner>().StartSpawningEnemies();
+        //FindFirstObjectByType<EnemySpawner>().StartSpawningEnemies();
     }
 
     /// <summary>
