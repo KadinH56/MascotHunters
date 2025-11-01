@@ -398,7 +398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7961224399997987244, guid: 712e40bc711677349adc2af1901d357f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8185104160216591052, guid: 712e40bc711677349adc2af1901d357f, type: 3}
       propertyPath: m_LocalScale.x
@@ -480,7 +480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7961224399997987244, guid: f2e11fce714fbe94089d09a9eadd723e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8185104160216591052, guid: f2e11fce714fbe94089d09a9eadd723e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -584,9 +584,21 @@ PrefabInstance:
       propertyPath: pMovement
       value: 
       objectReference: {fileID: 2040649314549149523}
+    - target: {fileID: 5755371334443875113, guid: 6f02c26cc9f3b7f4ca373e8ddd872798, type: 3}
+      propertyPath: baseDamage
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755371334443875113, guid: 6f02c26cc9f3b7f4ca373e8ddd872798, type: 3}
+      propertyPath: maxDistance
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8940688666742109886, guid: 6f02c26cc9f3b7f4ca373e8ddd872798, type: 3}
       propertyPath: m_Name
       value: Bat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940688666742109886, guid: 6f02c26cc9f3b7f4ca373e8ddd872798, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

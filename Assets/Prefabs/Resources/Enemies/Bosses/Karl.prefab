@@ -869,7 +869,7 @@ MonoBehaviour:
   projectile: {fileID: 0}
   shootTimer: 0
   isMelee: 0
-  meleeTime: 5
+  meleeTime: 4
   meleeBox: {fileID: 0}
   cost: 1
   healthBar: {fileID: 2110205051230298626}
@@ -880,12 +880,12 @@ MonoBehaviour:
   permanentBloodPrefab: {fileID: 6906568303561589159, guid: 2eba2b4ec2d06b04fb6d477abfe4c11e, type: 3}
   itemDropChance: 100
   pauseTimeBeforeAttack: 2
-  pauseTimeAfterAttack: 2
-  timeBeforeBigAttack: 4
-  timeDuringBigAttack: 10
+  pauseTimeAfterAttack: 1.5
+  timeBeforeBigAttack: 3
+  timeDuringBigAttack: 6
   timeAfterBigAttack: 1
-  maxTargetDistance: 12
-  distanceFromKarl: 25
+  maxTargetDistance: 10
+  distanceFromKarl: 23
   hitboxOffset: 0.5
   maxDistanceFromKarl: 25
   minDistanceFromKarl: 5
