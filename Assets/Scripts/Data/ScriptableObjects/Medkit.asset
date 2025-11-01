@@ -15,5 +15,5 @@ MonoBehaviour:
   upgrade: 0
   upgradeName: Medkit
   descriptions:
-  - Increase max health
+  - Patch up and increase your max health.
   sprite: {fileID: 21300000, guid: 8ad7ad78f8e7ec94bbfeed567698cdf3, type: 3}

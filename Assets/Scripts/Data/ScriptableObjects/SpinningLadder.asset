@@ -15,6 +15,6 @@ MonoBehaviour:
   upgrade: 1
   upgradeName: Spinning Ladder
   descriptions:
-  - Get a Spinning Ladder
-  - Get a Second Spinning Ladder
+  - Get the Ladder, spinning around for passive damage.
+  - Aquire a second ladder.
   sprite: {fileID: 21300000, guid: 4cbeb55fe4b8db34890dfd5813b8126e, type: 3}

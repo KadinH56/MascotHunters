@@ -15,6 +15,6 @@ MonoBehaviour:
   upgrade: 1
   upgradeName: Baseball Bat
   descriptions:
-  - Get a Baseball Bat
-  - Upgrade the bat...somehow
-  sprite: {fileID: 21300000, guid: 30d852dcb48ac6e4292d28cdb8fd5ef7, type: 3}
+  - Get the Baseball Bat, swinging in bursts.
+  - Bat now feels lighter, allowing for more swings per burst.
+  sprite: {fileID: 21300000, guid: cde3c925a1aac92408777ba99aee5dc9, type: 3}

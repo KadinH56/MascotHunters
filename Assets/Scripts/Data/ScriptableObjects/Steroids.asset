@@ -15,5 +15,5 @@ MonoBehaviour:
   upgrade: 0
   upgradeName: Steroids
   descriptions:
-  - Increase Damage
+  - Buff up and increase your damage.
   sprite: {fileID: 21300000, guid: 80886fcab0e31014ba041281a42cf9f5, type: 3}
