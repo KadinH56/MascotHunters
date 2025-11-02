@@ -83,6 +83,8 @@ public class PlayerStatManager : MonoBehaviour
     public void OnAlive(bool fullRevive = true)
     {
         gameObject.SetActive(true);
+        spriteRenderer.material.SetFloat("_HitFlash", 0);
+
         if (fullRevive)
         {
             playerStats.Health = playerStats.MaxHealth;

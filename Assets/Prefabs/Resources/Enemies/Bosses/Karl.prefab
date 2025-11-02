@@ -861,7 +861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KarlBoss
   enemyStats:
-    baseMaxHealth: 120
+    baseMaxHealth: 100
     baseDamage: 8
     baseMovement: 4
   distanceFromPlayer: 4

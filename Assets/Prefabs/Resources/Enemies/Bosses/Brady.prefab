@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats:
-    baseMaxHealth: 50
+    baseMaxHealth: 65
     baseDamage: 8
     baseMovement: 6
   distanceFromPlayer: 0
