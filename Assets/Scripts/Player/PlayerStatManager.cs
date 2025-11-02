@@ -48,6 +48,17 @@ public class PlayerStatManager : MonoBehaviour
         }
     }
 
+    public void Healing(int health)
+    {
+        playerStats.Health += health;
+        if (playerStats.Health > playerStats.MaxHealth)
+        {
+            playerStats.Health = playerStats.MaxHealth;
+        }
+
+        UpdateHealthBar();
+    }
+
     public void SetControls(string scheme, InputDevice[] device)
     {
         this.scheme = scheme;
