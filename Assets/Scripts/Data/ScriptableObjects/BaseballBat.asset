@@ -16,5 +16,5 @@ MonoBehaviour:
   upgradeName: Baseball Bat
   descriptions:
   - Get the Baseball Bat, swinging in bursts.
-  - Bat now feels lighter, allowing for more swings per burst.
+  - Allows the bat to swing an extra time.
   sprite: {fileID: 21300000, guid: cde3c925a1aac92408777ba99aee5dc9, type: 3}

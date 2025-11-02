@@ -8,11 +8,11 @@ public class EnemyWaveBar : MonoBehaviour
     {
         if(GameInformation.TotalEnemies > 0)
         {
-            image.fillAmount = 1f - (float)GameInformation.EnemiesRemaining / GameInformation.TotalEnemies;
+            image.fillAmount = 0 + (float)GameInformation.EnemiesRemaining / GameInformation.TotalEnemies;
             //print(GameInformation.EnemiesRemaining.ToString() + " " + GameInformation.TotalEnemies.ToString());
             return;
         }
 
-        image.fillAmount = 0;
+        image.fillAmount = 1;
     }
 }
