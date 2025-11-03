@@ -6,20 +6,23 @@ public class ResetQuit : MonoBehaviour
 {
     private PlayerInput pInput;
     private InputAction restart;
-    private InputAction quit;
+    private InputAction pause;
 
     private InputAction start1P;
     private InputAction start2P;
+
+    private PauseMenu pm;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         pInput = GetComponent<PlayerInput>();
         restart = pInput.currentActionMap.FindAction("Restart");
-        quit = pInput.currentActionMap.FindAction("Quit");
+        pause = pInput.currentActionMap.FindAction("Pause");
+        pm = GetComponent<PauseMenu>();
 
         restart.started += Reset_started;
-        quit.started += Quit_started;
+        pause.started += Pause_started;
 
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {
@@ -29,6 +32,11 @@ public class ResetQuit : MonoBehaviour
             start1P.started += Start1P_started;
             start2P.started += Start2P_started;
         }
+    }
+
+    private void Pause_started(InputAction.CallbackContext obj)
+    {
+        pm.Paused();
     }
 
     private void Start2P_started(InputAction.CallbackContext obj)
@@ -43,12 +51,6 @@ public class ResetQuit : MonoBehaviour
         SceneManager.LoadSceneAsync(1);
     }
 
-    private void Quit_started(InputAction.CallbackContext obj)
-    {
-        Application.Quit();
-        //UnityEditor.EditorApplication.isPlaying = false;
-    }
-
     private void Reset_started(InputAction.CallbackContext obj)
     {
         SceneManager.LoadScene(0);
@@ -56,7 +58,6 @@ public class ResetQuit : MonoBehaviour
 
     private void OnDestroy()
     {
-        quit.started -= Quit_started;
         restart.started -= Reset_started;
 
         if(SceneManager.GetActiveScene().buildIndex == 0)
