@@ -84,6 +84,7 @@ public class PlayerSpawner : MonoBehaviour
             }
 
             player.GetComponent<PlayerMovement>().PlayerID = i;
+            player.GetComponent<PlayerMovement>().SetSprite();
             player.name = i.ToString();
 
             //Set player position
