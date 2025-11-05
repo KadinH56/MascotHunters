@@ -10,6 +10,7 @@
 
 using System.Collections;
 using System.Threading;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -47,6 +48,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private WeaponManager weaponManager;
 
+    [SerializeField] private AnimatorController player1;
+    [SerializeField] private AnimatorController player2;
+
     /// <summary>
     /// Used by the Player Manager to set the player ID to 0 or 1
     /// </summary>
@@ -76,6 +80,11 @@ public class PlayerMovement : MonoBehaviour
 
         //animator = GetComponent<Animator>();
 
+    }
+
+    public void SetSprite()
+    {
+        animator.runtimeAnimatorController = playerID == 0 ? player1 : player2;
     }
 
     /// <summary>
