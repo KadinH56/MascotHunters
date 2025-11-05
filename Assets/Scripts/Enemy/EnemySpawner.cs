@@ -86,7 +86,7 @@ public class EnemySpawner : MonoBehaviour
             }
             GameInformation.TotalEnemies = 0;
 
-            if(GameInformation.Wave % 5 != 0)
+            if(GameInformation.Wave % 3 != 0)
             {
                 credits = startingCredits + (creditsPerWave * GameInformation.Wave);
                 credits *= GameInformation.NumPlayers;
@@ -230,7 +230,7 @@ public class EnemySpawner : MonoBehaviour
                 deadplayer.transform.position = alivePlayer.transform.position;
             }
 
-            if (GameInformation.Wave % 5 == 0)
+            if (GameInformation.Wave % 3 == 0)
             {
                 FindFirstObjectByType<UpgradeSystem>().StartUpgrades();
             }
