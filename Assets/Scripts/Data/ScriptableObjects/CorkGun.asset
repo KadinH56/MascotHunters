@@ -16,5 +16,6 @@ MonoBehaviour:
   upgradeName: Cork Gun
   descriptions:
   - Get the Corked Gun, a ranged weapon.
-  - Corks shoot at an increased firing rate.
+  - Cork now explodes, increased fire rate.
+  - Explosion is now larger, increased fire rate.
   sprite: {fileID: 21300000, guid: 3478959f305614145907d6146713ad0e, type: 3}

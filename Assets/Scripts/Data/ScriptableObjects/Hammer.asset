@@ -16,5 +16,6 @@ MonoBehaviour:
   upgradeName: Hammer
   descriptions:
   - Get the Hammer, a powerful automatic weapon.
-  - Hammer hit size is increased.
+  - Hammer hit size is increased, cooldown reduced.
+  - Hammer hit size is increased, now leaves cracks that damage enemies.
   sprite: {fileID: 21300000, guid: b93773fdbd9199f4a84f074dd9153c2f, type: 3}
