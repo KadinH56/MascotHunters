@@ -387,10 +387,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 8426235526401967239}
     m_Modifications:
     - target: {fileID: 4439332330967657993, guid: 712e40bc711677349adc2af1901d357f, type: 3}
-      propertyPath: baseDamage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4439332330967657993, guid: 712e40bc711677349adc2af1901d357f, type: 3}
       propertyPath: rotateAround
       value: 
       objectReference: {fileID: 3387858530456264924}
