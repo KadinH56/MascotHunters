@@ -17,4 +17,4 @@ MonoBehaviour:
   descriptions:
   - Get the Corked Gun, a ranged weapon.
   - Corks shoot at an increased firing rate.
-  sprite: {fileID: -828603243, guid: f26a597572f5e914daeb176971dcbd79, type: 3}
+  sprite: {fileID: 21300000, guid: 3478959f305614145907d6146713ad0e, type: 3}

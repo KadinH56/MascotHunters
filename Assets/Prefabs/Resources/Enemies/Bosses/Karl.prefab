@@ -887,14 +887,14 @@ MonoBehaviour:
   maxTargetDistance: 10
   distanceFromKarl: 23
   hitboxOffset: 0.5
-  maxDistanceFromKarl: 25
+  maxDistanceFromKarl: 90
   minDistanceFromKarl: 5
   claws: {fileID: 8241830170834023039}
   clawRenderers:
   - {fileID: 7535778844130069501}
   - {fileID: 8813248828126370887}
   clawsCollider: {fileID: 6918003567033468878}
-  bigRotation: 5
+  bigRotation: 2
   followRotation: 10
 --- !u!1 &5958240348254958594
 GameObject:
