@@ -543,6 +543,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 8426235526401967239}
     m_Modifications:
     - target: {fileID: 591585930900299826, guid: 6f02c26cc9f3b7f4ca373e8ddd872798, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 591585930900299826, guid: 6f02c26cc9f3b7f4ca373e8ddd872798, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 591585930900299826, guid: 6f02c26cc9f3b7f4ca373e8ddd872798, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 591585930900299826, guid: 6f02c26cc9f3b7f4ca373e8ddd872798, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -586,14 +598,6 @@ PrefabInstance:
       propertyPath: pMovement
       value: 
       objectReference: {fileID: 2040649314549149523}
-    - target: {fileID: 5755371334443875113, guid: 6f02c26cc9f3b7f4ca373e8ddd872798, type: 3}
-      propertyPath: baseDamage
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5755371334443875113, guid: 6f02c26cc9f3b7f4ca373e8ddd872798, type: 3}
-      propertyPath: maxDistance
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8940688666742109886, guid: 6f02c26cc9f3b7f4ca373e8ddd872798, type: 3}
       propertyPath: m_Name
       value: Bat
@@ -664,14 +668,6 @@ PrefabInstance:
       propertyPath: pMovement
       value: 
       objectReference: {fileID: 2040649314549149523}
-    - target: {fileID: 2225385550678140505, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
-      propertyPath: baseDamage
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2225385550678140505, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
-      propertyPath: hitCountdown
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6278385395933206272, guid: a38a5ac8be1fac14db1d59cce879bef8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1

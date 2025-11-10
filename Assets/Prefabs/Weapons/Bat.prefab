@@ -136,18 +136,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291f56c76a20076449020e324e75643c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BatHit
-  baseDamage: 4
+  baseDamage: 8
   pMovement: {fileID: 0}
   weaponLevel: 0
-  maxDistance: 6
+  maxDistance: 8
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
-  numHits: 2
+  numHits: 3
   hitRenderer: {fileID: 4746227391703693586}
   hitCountdown: 1
   batRadius: 2.5
   offset: {x: 1.5, y: 0, z: -0.85}
+  numHitsLevel2: 5
+  cooldownLevel2: 0.8
+  cooldownLevel3: 0.5
+  sizeMultiplier: 2
 --- !u!95 &4115033051317844474
 Animator:
   serializedVersion: 7
