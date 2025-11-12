@@ -47,7 +47,7 @@ public class LadderRotate : WeaponBase
                 {
                     go.SetActive(true);
                 }
-                firstLadderCollider.center = new(3.2f, 0, 0);
+                firstLadderCollider.center = new(-3.2f, 0, 0);
                 firstLadderCollider.height = 5.1f;
                 
                 break;
