@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class HammerHit : WeaponBase
 {
@@ -18,6 +19,18 @@ public class HammerHit : WeaponBase
     [SerializeField] private LayerMask enemyLayers;
 
     [SerializeField] private AudioClip hammerHitSound;
+    [SerializeField] private GameObject hitEffect;
+    [SerializeField] private GameObject hitDamageEffect;
+
+    [SerializeField] private Vector3 hitOffset = Vector3.zero;
+
+    [SerializeField] private int maxHit = 40;
+
+    [SerializeField] private float speedModifier = 1f;
+    [SerializeField] private float speedLevel2Modifier = 0.9f;
+    [SerializeField] private float speedLevel3Modifier = 0.75f;
+    [SerializeField] private float level2SizeModifier = 1.5f;
+    private Collider[] hits;
 
     Animator animator;
 
@@ -26,19 +39,8 @@ public class HammerHit : WeaponBase
 
     void Start()
     {
-        //hitCircle.GetComponent<SpriteRenderer>().enabled = false;
-        //hitCircle.GetComponent<CapsuleCollider>().enabled = false;
-
-        //hitCollider = GetComponent<CapsuleCollider>();
-        //hitRenderer = GetComponent<SpriteRenderer>();
-
-        //hitCollider.enabled = false;
-        //hitRenderer.enabled = false;
-
         animator = GetComponent<Animator>();
-
-        LevelupDescriptions.Add(1, "Get a Strength Hammer");
-        levelupDescriptions.Add(2, "Increase Hammer Size");
+        hits = new Collider[maxHit];
         weaponLevel = 1;
     }
 
@@ -52,21 +54,12 @@ public class HammerHit : WeaponBase
     {
         while (true)
         {
-            //Debug.Log("Hammer activated!");
-            //hitCircle.GetComponent<SpriteRenderer>().enabled = true;
-            //hitCircle.GetComponent <CapsuleCollider>().enabled = true;
-            //hitCircle.GetComponent<HitCircle>().Damage = CalculateDamage; IDK
-            //hitCircle.GetComponent<Rigidbody>().position = pMovement.Facing;
-            //hitCountdown--;
-            yield return new WaitForSeconds(hitCountdown);
+            yield return new WaitForSeconds(hitCountdown * speedModifier);
+            print("Hit");
             animating = true;
+            animator.speed = speedModifier;
             animator.SetBool("Hit", true);
             AudioSource.PlayClipAtPoint(hammerHitSound, transform.position);
-
-
-            //hitCollider.enabled = false;
-            //yield return new WaitForSeconds(1f);
-            //hitRenderer.enabled = false;
         }
     }
 
@@ -87,20 +80,41 @@ public class HammerHit : WeaponBase
     {
         animator.SetBool("Hit", false);
         animating = false;
-        Collider[] enemies = Physics.OverlapSphere(hitRenderer.transform.position, circleRadius * circleRadiusModifier, enemyLayers);
-        foreach (Collider enemy in enemies)
+        //Collider[] enemies = Physics.OverlapSphere(hitRenderer.transform.position + hitOffset, circleRadius * circleRadiusModifier, enemyLayers);
+        //foreach (Collider enemy in enemies)
+        //{
+        //    if (enemy.gameObject.CompareTag("Enemy"))
+        //    {
+        //        enemy.gameObject.GetComponent<EnemyScript>().TakeDamage(CalculateDamage());
+        //    }
+        //}
+
+        int enemies = Physics.OverlapSphereNonAlloc(hitRenderer.transform.position + (transform.rotation * hitOffset), circleRadius * circleRadiusModifier, hits, enemyLayers);
+        for (int i = 0; i < enemies; i++)
         {
-            if (enemy.gameObject.CompareTag("Enemy"))
+            if (hits[i].gameObject.CompareTag("Enemy"))
             {
-                enemy.gameObject.GetComponent<EnemyScript>().TakeDamage(CalculateDamage());
+                hits[i].gameObject.GetComponent<EnemyScript>().TakeDamage(CalculateDamage());
             }
+        }
+
+        if (weaponLevel < 3)
+        {
+            GameObject effect = Instantiate(hitEffect, hitRenderer.transform.position + (Vector3.down * 1.46f), Quaternion.identity);
+            effect.transform.localScale *= circleRadiusModifier;
+        }
+        else
+        {
+            GameObject effect = Instantiate(hitDamageEffect, hitRenderer.transform.position + (Vector3.down * 1.46f), Quaternion.identity);
+            effect.transform.localScale *= circleRadiusModifier;
+            effect.GetComponent<PermenentBlood>().Damage = CalculateDamage() / 2;
         }
     }
 
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(hitRenderer.transform.position, circleRadius * circleRadiusModifier);
+        Gizmos.DrawWireSphere(hitRenderer.transform.position + hitOffset, circleRadius * circleRadiusModifier);
     }
 
     //private void OnTriggerEnter(Collider other)
@@ -118,8 +132,12 @@ public class HammerHit : WeaponBase
         switch (weaponLevel)
         {
             case 2:
-                //speedModifier = 0.9f;
-                circleRadiusModifier = 1.15f;
+                speedModifier = speedLevel2Modifier;
+                circleRadiusModifier = level2SizeModifier;
+                transform.localScale = 6 * circleRadiusModifier * Vector3.one;
+                break;
+            case 3:
+                speedModifier = speedLevel3Modifier;
                 break;
         }
     }

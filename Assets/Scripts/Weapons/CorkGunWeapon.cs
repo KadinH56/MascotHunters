@@ -6,6 +6,7 @@ public class CorkGunWeapon : WeaponBase
     [SerializeField] private GameObject projectile;
     [SerializeField] private float initShootTime = 1.5f;
     [SerializeField] private float initShootSpeed = 16f;
+    [SerializeField] private float explosionSize = 0f;
 
     private float speedModifier = 1f;
     private float timeModifier = 1f;
@@ -14,12 +15,15 @@ public class CorkGunWeapon : WeaponBase
 
     [SerializeField] private AudioClip shootSound;
 
+    [SerializeField] private float level2Speed = 0.75f;
+    [SerializeField] private float level2ExplosionSize = 8f;
+    [SerializeField] private float level3Speed = 0.5f;
+    [SerializeField] private float level3ExplosionSize = 16f;
+
     private void Start()
     {
         //StartCoroutine(Shoot());
 
-        LevelupDescriptions.Add(1, "Get a Cork Gun");
-        LevelupDescriptions.Add(2, "Reduce Reload Time (100% -> 75%)");
         weaponLevel = 1;
     }
 
@@ -62,6 +66,7 @@ public class CorkGunWeapon : WeaponBase
             }
 
             proj.GetComponent<Rigidbody>().linearVelocity = initShootSpeed * speedModifier * velo;
+            proj.GetComponent<CorkGunProjectile>().ExplosionSize = explosionSize;
         }
     }
 
@@ -71,7 +76,12 @@ public class CorkGunWeapon : WeaponBase
         switch (weaponLevel)
         {
             case 2:
-                timeModifier = 0.75f;
+                timeModifier = level2Speed;
+                explosionSize = level2ExplosionSize;
+                break;
+            case 3:
+                timeModifier = level3Speed;
+                explosionSize = level3ExplosionSize;
                 break;
         }
 
