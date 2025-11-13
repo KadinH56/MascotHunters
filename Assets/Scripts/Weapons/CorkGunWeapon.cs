@@ -77,7 +77,7 @@ public class CorkGunWeapon : WeaponBase
         {
             case 2:
                 timeModifier = level2Speed;
-                explosionSize = level3ExplosionSize;
+                explosionSize = level2ExplosionSize;
                 break;
             case 3:
                 timeModifier = level3Speed;
