@@ -29,14 +29,11 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private List<Image> playerHealthBars;
 
-    [SerializeField] private bool arcadeBuild = false;
-
     /// <summary>
     /// Setup the game itself
     /// </summary>
     private void Start()
     {
-        GameInformation.IsArcadeBuild = arcadeBuild;
         ////For each player playing, spawn their object
         ////Also sets some internal stuff
         for (int i = 0; i < GameInformation.NumPlayers; i++)
@@ -46,7 +43,7 @@ public class PlayerSpawner : MonoBehaviour
             //You know, at least this works on arcade builds
             //Unity I freaking hate your input system with a passion idk how you do this
 
-            if (arcadeBuild)
+            if (GameInformation.IsArcadeBuild)
             {
                 InputDevice[] devices =
                 {
