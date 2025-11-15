@@ -29,6 +29,8 @@ public class PlayerStatManager : MonoBehaviour
     public Image HealthBar { get => healthBar; set => healthBar = value; }
 
     [SerializeField] protected SpriteRenderer spriteRenderer;
+    [SerializeField] protected Animator animator;
+    [SerializeField] private bool isDead;
 
     /// <summary>
     /// Take damage
@@ -43,6 +45,7 @@ public class PlayerStatManager : MonoBehaviour
 
         if (playerStats.Health <= 0)
         {
+            isDead = true;
             gameObject.SetActive(false);
             //mainMenu.SetActive(true);
         }
@@ -83,6 +86,7 @@ public class PlayerStatManager : MonoBehaviour
     public void OnAlive(bool fullRevive = true)
     {
         gameObject.SetActive(true);
+        isDead = false;
         spriteRenderer.material.SetFloat("_HitFlash", 0);
 
         if (fullRevive)
