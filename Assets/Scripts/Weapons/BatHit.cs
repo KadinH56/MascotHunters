@@ -13,6 +13,11 @@ public class BatHit : WeaponBase
     [SerializeField] private float batRadius = 1f;
     [SerializeField] private Vector3 offset = Vector3.zero;
 
+    [SerializeField] private int numHitsLevel2;
+    [SerializeField] private float cooldownLevel2;
+    [SerializeField] private float cooldownLevel3;
+    [SerializeField] private float sizeMultiplierLevel3 = 2f;
+
     Animator animator;
 
     bool attacking = false;
@@ -31,8 +36,6 @@ public class BatHit : WeaponBase
 
         animator = GetComponent<Animator>();
 
-        LevelupDescriptions.Add(1, "Get a Baseball Bat");
-        levelupDescriptions.Add(2, "Increase Hammer Size");
         weaponLevel = 1;
     }
 
@@ -64,7 +67,15 @@ public class BatHit : WeaponBase
         switch (weaponLevel)
         {
             case 2:
-                numHits++;
+                numHits = numHitsLevel2;
+                hitCountdown = cooldownLevel2;
+                break;
+            case 3:
+                hitCountdown = cooldownLevel3;
+                transform.localScale *= sizeMultiplierLevel3;
+                batRadius *= sizeMultiplierLevel3;
+                offset.x *= sizeMultiplierLevel3;
+                maxDistance *= sizeMultiplierLevel3;
                 break;
         }
     }

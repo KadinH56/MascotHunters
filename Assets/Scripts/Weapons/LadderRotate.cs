@@ -8,11 +8,12 @@ public class LadderRotate : WeaponBase
 
     [SerializeField] private GameObject secondLadderObject;
     [SerializeField] private Collider secondLadderCollider;
+    [SerializeField] private CapsuleCollider firstLadderCollider;
+
+    [SerializeField] private GameObject[] extensions;
 
     private void Start()
     {
-        LevelupDescriptions.Add(1, "Get a Spinning Ladder");
-        LevelupDescriptions.Add(2, "Add a Second Ladder");
         weaponLevel = 1;
     }
 
@@ -42,6 +43,15 @@ public class LadderRotate : WeaponBase
         switch (weaponLevel)
         {
             case 2:
+                foreach (GameObject go in extensions)
+                {
+                    go.SetActive(true);
+                }
+                firstLadderCollider.center = new(-3.2f, 0, 0);
+                firstLadderCollider.height = 5.1f;
+                
+                break;
+            case 3:
                 //speedModifier = 0.9f;
                 secondLadderCollider.enabled = true;
                 secondLadderObject.SetActive(true);

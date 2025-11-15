@@ -38,6 +38,12 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
+    //[ContextMenu("Gimme a hammah")]
+    //public void WeaponUpgrade2()
+    //{
+    //    WeaponUpgrade("Hammer");
+    //}
+
     public WeaponStat[] GetWeapons()
     {
         WeaponStat[] stats = new WeaponStat[2];

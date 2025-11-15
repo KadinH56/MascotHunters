@@ -266,7 +266,7 @@ public class UpgradeSystem : MonoBehaviour
                 continue;
             }
 
-            if(stat.Level < 2)
+            if(stat.Level < 3)
             {
                 weapons.Add(stat.Weapon);
             }
