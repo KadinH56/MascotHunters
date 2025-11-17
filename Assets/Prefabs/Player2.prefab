@@ -310,6 +310,8 @@ MonoBehaviour:
   rollSound: {fileID: 0}
   moveSound: {fileID: 0}
   weaponManager: {fileID: 0}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
 --- !u!114 &7677238045681899569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +332,8 @@ MonoBehaviour:
   mainMenu: {fileID: 0}
   percentOfHealthRegainedOnRessurect: 0.5
   spriteRenderer: {fileID: 0}
+  animator: {fileID: 698033908845542131}
+  isDead: 0
 --- !u!1001 &491127998355535138
 PrefabInstance:
   m_ObjectHideFlags: 0

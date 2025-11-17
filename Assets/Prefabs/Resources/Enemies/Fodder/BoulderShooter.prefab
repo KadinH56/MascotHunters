@@ -294,13 +294,13 @@ MonoBehaviour:
     baseDamage: 4
     baseMovement: 5
   distanceFromPlayer: 12
-  projectileVelocity: 8
+  projectileVelocity: 10
   projectile: {fileID: 4408125041637714283, guid: 3bfabfbd640cf3242b4bb772439795a7, type: 3}
   shootTimer: 4
   isMelee: 0
   meleeTime: 0
   meleeBox: {fileID: 2008192815645434260}
-  cost: 1
+  cost: 5
   healthBar: {fileID: 0}
   animator: {fileID: 6217990835424741818}
   spriteRenderer: {fileID: 2139181303718269317}

@@ -378,6 +378,8 @@ MonoBehaviour:
   mainMenu: {fileID: 0}
   percentOfHealthRegainedOnRessurect: 0.5
   spriteRenderer: {fileID: 680136096779187297}
+  animator: {fileID: 698033908845542131}
+  isDead: 0
 --- !u!1001 &491127998355535138
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -43,12 +43,21 @@ public class PlayerStatManager : MonoBehaviour
         playerStats.Health -= damage;
         UpdateHealthBar();
 
-        if (playerStats.Health <= 0)
+        if (playerStats.Health <= 0 && !isDead)
         {
-            isDead = true;
-            gameObject.SetActive(false);
+         
+            StartCoroutine(HandleDeath());
+            
             //mainMenu.SetActive(true);
         }
+    }
+
+    private IEnumerator HandleDeath()
+    {
+        animator.SetBool("IsDead", true);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+
+        gameObject.SetActive(false);
     }
 
     public void Healing(int health)
@@ -86,7 +95,7 @@ public class PlayerStatManager : MonoBehaviour
     public void OnAlive(bool fullRevive = true)
     {
         gameObject.SetActive(true);
-        isDead = false;
+        animator.SetBool("IsDead", false);
         spriteRenderer.material.SetFloat("_HitFlash", 0);
 
         if (fullRevive)
