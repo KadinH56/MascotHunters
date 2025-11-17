@@ -76,7 +76,6 @@ public class PlayerSpawner : MonoBehaviour
                     }
                 }
                 //print(devices[0]);
-
                 player.GetComponent<PlayerStatManager>().SetControls(scheme, devices);//.SwitchCurrentControlScheme(scheme, devices);
             }
 
