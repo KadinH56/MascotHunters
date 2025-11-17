@@ -29,6 +29,8 @@ public class PlayerStatManager : MonoBehaviour
     public Image HealthBar { get => healthBar; set => healthBar = value; }
 
     [SerializeField] protected SpriteRenderer spriteRenderer;
+    [SerializeField] protected Animator animator;
+    [SerializeField] private bool isDead;
 
     /// <summary>
     /// Take damage
@@ -41,11 +43,21 @@ public class PlayerStatManager : MonoBehaviour
         playerStats.Health -= damage;
         UpdateHealthBar();
 
-        if (playerStats.Health <= 0)
+        if (playerStats.Health <= 0 && !isDead)
         {
-            gameObject.SetActive(false);
+         
+            StartCoroutine(HandleDeath());
+            
             //mainMenu.SetActive(true);
         }
+    }
+
+    private IEnumerator HandleDeath()
+    {
+        animator.SetBool("IsDead", true);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+
+        gameObject.SetActive(false);
     }
 
     public void Healing(int health)
@@ -83,6 +95,7 @@ public class PlayerStatManager : MonoBehaviour
     public void OnAlive(bool fullRevive = true)
     {
         gameObject.SetActive(true);
+        animator.SetBool("IsDead", false);
         spriteRenderer.material.SetFloat("_HitFlash", 0);
 
         if (fullRevive)
