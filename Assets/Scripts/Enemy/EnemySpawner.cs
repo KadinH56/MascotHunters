@@ -237,6 +237,10 @@ public class EnemySpawner : MonoBehaviour
 
             if (GameInformation.Wave % 3 == 0)
             {
+                if (bosses.Count == 0)
+                {
+                    bosses = Resources.LoadAll("Enemies/Bosses", typeof(GameObject)).ToList();
+                }
                 string name = bosses[0].name;
                 FindFirstObjectByType<TopBar>().ResetSystem(name);
             }

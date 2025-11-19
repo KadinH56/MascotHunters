@@ -108,5 +108,7 @@ public class TopBar : MonoBehaviour
         {
             image.sprite = neccesarySprite;
         }
+
+        fills[2].sprite = bradyBossFill;
     }
 }
