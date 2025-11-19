@@ -142,8 +142,8 @@ public class EnemyScript : MonoBehaviour
     {
         DropItem();
         AudioSource.PlayClipAtPoint(enemyDeath, transform.position);
-        GameInformation.EnemiesRemaining--;
-        FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();
+        //FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();
+        FindFirstObjectByType<TopBar>().EnemyDied();
         Destroy(gameObject);
     }
 
