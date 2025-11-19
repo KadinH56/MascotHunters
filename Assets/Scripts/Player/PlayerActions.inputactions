@@ -287,7 +287,7 @@
                 {
                     "name": "",
                     "id": "91515665-1517-44bc-809e-221299335c44",
-                    "path": "<Keyboard>/z",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": ";MainControlScheme;ArcadeA",
@@ -298,7 +298,7 @@
                 {
                     "name": "",
                     "id": "abbd8e13-a73b-448f-824d-fcc401efef66",
-                    "path": "<Keyboard>/comma",
+                    "path": "<Keyboard>/7",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard2",
@@ -331,7 +331,7 @@
                 {
                     "name": "",
                     "id": "4b42dc1b-b14f-46ef-b891-a623e715577c",
-                    "path": "<Keyboard>/x",
+                    "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": ";MainControlScheme;ArcadeA",
@@ -342,7 +342,7 @@
                 {
                     "name": "",
                     "id": "8d074fb5-c135-44e0-a098-bc6966f1d47d",
-                    "path": "<Keyboard>/period",
+                    "path": "<Keyboard>/8",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard2",
@@ -375,7 +375,7 @@
                 {
                     "name": "",
                     "id": "89d04395-fcde-4184-9cab-df7ff049208b",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/3",
                     "interactions": "",
                     "processors": "",
                     "groups": ";MainControlScheme;ArcadeA",
@@ -386,7 +386,7 @@
                 {
                     "name": "",
                     "id": "32227d77-34d5-4057-ae9b-3ce99aaf543f",
-                    "path": "<Keyboard>/slash",
+                    "path": "<Keyboard>/9",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard2",
