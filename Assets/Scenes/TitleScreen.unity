@@ -859,7 +859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1932436e3f2d24baf68c407ee46375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SetArcadePCBuild
-  isArcadeBuild: 1
+  isArcadeBuild: 0
 --- !u!4 &1553666101
 Transform:
   m_ObjectHideFlags: 0
