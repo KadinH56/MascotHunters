@@ -591,6 +591,8 @@ MonoBehaviour:
     m_Bits: 256
   chompSize: 4
   chompCircle: {fileID: 4971408473570402730}
+  dashTelegraphPrefab: {fileID: 1906670201918488967, guid: 95c12d340898e324c9fab5858f274bff, type: 3}
+  telegraphDuration: 0.35
 --- !u!1 &5958240348254958594
 GameObject:
   m_ObjectHideFlags: 0

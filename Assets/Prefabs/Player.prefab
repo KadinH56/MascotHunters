@@ -152,7 +152,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 279fa7a08fce52345afb07c8223b7d11, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -376,6 +376,8 @@ MonoBehaviour:
     baseMovement: 8
   healthBar: {fileID: 0}
   mainMenu: {fileID: 0}
+  player: {fileID: 8114800350451386471}
+  weapon: {fileID: 284896115691116450}
   percentOfHealthRegainedOnRessurect: 0.5
   spriteRenderer: {fileID: 680136096779187297}
   animator: {fileID: 698033908845542131}
