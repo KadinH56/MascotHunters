@@ -2632,6 +2632,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2029674756973769184, guid: 863f38991540d144faef3db2a684d260, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029674756973769184, guid: 863f38991540d144faef3db2a684d260, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.82000005
+      objectReference: {fileID: 0}
     - target: {fileID: 2030233999612071971, guid: 863f38991540d144faef3db2a684d260, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -3171,6 +3179,14 @@ PrefabInstance:
     - target: {fileID: 2708413578011190040, guid: 863f38991540d144faef3db2a684d260, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715482068241776462, guid: 863f38991540d144faef3db2a684d260, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.36308
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715482068241776462, guid: 863f38991540d144faef3db2a684d260, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.08906
       objectReference: {fileID: 0}
     - target: {fileID: 2719330249464049365, guid: 863f38991540d144faef3db2a684d260, type: 3}
       propertyPath: m_Layer
@@ -7368,6 +7384,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7508363172396480556, guid: 863f38991540d144faef3db2a684d260, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.82
+      objectReference: {fileID: 0}
     - target: {fileID: 7512290642188648554, guid: 863f38991540d144faef3db2a684d260, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -8929,6 +8949,8 @@ PrefabInstance:
     - {fileID: 418601084065473724, guid: 863f38991540d144faef3db2a684d260, type: 3}
     - {fileID: 115107610951578003, guid: 863f38991540d144faef3db2a684d260, type: 3}
     - {fileID: 3718578470214600744, guid: 863f38991540d144faef3db2a684d260, type: 3}
+    - {fileID: 3847668402269879776, guid: 863f38991540d144faef3db2a684d260, type: 3}
+    - {fileID: 8543413426684409740, guid: 863f38991540d144faef3db2a684d260, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2450653296595289078, guid: 863f38991540d144faef3db2a684d260, type: 3}
       insertIndex: -1
@@ -9654,8 +9676,8 @@ Transform:
   m_GameObject: {fileID: 409980565}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 77.45, y: -0.13, z: 54.5}
-  m_LocalScale: {x: 8.5609, y: 0.3836, z: 41.041553}
+  m_LocalPosition: {x: 77.45, y: 0.10000038, z: 54.5}
+  m_LocalScale: {x: 8.5609, y: 0.055407006, z: 41.041553}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1091553660}
@@ -10292,8 +10314,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3429335, y: 0.829495, z: 4.115223}
-  m_Center: {x: 0.011447653, y: 1.1083666, z: 0.16245158}
+  m_Size: {x: 1.4045345, y: 0.829495, z: 4.115223}
+  m_Center: {x: 0.042248134, y: 1.1083666, z: 0.16245157}
 --- !u!208 &647162731
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -11180,8 +11202,8 @@ Transform:
   m_GameObject: {fileID: 869890913}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.57, y: -0.13, z: 29.6682}
-  m_LocalScale: {x: 8.5609, y: 0.3836, z: 41.086697}
+  m_LocalPosition: {x: -4.57, y: 0.1, z: 29.6522}
+  m_LocalScale: {x: 8.5609, y: 0.055407006, z: 41.05381}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1091553660}
@@ -12464,8 +12486,8 @@ Transform:
   m_GameObject: {fileID: 1141149853}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -45.59, y: -0.13, z: 54.46}
-  m_LocalScale: {x: 8.5609, y: 0.3836, z: 41.041553}
+  m_LocalPosition: {x: -45.59, y: 0.10000038, z: 54.46}
+  m_LocalScale: {x: 8.5609, y: 0.055407006, z: 41.041553}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1091553660}
@@ -12724,8 +12746,8 @@ Transform:
   m_GameObject: {fileID: 1168209364}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 36.45, y: -0.13, z: 54.5}
-  m_LocalScale: {x: 8.5609, y: 0.3836, z: 41.041553}
+  m_LocalPosition: {x: 36.45, y: 0.10000038, z: 54.5}
+  m_LocalScale: {x: 8.5609, y: 0.055407006, z: 41.041553}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1091553660}
@@ -12835,8 +12857,8 @@ Transform:
   m_GameObject: {fileID: 1179448591}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4.57, y: -0.13, z: 54.46}
-  m_LocalScale: {x: 8.5609, y: 0.3836, z: 41.041553}
+  m_LocalPosition: {x: -4.57, y: 0.10000038, z: 54.46}
+  m_LocalScale: {x: 8.5609, y: 0.055407006, z: 41.041553}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1091553660}
@@ -13570,8 +13592,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2395301, y: 0.79295665, z: 4.3887773}
-  m_Center: {x: -0.0139350295, y: 1.1308404, z: 0.33311963}
+  m_Size: {x: 1.3595269, y: 0.79295665, z: 4.3887773}
+  m_Center: {x: 0.04606339, y: 1.1308404, z: 0.33311954}
 --- !u!208 &1427843191
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -14138,8 +14160,8 @@ Transform:
   m_GameObject: {fileID: 1624014505}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.57, y: -0.13, z: 81.6623}
-  m_LocalScale: {x: 8.5609, y: 0.3836, z: 45.86795}
+  m_LocalPosition: {x: -4.57, y: 0.10000038, z: 81.6664}
+  m_LocalScale: {x: 8.5609, y: 0.055407006, z: 45.85878}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1091553660}
@@ -14820,8 +14842,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1853278, y: 0.74051553, z: 4.0128407}
-  m_Center: {x: -0.041699138, y: 1.0285048, z: 0.2775326}
+  m_Size: {x: 1.3275317, y: 0.74051553, z: 4.0128407}
+  m_Center: {x: 0.029402902, y: 1.0285048, z: 0.27753258}
 --- !u!208 &1841625376
 NavMeshObstacle:
   m_ObjectHideFlags: 0
