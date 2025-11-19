@@ -24,7 +24,7 @@ public class BradyBoss : EnemyScript
     [SerializeField] private GameObject chompCircle;
 
     [SerializeField] private GameObject dashTelegraphPrefab;
-    [SerializeField] private float telegraphDuration = 0.35f;
+    [SerializeField] private float telegraphDuration = 1f;
 
     private STATE_MACHINE state = STATE_MACHINE.FOLLOW;
 
@@ -109,10 +109,31 @@ public class BradyBoss : EnemyScript
             direction.y = 0;
             direction.Normalize();
 
-            GameObject telegraph = Instantiate(dashTelegraphPrefab, transform.position,
-                Quaternion.LookRotation(direction));
+            Vector3 start = transform.position;
+            Vector3 end = target.transform.position; // or start + (direction * 8f) if you prefer a fixed length
+
+            GameObject telegraphObj = Instantiate(dashTelegraphPrefab);
+            LineRenderer lr = telegraphObj.GetComponent<LineRenderer>();
+
+            // Ensure LineRenderer exists
+            lr.positionCount = 2;
+            lr.useWorldSpace = true;
+
+            //Make it thick
+            lr.widthMultiplier = 0.5f;     
+            lr.startWidth = 0.5f;
+            lr.endWidth = 0.5f;
+
+            Vector3 Begin = transform.position;
+            Vector3 Stop = target.transform.position;
+
+            lr.SetPosition(0, start);
+            lr.SetPosition(1, end);
+
+         
+            Destroy(telegraphObj, telegraphDuration);
+
             yield return new WaitForSeconds(telegraphDuration);
-            Destroy(telegraph);
 
             GetComponent<Rigidbody>().linearVelocity = dashSpeedModifier * enemyStats.Movement * direction;
 
