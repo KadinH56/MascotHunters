@@ -18,6 +18,7 @@ public class PlayerStatManager : MonoBehaviour
     [SerializeField] private Image healthBar;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private PlayerInput player;
+    [SerializeField] private WeaponManager weapon;
 
 
     [SerializeField] private float percentOfHealthRegainedOnRessurect = 0.5f;
@@ -57,9 +58,9 @@ public class PlayerStatManager : MonoBehaviour
     private IEnumerator HandleDeath()
     {
         animator.SetBool("IsDead", true);
-        yield return new WaitForSeconds(1);
         player.enabled = false;
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        weapon.enabled = false;
+        yield return new WaitForSeconds(4);
         gameObject.SetActive(false);
     }
 
@@ -99,6 +100,7 @@ public class PlayerStatManager : MonoBehaviour
     {
         gameObject.SetActive(true);
         player.enabled = true;
+        weapon.enabled = true;
         animator.SetBool("IsDead", false);
         spriteRenderer.material.SetFloat("_HitFlash", 0);
 

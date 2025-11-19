@@ -377,6 +377,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   mainMenu: {fileID: 0}
   player: {fileID: 8114800350451386471}
+  weapon: {fileID: 284896115691116450}
   percentOfHealthRegainedOnRessurect: 0.5
   spriteRenderer: {fileID: 680136096779187297}
   animator: {fileID: 698033908845542131}

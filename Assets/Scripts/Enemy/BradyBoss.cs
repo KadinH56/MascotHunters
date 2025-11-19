@@ -23,6 +23,9 @@ public class BradyBoss : EnemyScript
     [SerializeField] private float chompSize = 3f;
     [SerializeField] private GameObject chompCircle;
 
+    [SerializeField] private GameObject dashTelegraphPrefab;
+    [SerializeField] private float telegraphDuration = 0.35f;
+
     private STATE_MACHINE state = STATE_MACHINE.FOLLOW;
 
     bool attacking = false;
@@ -105,6 +108,12 @@ public class BradyBoss : EnemyScript
             Vector3 direction = target.transform.position - transform.position;
             direction.y = 0;
             direction.Normalize();
+
+            GameObject telegraph = Instantiate(dashTelegraphPrefab, transform.position,
+                Quaternion.LookRotation(direction));
+            yield return new WaitForSeconds(telegraphDuration);
+            Destroy(telegraph);
+
             GetComponent<Rigidbody>().linearVelocity = dashSpeedModifier * enemyStats.Movement * direction;
 
             if (GetComponent<Rigidbody>().linearVelocity.x > 0)
