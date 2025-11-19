@@ -486,7 +486,6 @@ GameObject:
   m_Component:
   - component: {fileID: 155308648}
   - component: {fileID: 155308650}
-  - component: {fileID: 155308649}
   m_Layer: 3
   m_Name: GroundPlateNew (2)
   m_TagString: Untagged
@@ -509,27 +508,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 229277865}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!65 &155308649
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155308647}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 31.999998, y: 32.000008, z: 0.002140764}
-  m_Center: {x: 0, y: -4.1758327e-18, z: 0.002293629}
 --- !u!212 &155308650
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8747,7 +8725,6 @@ GameObject:
   m_Component:
   - component: {fileID: 673169991}
   - component: {fileID: 673169993}
-  - component: {fileID: 673169992}
   m_Layer: 3
   m_Name: GroundPlateNew (1)
   m_TagString: Untagged
@@ -8770,27 +8747,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 229277865}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!65 &673169992
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673169990}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 31.999998, y: 32.000008, z: 0.002140764}
-  m_Center: {x: 0, y: -4.1758327e-18, z: 0.002293629}
 --- !u!212 &673169993
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8880,7 +8836,6 @@ GameObject:
   m_Component:
   - component: {fileID: 718920180}
   - component: {fileID: 718920182}
-  - component: {fileID: 718920181}
   m_Layer: 3
   m_Name: GroundPlateNew (8)
   m_TagString: Untagged
@@ -8903,27 +8858,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 229277865}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!65 &718920181
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718920179}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 31.999998, y: 32.000008, z: 0.002140764}
-  m_Center: {x: 0, y: -4.1758327e-18, z: 0.002293629}
 --- !u!212 &718920182
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9128,7 +9062,6 @@ GameObject:
   m_Component:
   - component: {fileID: 764799525}
   - component: {fileID: 764799527}
-  - component: {fileID: 764799526}
   m_Layer: 3
   m_Name: GroundPlateNew (4)
   m_TagString: Untagged
@@ -9145,33 +9078,12 @@ Transform:
   m_GameObject: {fileID: 764799524}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 166, y: 0, z: 58.9}
-  m_LocalScale: {x: 4.877253, y: 4.8816276, z: 22.840576}
+  m_LocalPosition: {x: 166, y: -0, z: 59.3255}
+  m_LocalScale: {x: 4.877253, y: 5.0886283, z: 22.840576}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 229277865}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!65 &764799526
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 764799524}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 31.999998, y: 32.000008, z: 0.002140764}
-  m_Center: {x: 0, y: -4.1758327e-18, z: 0.002293629}
 --- !u!212 &764799527
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9781,7 +9693,6 @@ GameObject:
   m_Component:
   - component: {fileID: 879267014}
   - component: {fileID: 879267016}
-  - component: {fileID: 879267015}
   m_Layer: 3
   m_Name: GroundPlateNew (7)
   m_TagString: Untagged
@@ -9798,33 +9709,12 @@ Transform:
   m_GameObject: {fileID: 879267013}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -147, y: -0, z: 217.5}
-  m_LocalScale: {x: 4.877253, y: 4.8816276, z: 22.840576}
+  m_LocalPosition: {x: -146.199, y: 0, z: 216.2159}
+  m_LocalScale: {x: 4.927489, y: 4.961686, z: 22.840576}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 229277865}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!65 &879267015
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879267013}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 31.999998, y: 32.000008, z: 0.002140764}
-  m_Center: {x: 0, y: -4.1758327e-18, z: 0.002293629}
 --- !u!212 &879267016
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9893,7 +9783,6 @@ GameObject:
   m_Component:
   - component: {fileID: 883690064}
   - component: {fileID: 883690066}
-  - component: {fileID: 883690065}
   m_Layer: 3
   m_Name: GroundPlateNew (6)
   m_TagString: Untagged
@@ -9910,33 +9799,12 @@ Transform:
   m_GameObject: {fileID: 883690063}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -147, y: 0, z: -97.8}
-  m_LocalScale: {x: 4.877253, y: 4.8816276, z: 22.840576}
+  m_LocalPosition: {x: -146.0779, y: -0, z: -97.258}
+  m_LocalScale: {x: 4.934805, y: 4.9153104, z: 22.840576}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 229277865}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!65 &883690065
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883690063}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 31.999998, y: 32.000008, z: 0.002140764}
-  m_Center: {x: 0, y: -4.1758327e-18, z: 0.002293629}
 --- !u!212 &883690066
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10428,7 +10296,6 @@ GameObject:
   m_Component:
   - component: {fileID: 972245278}
   - component: {fileID: 972245280}
-  - component: {fileID: 972245279}
   m_Layer: 3
   m_Name: GroundPlateNew (5)
   m_TagString: Untagged
@@ -10451,27 +10318,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 229277865}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!65 &972245279
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972245277}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 31.999998, y: 32.000008, z: 0.002140764}
-  m_Center: {x: 0, y: -4.1758327e-18, z: 0.002293629}
 --- !u!212 &972245280
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11747,7 +11593,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1567315448}
   - component: {fileID: 1567315450}
-  - component: {fileID: 1567315449}
   m_Layer: 3
   m_Name: GroundPlateNew (3)
   m_TagString: Untagged
@@ -11770,27 +11615,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 229277865}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!65 &1567315449
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1567315447}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 31.999998, y: 32.000008, z: 0.002140764}
-  m_Center: {x: 0, y: -4.1758327e-18, z: 0.002293629}
 --- !u!212 &1567315450
 SpriteRenderer:
   m_ObjectHideFlags: 0
