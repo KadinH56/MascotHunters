@@ -204,9 +204,8 @@ public class EnemySpawner : MonoBehaviour
                 Instantiate(boss, (Vector3)position, Quaternion.identity);
                 GameInformation.TotalEnemies++;
             }
-
-            GameInformation.EnemiesRemaining = GameInformation.TotalEnemies;
-            FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();
+            FindAnyObjectByType<TopBar>().SetEnemiesLeft();
+            //FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();
 
             while (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
             {
@@ -233,6 +232,13 @@ public class EnemySpawner : MonoBehaviour
             if (GameInformation.Wave % 3 == 0)
             {
                 FindFirstObjectByType<UpgradeSystem>().StartUpgrades();
+            }
+            FindFirstObjectByType<TopBar>().ResetKillCount();
+
+            if (GameInformation.Wave % 3 == 0)
+            {
+                string name = bosses[0].name;
+                FindFirstObjectByType<TopBar>().ResetSystem(name);
             }
 
             GameInformation.Wave++;
