@@ -89,9 +89,12 @@ public class BatHit : WeaponBase
     {
         if (hitsRemaining <= 0)
         {
+            hitRenderer.SetActive(false); //This one goes out to you Ian
             attacking = false;
             yield break;
         }
+        hitRenderer.SetActive(true);
+
         attacking = true;
         GameObject target = null;
         float distance = maxDistance;
@@ -123,6 +126,7 @@ public class BatHit : WeaponBase
         hitsRemaining--;
 
         yield return new WaitForSeconds(0.25f);
+        hitRenderer.GetComponent<SpriteRenderer>().flipY = !hitRenderer.GetComponent<SpriteRenderer>().flipY;
         animator.Play("BatAttack");
     }
 

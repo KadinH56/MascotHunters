@@ -32,6 +32,8 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private GameObject bloodPrefab;
     [SerializeField] private GameObject permanentBloodPrefab;
 
+    private bool dead = false;
+
     /// <summary>
     /// Bigger numbers mean less likely to drop an item
     /// </summary>
@@ -140,6 +142,11 @@ public class EnemyScript : MonoBehaviour
 
     public virtual void KillEnemy()
     {
+        if (dead)
+        {
+            return;
+        }
+        dead = true;
         DropItem();
         AudioSource.PlayClipAtPoint(enemyDeath, transform.position);
         //FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();

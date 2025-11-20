@@ -229,7 +229,7 @@ public class EnemySpawner : MonoBehaviour
                 deadplayer.transform.position = alivePlayer.transform.position;
             }
 
-            if (GameInformation.Wave % 3 == 0)
+            if (GameInformation.Wave % 1 == 0)
             {
                 FindFirstObjectByType<UpgradeSystem>().StartUpgrades();
             }

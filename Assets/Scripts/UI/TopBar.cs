@@ -67,7 +67,7 @@ public class TopBar : MonoBehaviour
     {
         for (int i = 0; i < waveTexts.Length; i++)
         {
-            waveTexts[i].text = (GameInformation.Wave + i).ToString();
+            waveTexts[i].text = (GameInformation.Wave + i + 1).ToString();
         }
 
         StartCoroutine(AnimatedReset(boss));
