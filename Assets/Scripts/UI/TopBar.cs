@@ -40,15 +40,15 @@ public class TopBar : MonoBehaviour
 
     public void EnemyDied()
     {
-        int enemiesRemaining = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        enemiesDead++;
         int waveSelector = (GameInformation.Wave % 3) - 1;
         if(waveSelector == -1)
         {
             waveSelector = 2;
         }
 
-        fills[waveSelector].fillAmount = (float)enemiesRemaining / GameInformation.TotalEnemies;
-        SetEnemiesLeft(enemiesRemaining);
+        fills[waveSelector].fillAmount = (float)enemiesDead / GameInformation.TotalEnemies;
+        SetEnemiesLeft();
     }
 
     public void ResetKillCount()
@@ -56,9 +56,9 @@ public class TopBar : MonoBehaviour
         enemiesDead = 0;
     }
 
-    public void SetEnemiesLeft(int enemiesRemaining)
+    public void SetEnemiesLeft()
     {
-        int enemiesLeft = enemiesRemaining;
+        int enemiesLeft = GameInformation.TotalEnemies - enemiesDead;
         enemiesLeftText.text = ": " + enemiesLeft.ToString();
         
     }
@@ -67,7 +67,7 @@ public class TopBar : MonoBehaviour
     {
         for (int i = 0; i < waveTexts.Length; i++)
         {
-            waveTexts[i].text = (GameInformation.Wave + i + 1).ToString();
+            waveTexts[i].text = (GameInformation.Wave + i).ToString();
         }
 
         StartCoroutine(AnimatedReset(boss));
