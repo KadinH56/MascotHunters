@@ -896,7 +896,7 @@ MonoBehaviour:
   clawsCollider: {fileID: 6918003567033468878}
   bigRotation: 2
   followRotation: 10
-  bigAttackCircle: {fileID: 5593190870652179328}
+  bigAttackCircle: {fileID: 2930847079178777546, guid: 4bd3fb2661b95814e9de68c47a05728c, type: 3}
   telegraphDuration: 0.1
 --- !u!1 &5958240348254958594
 GameObject:
