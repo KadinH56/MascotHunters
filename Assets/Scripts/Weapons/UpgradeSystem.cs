@@ -28,6 +28,8 @@ public class UpgradeSystem : MonoBehaviour
     private string[] descriptions = new string[3];
     private string[] names = new string[3];
 
+    [SerializeField] private Animator anim;
+
     private int buttonHit = 0;
     private void Start()
     {
@@ -57,7 +59,16 @@ public class UpgradeSystem : MonoBehaviour
             buttonHit = -1;
             currentPlayer = players[i];
 
-            descriptionText.gameObject.SetActive(false);
+            if(currentPlayer.PlayerID == 0)
+            {
+                anim.Play("MenuP1");
+            }
+            else
+            {
+                anim.Play("MenuP2");
+            }
+
+                descriptionText.gameObject.SetActive(false);
             nameText.gameObject.SetActive(false);
 
             upgrades = new string[3];

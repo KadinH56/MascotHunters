@@ -31,9 +31,19 @@ public class PlayerStatManager : MonoBehaviour
     public Stats PlayerStats { get => playerStats; set => playerStats = value; }
     public Image HealthBar { get => healthBar; set => healthBar = value; }
 
+    [SerializeField] private Sprite p2hpBar;
+
     [SerializeField] protected SpriteRenderer spriteRenderer;
     [SerializeField] protected Animator animator;
     [SerializeField] private bool isDead;
+
+    private void Start()
+    {
+        if(GetComponent<PlayerMovement>().PlayerID == 1)
+        {
+            healthBar.sprite = p2hpBar;
+        }
+    }
 
     /// <summary>
     /// Take damage
