@@ -438,6 +438,8 @@ MonoBehaviour:
   pauseTimeAfterAttack: 1
   timeBeforeBigAttack: 4
   maxTargetDistance: 12
+  telegraphLinePrefab: {fileID: 1906670201918488967, guid: ca192409e3c20534a80807caa692747e, type: 3}
+  telegraphDuration: 1
 --- !u!1 &5958240348254958594
 GameObject:
   m_ObjectHideFlags: 0
