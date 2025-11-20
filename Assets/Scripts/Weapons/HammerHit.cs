@@ -100,12 +100,12 @@ public class HammerHit : WeaponBase
 
         if (weaponLevel < 3)
         {
-            GameObject effect = Instantiate(hitEffect, hitRenderer.transform.position + (Vector3.down * 1.46f), Quaternion.identity);
+            GameObject effect = Instantiate(hitEffect, hitRenderer.transform.position + (Vector3.down * 1.40f), Quaternion.identity);
             effect.transform.localScale *= circleRadiusModifier;
         }
         else
         {
-            GameObject effect = Instantiate(hitDamageEffect, hitRenderer.transform.position + (Vector3.down * 1.46f), Quaternion.identity);
+            GameObject effect = Instantiate(hitDamageEffect, hitRenderer.transform.position + (Vector3.down * 1.40f), Quaternion.identity);
             effect.transform.localScale *= circleRadiusModifier;
             effect.GetComponent<PermenentBlood>().Damage = CalculateDamage() / 2;
         }
