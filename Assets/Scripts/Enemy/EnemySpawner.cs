@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
@@ -19,7 +18,6 @@ public class EnemySpawner : MonoBehaviour
     /// <summary>
     /// Waves x Cost = Unlocked enemy, basically. Couldn't think of a better name I'm sorry.
     /// </summary>
-    [SerializeField] private int costWaveMultiplier = 2;
     [SerializeField] private LayerMask groundLayers;
     [SerializeField] private Vector3 boxSize = new(1.5f, 1, 1.5f);
 
@@ -92,6 +90,23 @@ public class EnemySpawner : MonoBehaviour
                 credits *= GameInformation.NumPlayers;
 
                 int highestCost = costsInOrder[0];
+
+                Dictionary<int, List<GameObject>> availableEnemies = new(enemiesByCost);
+                
+                for(int i = highestCost; i > 0; i--)
+                {
+                    if (enemiesByCost.ContainsKey(i))
+                    {
+                        foreach(GameObject enemy in enemiesByCost[i])
+                        {
+                            if(enemy.GetComponent<EnemyScript>().StartingWave > GameInformation.Wave)
+                            {
+                                enemiesByCost[i].Remove(enemy);
+                            }
+                        }
+                    }
+                }
+
                 while (credits > 0 && GameInformation.TotalEnemies < enemyCap)
                 {
                     if (highestCost > credits)
@@ -99,12 +114,12 @@ public class EnemySpawner : MonoBehaviour
                         highestCost = credits;
                     }
 
-                    if (highestCost > 1 && highestCost > GameInformation.Wave / (float)costWaveMultiplier)
-                    {
-                        //print("Occurs?");
-                        highestCost--;
-                        continue;
-                    }
+                    //if (highestCost > 1 && highestCost > GameInformation.Wave / (float)costWaveMultiplier)
+                    //{
+                    //    //print("Occurs?");
+                    //    highestCost--;
+                    //    continue;
+                    //}
 
                     List<int> allowedCosts = new();
                     foreach (int cost in costsInOrder)
@@ -139,7 +154,7 @@ public class EnemySpawner : MonoBehaviour
                     }
 
                     //Now we spawn enemies
-                    List<GameObject> enemyPool = enemiesByCost[allowedCosts[Random.Range(0, allowedCosts.Count)]];
+                    List<GameObject> enemyPool = availableEnemies[allowedCosts[Random.Range(0, allowedCosts.Count)]];
                     GameObject enemy = enemyPool[Random.Range(0, enemyPool.Count)];
 
                     //position += 3f * enemy.GetComponent<EnemyScript>().Size * Vector3.up / 4f;
