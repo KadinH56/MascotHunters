@@ -301,7 +301,6 @@ MonoBehaviour:
   meleeTime: 0
   meleeBox: {fileID: 2008192815645434260}
   cost: 4
-  startingWave: 8
   healthBar: {fileID: 0}
   animator: {fileID: 6217990835424741818}
   spriteRenderer: {fileID: 2139181303718269317}

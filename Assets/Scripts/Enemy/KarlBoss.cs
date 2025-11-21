@@ -37,9 +37,6 @@ public class KarlBoss : EnemyScript
     [SerializeField] private float bigRotation = 7.5f;
     [SerializeField] private float followRotation = 15f;
 
-    [SerializeField] private GameObject bigAttackCircle;
-    [SerializeField] private float telegraphDuration = 0.1f;
-
     private bool isWaiting = false;
 
     public override void EnemyAI()
@@ -116,17 +113,6 @@ public class KarlBoss : EnemyScript
 
     private IEnumerator BigAttack()
     {
-        for (int i = 0; i < 5; i++) 
-        {
-            GameObject circle = Instantiate(bigAttackCircle, transform.position, Quaternion.Euler(90f,0f,0f));
-
-            yield return new WaitForSeconds(0.25f);
-
-            Destroy(circle);
-
-            yield return new WaitForSeconds(0.25f); 
-        }
-
         agent.speed = enemyStats.Movement / 2f;
         currentRotation = bigRotation;
         while (distanceFromKarl < maxDistanceFromKarl)

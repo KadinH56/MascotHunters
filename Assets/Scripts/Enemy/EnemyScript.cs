@@ -23,7 +23,6 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private Collider meleeBox;
 
     [SerializeField] private int cost = 1;
-    [SerializeField] private int startingWave = 1;
     [SerializeField] private EnemyHealthBar healthBar;
 
     [SerializeField] protected Animator animator;
@@ -47,8 +46,6 @@ public class EnemyScript : MonoBehaviour
     protected PlayerMovement target;
 
     public int Cost { get => cost; set => cost = value; }
-    public int StartingWave { get => startingWave; }
-
     //public float Size { get => size; set => size = value; }
 
     private void Start()
@@ -227,23 +224,6 @@ public class EnemyScript : MonoBehaviour
                 break;
             case "Speed":
                 enemyStats.MovementModifierMultiplicitive += amount;
-                break;
-        }
-    }
-
-    public void UpgradeMult(string stat, float amount)
-    {
-        switch (stat)
-        {
-            case "Damage":
-                enemyStats.DamageModifierMultiplicitive *= amount;
-                break;
-            case "Health":
-                enemyStats.HealthModifierMultiplicitive *= amount;
-                enemyStats.Health = enemyStats.MaxHealth;
-                break;
-            case "Speed":
-                enemyStats.MovementModifierMultiplicitive *= amount;
                 break;
         }
     }

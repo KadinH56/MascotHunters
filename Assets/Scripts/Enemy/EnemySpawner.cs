@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
@@ -14,11 +15,11 @@ public class EnemySpawner : MonoBehaviour
     private int credits = 0;
 
     [SerializeField] private int creditsPerWave = 3;
-    [SerializeField] private int creditsPerBossWave = 15;
     [SerializeField] private int startingCredits = 3;
     /// <summary>
     /// Waves x Cost = Unlocked enemy, basically. Couldn't think of a better name I'm sorry.
     /// </summary>
+    [SerializeField] private int costWaveMultiplier = 2;
     [SerializeField] private LayerMask groundLayers;
     [SerializeField] private Vector3 boxSize = new(1.5f, 1, 1.5f);
 
@@ -85,9 +86,92 @@ public class EnemySpawner : MonoBehaviour
             }
             GameInformation.TotalEnemies = 0;
 
-            credits = startingCredits + (creditsPerWave * GameInformation.Wave);
+            if(GameInformation.Wave % 3 != 0)
+            {
+                credits = startingCredits + (creditsPerWave * GameInformation.Wave);
+                credits *= GameInformation.NumPlayers;
 
-            if (GameInformation.Wave % 3 == 0)
+                int highestCost = costsInOrder[0];
+                while (credits > 0 && GameInformation.TotalEnemies < enemyCap)
+                {
+                    if (highestCost > credits)
+                    {
+                        highestCost = credits;
+                    }
+
+                    if (highestCost > 1 && highestCost > GameInformation.Wave / (float)costWaveMultiplier)
+                    {
+                        //print("Occurs?");
+                        highestCost--;
+                        continue;
+                    }
+
+                    List<int> allowedCosts = new();
+                    foreach (int cost in costsInOrder)
+                    {
+                        if (cost <= highestCost)
+                        {
+                            allowedCosts.Add(cost);
+                        }
+                    }
+
+                    //Okay lets run a quick physics check and get a position. Who's ready for TRIPLE WHILE LOOPS
+                    Vector3? position = null;
+
+                    while (position == null)
+                    {
+                        Vector3 desiredPos = Quaternion.Euler(0, Random.Range(0f, 360f), 0) * Vector3.forward * Random.Range(minSpawnRadius, maxSpawnRadius);
+                        //desiredPos += Vector3.up * 1.5f;
+                        desiredPos += new Vector3(cam.Average.x, 1.5f, cam.Average.z);
+                        desiredPos = 
+                            new(Mathf.Clamp(desiredPos.x, boundsBottomLeft.position.x, boundsTopRight.position.x),
+                            desiredPos.y,
+                            Mathf.Clamp(desiredPos.z, boundsBottomLeft.position.z, boundsTopRight.position.z));
+                        bool gotHit = Physics.CheckBox(desiredPos, boxSize / 2f, Quaternion.identity, groundLayers);
+                        //Physics check
+                        //I'm not sure if I need the wait for fixed update...but I don't want to crash the game
+                        yield return new WaitForFixedUpdate();
+                        if (!gotHit)
+                        {
+                            position = desiredPos;
+                            break;
+                        }
+                    }
+
+                    //Now we spawn enemies
+                    List<GameObject> enemyPool = enemiesByCost[allowedCosts[Random.Range(0, allowedCosts.Count)]];
+                    GameObject enemy = enemyPool[Random.Range(0, enemyPool.Count)];
+
+                    //position += 3f * enemy.GetComponent<EnemyScript>().Size * Vector3.up / 4f;
+
+                    Instantiate(enemy, (Vector3)position, Quaternion.identity);
+                    credits -= enemy.GetComponent<EnemyScript>().Cost;
+                    //print("I got this far");
+                    yield return null;
+
+                    GameInformation.TotalEnemies++;
+                }
+
+                while(credits > 0)
+                {
+                    List<string> stats = new()
+                    {
+                        "Health",
+                        "Damage",
+                        "Speed"
+                    };
+
+                    string stat = stats[Random.Range(0, stats.Count)];
+
+                    foreach(EnemyScript enemy in FindObjectsByType<EnemyScript>(FindObjectsSortMode.None))
+                    {
+                        enemy.Upgrade(stat, upgradeAmount);
+                    }
+                    credits--;
+                    yield return null;
+                }
+            }
+            else
             {
                 GameObject boss = GenerateBoss();
 
@@ -115,126 +199,14 @@ public class EnemySpawner : MonoBehaviour
                     }
                 }
 
-                int bossWave = Mathf.CeilToInt(GameInformation.Wave / 9f);
-                credits = (bossWave - 1) * creditsPerBossWave;
-
                 //position += Vector3.up * boss.GetComponent<EnemyScript>().Size / 2f;
                 //Now we spawn boss
-                GameObject enemy = Instantiate(boss, (Vector3)position, Quaternion.identity);
-                enemy.GetComponent<EnemyScript>().UpgradeMult("Health", bossWave);
-                enemy.GetComponent<EnemyScript>().UpgradeMult("Health", Mathf.Max(bossWave / 2f, 1));
+                Instantiate(boss, (Vector3)position, Quaternion.identity);
                 GameInformation.TotalEnemies++;
             }
-
-            credits *= GameInformation.NumPlayers;
-
-
-            int highestCost = costsInOrder[0];
-
-            Dictionary<int, List<GameObject>> availableEnemies = new();
-
-            for (int i = highestCost; i > 0; i--)
-            {
-                if (enemiesByCost.ContainsKey(i))
-                {
-                    foreach (GameObject enemy in enemiesByCost[i])
-                    {
-                        if (enemy.GetComponent<EnemyScript>().StartingWave <= GameInformation.Wave)
-                        {
-                            if (!availableEnemies.ContainsKey(i))
-                            {
-                                availableEnemies.Add(i, new List<GameObject>());
-                            }
-
-                            availableEnemies[i].Add(enemy);
-                        }
-                    }
-                }
-            }
-
-            while (credits > 0 && GameInformation.TotalEnemies < enemyCap)
-            {
-                if (highestCost > credits)
-                {
-                    highestCost = credits;
-                }
-
-                //if (highestCost > 1 && highestCost > GameInformation.Wave / (float)costWaveMultiplier)
-                //{
-                //    //print("Occurs?");
-                //    highestCost--;
-                //    continue;
-                //}
-
-                List<int> allowedCosts = new();
-                foreach (int cost in availableEnemies.Keys)
-                {
-                    if (cost <= highestCost)
-                    {
-                        allowedCosts.Add(cost);
-                    }
-                }
-
-                //Okay lets run a quick physics check and get a position. Who's ready for TRIPLE WHILE LOOPS
-                Vector3? position = null;
-
-                while (position == null)
-                {
-                    Vector3 desiredPos = Quaternion.Euler(0, Random.Range(0f, 360f), 0) * Vector3.forward * Random.Range(minSpawnRadius, maxSpawnRadius);
-                    //desiredPos += Vector3.up * 1.5f;
-                    desiredPos += new Vector3(cam.Average.x, 1.5f, cam.Average.z);
-                    desiredPos =
-                        new(Mathf.Clamp(desiredPos.x, boundsBottomLeft.position.x, boundsTopRight.position.x),
-                        desiredPos.y,
-                        Mathf.Clamp(desiredPos.z, boundsBottomLeft.position.z, boundsTopRight.position.z));
-                    bool gotHit = Physics.CheckBox(desiredPos, boxSize / 2f, Quaternion.identity, groundLayers);
-                    //Physics check
-                    //I'm not sure if I need the wait for fixed update...but I don't want to crash the game
-                    yield return new WaitForFixedUpdate();
-                    if (!gotHit)
-                    {
-                        position = desiredPos;
-                        break;
-                    }
-                }
-
-                //Now we spawn enemies
-                List<GameObject> enemyPool = availableEnemies[allowedCosts[Random.Range(0, allowedCosts.Count)]];
-                GameObject enemy = enemyPool[Random.Range(0, enemyPool.Count)];
-
-                //position += 3f * enemy.GetComponent<EnemyScript>().Size * Vector3.up / 4f;
-
-                Instantiate(enemy, (Vector3)position, Quaternion.identity);
-                credits -= enemy.GetComponent<EnemyScript>().Cost;
-                //print("I got this far");
-                yield return null;
-
-                GameInformation.TotalEnemies++;
-            }
-
-            while (credits > 0)
-            {
-                List<string> stats = new()
-                    {
-                        "Health",
-                        "Damage",
-                        "Speed"
-                    };
-
-                string stat = stats[Random.Range(0, stats.Count)];
-
-                foreach (EnemyScript enemy in FindObjectsByType<EnemyScript>(FindObjectsSortMode.None))
-                {
-                    enemy.Upgrade(stat, upgradeAmount);
-                }
-                credits--;
-                yield return null;
-            }
-
             FindAnyObjectByType<TopBar>().SetEnemiesLeft();
             //FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();
 
-            //Wait for enemies to die
             while (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
             {
                 yield return null;
@@ -257,7 +229,7 @@ public class EnemySpawner : MonoBehaviour
                 deadplayer.transform.position = alivePlayer.transform.position;
             }
 
-            if (GameInformation.Wave % 3 == 0)
+            if (GameInformation.Wave % 1 == 0)
             {
                 FindFirstObjectByType<UpgradeSystem>().StartUpgrades();
             }

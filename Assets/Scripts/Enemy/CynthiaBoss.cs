@@ -25,9 +25,6 @@ public class CynthiaBoss : EnemyScript
     private int timeLeft = 60;
     [SerializeField] private float maxTargetDistance = 7f;
 
-    [SerializeField] private GameObject telegraphLinePrefab;
-    [SerializeField] private float telegraphDuration = 1f;
-
     public override void EnemyAI()
     {
         switch (state)
@@ -87,24 +84,6 @@ public class CynthiaBoss : EnemyScript
         {
             animator.SetBool("Attack", true);
             angle = Random.Range(0, 360f / numProjectilesInBigAttack);
-
-            GameObject[] telegraphs = new GameObject[numProjectilesInBigAttack];
-
-            for (int j = 0; j < numProjectilesInBigAttack; j++)
-            {
-                float dirAngle = angle + (j * (360f / numProjectilesInBigAttack));
-
-                GameObject t = Instantiate(telegraphLinePrefab, transform.position, Quaternion.Euler(0, dirAngle, 0));
-                t.transform.SetParent(transform); 
-                telegraphs[j] = t;
-            }
-
-      
-            yield return new WaitForSeconds(telegraphDuration);
-
-       
-            for (int j = 0; j < telegraphs.Length; j++)
-                Destroy(telegraphs[j]);
 
             for (int j = 0; j < numProjectilesInBigAttack; j++)
             {
