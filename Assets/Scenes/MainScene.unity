@@ -616,7 +616,6 @@ MonoBehaviour:
   maxSpawnRadius: 40
   creditsPerWave: 3
   startingCredits: 3
-  costWaveMultiplier: 2
   groundLayers:
     serializedVersion: 2
     m_Bits: 8
