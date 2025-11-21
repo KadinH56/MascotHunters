@@ -227,4 +227,21 @@ public class EnemyScript : MonoBehaviour
                 break;
         }
     }
+
+    public void UpgradeMult(string stat, float amount)
+    {
+        switch (stat)
+        {
+            case "Damage":
+                enemyStats.DamageModifierMultiplicitive *= amount;
+                break;
+            case "Health":
+                enemyStats.HealthModifierMultiplicitive *= amount;
+                enemyStats.Health = enemyStats.MaxHealth;
+                break;
+            case "Speed":
+                enemyStats.MovementModifierMultiplicitive *= amount;
+                break;
+        }
+    }
 }

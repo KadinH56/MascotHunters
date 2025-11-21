@@ -199,9 +199,13 @@ public class EnemySpawner : MonoBehaviour
                     }
                 }
 
+                int bossWave = Mathf.CeilToInt(GameInformation.Wave / 9f);
+
                 //position += Vector3.up * boss.GetComponent<EnemyScript>().Size / 2f;
                 //Now we spawn boss
-                Instantiate(boss, (Vector3)position, Quaternion.identity);
+                GameObject enemy = Instantiate(boss, (Vector3)position, Quaternion.identity);
+                enemy.GetComponent<EnemyScript>().UpgradeMult("Health", bossWave);
+                enemy.GetComponent<EnemyScript>().UpgradeMult("Health", Mathf.Max(bossWave / 2f, 1));
                 GameInformation.TotalEnemies++;
             }
             FindAnyObjectByType<TopBar>().SetEnemiesLeft();
@@ -229,7 +233,7 @@ public class EnemySpawner : MonoBehaviour
                 deadplayer.transform.position = alivePlayer.transform.position;
             }
 
-            if (GameInformation.Wave % 1 == 0)
+            if (GameInformation.Wave % 3 == 0)
             {
                 FindFirstObjectByType<UpgradeSystem>().StartUpgrades();
             }
