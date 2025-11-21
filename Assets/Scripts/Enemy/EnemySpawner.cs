@@ -91,7 +91,7 @@ public class EnemySpawner : MonoBehaviour
 
                 int highestCost = costsInOrder[0];
 
-                Dictionary<int, List<GameObject>> availableEnemies = new(enemiesByCost);
+                Dictionary<int, List<GameObject>> availableEnemies = new();
                 
                 for(int i = highestCost; i > 0; i--)
                 {
@@ -99,9 +99,14 @@ public class EnemySpawner : MonoBehaviour
                     {
                         foreach(GameObject enemy in enemiesByCost[i])
                         {
-                            if(enemy.GetComponent<EnemyScript>().StartingWave > GameInformation.Wave)
+                            if(enemy.GetComponent<EnemyScript>().StartingWave <= GameInformation.Wave)
                             {
-                                enemiesByCost[i].Remove(enemy);
+                                if (!availableEnemies.ContainsKey(i))
+                                {
+                                    availableEnemies.Add(i, new List<GameObject>());
+                                }
+
+                                availableEnemies[i].Add(enemy);
                             }
                         }
                     }
@@ -122,7 +127,7 @@ public class EnemySpawner : MonoBehaviour
                     //}
 
                     List<int> allowedCosts = new();
-                    foreach (int cost in costsInOrder)
+                    foreach (int cost in availableEnemies.Keys)
                     {
                         if (cost <= highestCost)
                         {
