@@ -27,16 +27,12 @@ public class PlayerSpawner : MonoBehaviour
     /// Player's prefab
     /// </summary>
     [SerializeField] private GameObject playerPrefab;
-    [SerializeField] private List<Image> playerHealthBars;
-
-    [SerializeField] private bool arcadeBuild = false;
 
     /// <summary>
     /// Setup the game itself
     /// </summary>
     private void Start()
     {
-        GameInformation.IsArcadeBuild = arcadeBuild;
         ////For each player playing, spawn their object
         ////Also sets some internal stuff
         for (int i = 0; i < GameInformation.NumPlayers; i++)
@@ -46,7 +42,7 @@ public class PlayerSpawner : MonoBehaviour
             //You know, at least this works on arcade builds
             //Unity I freaking hate your input system with a passion idk how you do this
 
-            if (arcadeBuild)
+            if (GameInformation.IsArcadeBuild)
             {
                 InputDevice[] devices =
                 {
@@ -79,7 +75,6 @@ public class PlayerSpawner : MonoBehaviour
                     }
                 }
                 //print(devices[0]);
-
                 player.GetComponent<PlayerStatManager>().SetControls(scheme, devices);//.SwitchCurrentControlScheme(scheme, devices);
             }
 
@@ -95,11 +90,6 @@ public class PlayerSpawner : MonoBehaviour
             spawnPos += transform.position;
             player.transform.position = spawnPos;
 
-            if(i < playerHealthBars.Count)
-            {
-                playerHealthBars[i].transform.parent.gameObject.SetActive(true);
-                player.GetComponent<PlayerStatManager>().HealthBar = playerHealthBars[i];
-            }
             player.GetComponent<PlayerStatManager>().OnAlive();
 
             //player.GetComponent<UpgradeSystem>().StartUpgrades(true);

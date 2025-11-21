@@ -287,10 +287,10 @@
                 {
                     "name": "",
                     "id": "91515665-1517-44bc-809e-221299335c44",
-                    "path": "<Keyboard>/z",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";MainControlScheme;ArcadeA",
+                    "groups": ";MainControlScheme",
                     "action": "Selection1",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -298,7 +298,7 @@
                 {
                     "name": "",
                     "id": "abbd8e13-a73b-448f-824d-fcc401efef66",
-                    "path": "<Keyboard>/comma",
+                    "path": "<Keyboard>/7",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard2",
@@ -330,11 +330,22 @@
                 },
                 {
                     "name": "",
-                    "id": "4b42dc1b-b14f-46ef-b891-a623e715577c",
-                    "path": "<Keyboard>/x",
+                    "id": "16a74000-9de7-4070-a1ea-4402b4f259e3",
+                    "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";MainControlScheme;ArcadeA",
+                    "groups": ";ArcadeA",
+                    "action": "Selection1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4b42dc1b-b14f-46ef-b891-a623e715577c",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";MainControlScheme",
                     "action": "Selection2",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -342,7 +353,7 @@
                 {
                     "name": "",
                     "id": "8d074fb5-c135-44e0-a098-bc6966f1d47d",
-                    "path": "<Keyboard>/period",
+                    "path": "<Keyboard>/8",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard2",
@@ -374,11 +385,22 @@
                 },
                 {
                     "name": "",
-                    "id": "89d04395-fcde-4184-9cab-df7ff049208b",
-                    "path": "<Keyboard>/c",
+                    "id": "c86e48f7-3759-48a2-95ca-81724db74b74",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";MainControlScheme;ArcadeA",
+                    "groups": ";ArcadeA",
+                    "action": "Selection2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "89d04395-fcde-4184-9cab-df7ff049208b",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";MainControlScheme",
                     "action": "Selection3",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -386,7 +408,7 @@
                 {
                     "name": "",
                     "id": "32227d77-34d5-4057-ae9b-3ce99aaf543f",
-                    "path": "<Keyboard>/slash",
+                    "path": "<Keyboard>/9",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard2",
@@ -412,6 +434,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";MainControlScheme",
+                    "action": "Selection3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "33e26f12-905d-4374-b982-c49c7b93510d",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";ArcadeA",
                     "action": "Selection3",
                     "isComposite": false,
                     "isPartOfComposite": false

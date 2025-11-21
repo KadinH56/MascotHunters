@@ -14,6 +14,13 @@ public class WeaponManager : MonoBehaviour
     {
         weapons[0] = "Bat";
     }
+    public void DisableWeapons()
+    {
+        foreach (WeaponBase weapon in weaponScripts)
+        {
+            weapon.gameObject.SetActive(false);
+        }
+    }
 
     public void WeaponUpgrade(string newWeapon)
     {
