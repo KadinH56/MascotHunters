@@ -73,3 +73,13 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Art/3D_Assets/3D_FBX/StreetLight_LP.fbx.meta
+Assets/Art/3D_Assets/Textures/StreetLight_Textures/openPBR_shader1_Base_color.png.meta
+Assets/Art/3D_Assets/Textures/StreetLight_Textures/openPBR_shader1_Height.png.meta
+Assets/Art/3D_Assets/Textures/StreetLight_Textures/openPBR_shader1_Metallic.png.meta
+Assets/Art/3D_Assets/Textures/StreetLight_Textures/openPBR_shader1_Mixed_AO.png.meta
+Assets/Art/3D_Assets/Textures/StreetLight_Textures/openPBR_shader1_Normal.png.meta
+Assets/Art/3D_Assets/Textures/StreetLight_Textures/openPBR_shader1_Normal_DirectX.png.meta
+Assets/Art/3D_Assets/Textures/StreetLight_Textures/openPBR_shader1_Roughness.png.meta
+Assets/Art/3D_Assets/Textures/StreetLight_Textures.meta
+Assets/Art/Sprites/ArrowSign.png.meta
