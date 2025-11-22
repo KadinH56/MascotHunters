@@ -21,7 +21,7 @@ public class PlayerSpawner : MonoBehaviour
     /// <summary>
     /// Radius of which players will spawn in
     /// </summary>
-    [SerializeField] private float spawnRadius = 5f;
+    [SerializeField] private float spawnRadius = 2f;
 
     /// <summary>
     /// Player's prefab
@@ -84,7 +84,7 @@ public class PlayerSpawner : MonoBehaviour
 
             //Set player position
             Vector3 spawnPos = Vector3.forward;
-            spawnPos = Quaternion.Euler(0, Random.Range(0, 360), 0) * spawnPos;
+            spawnPos = Quaternion.Euler(0, Random.Range(0, 10), 0) * spawnPos;  //changed this line - Drew
 
             spawnPos *= spawnRadius;
             spawnPos += transform.position;
