@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 1b71362bc9e3e01478edb88dd0225041, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -675,6 +675,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 528807271807087714, guid: 863f38991540d144faef3db2a684d260, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.9605348
+      objectReference: {fileID: 0}
+    - target: {fileID: 528807271807087714, guid: 863f38991540d144faef3db2a684d260, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000349
+      objectReference: {fileID: 0}
     - target: {fileID: 585800684081607622, guid: 863f38991540d144faef3db2a684d260, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -867,6 +875,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2565748537984942991, guid: 863f38991540d144faef3db2a684d260, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.4594264
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565748537984942991, guid: 863f38991540d144faef3db2a684d260, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.032974
+      objectReference: {fileID: 0}
     - target: {fileID: 2668750534973706976, guid: 863f38991540d144faef3db2a684d260, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -1014,7 +1030,7 @@ PrefabInstance:
     - target: {fileID: 3744004488665817723, guid: 863f38991540d144faef3db2a684d260, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: c8630e4e0e57c1048999a1bbebe436a5, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3747779301200364387, guid: 863f38991540d144faef3db2a684d260, type: 3}
       propertyPath: m_Layer
       value: 3
