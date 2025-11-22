@@ -515,6 +515,7 @@ MonoBehaviour:
   upgradeAmount: 0.01
   boundsTopRight: {fileID: 1991298}
   boundsBottomLeft: {fileID: 1123193971}
+  SFXObject: {fileID: 3643400251095876079, guid: cb08304df83c8e04db2769c15295ec66, type: 3}
 --- !u!1 &158097617
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,7 +546,7 @@ RectTransform:
   m_LocalScale: {x: 1.2399999, y: 1.2399999, z: 1.2399999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1395335394}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3640,7 +3641,7 @@ RectTransform:
   m_LocalScale: {x: 1.2399999, y: 1.2399999, z: 1.2399999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1395335394}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3824,7 +3825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1337377428
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5431,3 +5432,5 @@ SceneRoots:
   - {fileID: 229277864}
   - {fileID: 665672837}
   - {fileID: 951084596}
+  - {fileID: 158097618}
+  - {fileID: 1322064255}
