@@ -39,7 +39,7 @@ public class CorkGunWeapon : WeaponBase
             yield return new WaitForSeconds(initShootTime * timeModifier);
 
             GameObject proj = Instantiate(projectile, transform.position, transform.rotation);
-            AudioSource.PlayClipAtPoint(shootSound, transform.position);
+            SFX.SpawnClip(shootSound, transform.position);
 
             GameObject target = null;
             float distance = maxDistance;

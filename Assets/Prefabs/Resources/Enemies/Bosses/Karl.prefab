@@ -872,10 +872,12 @@ MonoBehaviour:
   meleeTime: 4
   meleeBox: {fileID: 0}
   cost: 1
+  startingWave: 1
   healthBar: {fileID: 2110205051230298626}
   animator: {fileID: 0}
   spriteRenderer: {fileID: 821021272953717337}
-  enemyDeath: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
+  enemyDeath: {fileID: 8300000, guid: 8b81a55f2bae6884880433bd61b438b8, type: 3}
+  enemyHit: {fileID: 8300000, guid: 139b6e193027cd6479765c29b35d6481, type: 3}
   bloodPrefab: {fileID: 8582095781730894252, guid: 8f0c80c787765d344a6bb9c5aa8a99f4, type: 3}
   permanentBloodPrefab: {fileID: 6906568303561589159, guid: 2eba2b4ec2d06b04fb6d477abfe4c11e, type: 3}
   itemDropChance: 100
@@ -898,6 +900,7 @@ MonoBehaviour:
   followRotation: 10
   bigAttackCircle: {fileID: 2930847079178777546, guid: 4bd3fb2661b95814e9de68c47a05728c, type: 3}
   telegraphDuration: 0.1
+  battleCry: {fileID: 8300000, guid: 06d654be7fa8ea44ea524b1c8eed7e3a, type: 3}
 --- !u!1 &5958240348254958594
 GameObject:
   m_ObjectHideFlags: 0

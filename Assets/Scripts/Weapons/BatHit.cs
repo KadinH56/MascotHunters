@@ -17,6 +17,7 @@ public class BatHit : WeaponBase
     [SerializeField] private float cooldownLevel2;
     [SerializeField] private float cooldownLevel3;
     [SerializeField] private float sizeMultiplierLevel3 = 2f;
+    [SerializeField] private AudioClip batSwing;
 
     Animator animator;
 
@@ -126,6 +127,8 @@ public class BatHit : WeaponBase
         hitsRemaining--;
 
         yield return new WaitForSeconds(0.25f);
+        SFX.SpawnClip(batSwing, transform.position);
+
         hitRenderer.GetComponent<SpriteRenderer>().flipY = !hitRenderer.GetComponent<SpriteRenderer>().flipY;
         animator.Play("BatAttack");
     }

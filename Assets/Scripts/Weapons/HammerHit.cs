@@ -55,11 +55,9 @@ public class HammerHit : WeaponBase
         while (true)
         {
             yield return new WaitForSeconds(hitCountdown * speedModifier);
-            print("Hit");
             animating = true;
             animator.speed = speedModifier;
             animator.SetBool("Hit", true);
-            AudioSource.PlayClipAtPoint(hammerHitSound, transform.position);
         }
     }
 
@@ -109,6 +107,7 @@ public class HammerHit : WeaponBase
             effect.transform.localScale *= circleRadiusModifier;
             effect.GetComponent<PermenentBlood>().Damage = CalculateDamage() / 2;
         }
+        SFX.SpawnClip(hammerHitSound, transform.position);
     }
 
 

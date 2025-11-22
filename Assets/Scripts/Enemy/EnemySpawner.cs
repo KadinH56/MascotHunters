@@ -30,6 +30,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] Transform boundsTopRight;
     [SerializeField] Transform boundsBottomLeft;
 
+    [SerializeField] private GameObject SFXObject;
+
     private List<GameObject> players = new();
 
     private List<Object> bosses;
@@ -41,6 +43,7 @@ public class EnemySpawner : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        SFX.SetPrefab(SFXObject);
         Object[] enemies = Resources.LoadAll("Enemies/Fodder", typeof(GameObject));
         bosses = Resources.LoadAll("Enemies/Bosses", typeof(GameObject)).ToList();
 

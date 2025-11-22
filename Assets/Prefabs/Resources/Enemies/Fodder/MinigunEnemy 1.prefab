@@ -305,7 +305,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   animator: {fileID: 6217990835424741818}
   spriteRenderer: {fileID: 2139181303718269317}
-  enemyDeath: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+  enemyDeath: {fileID: 8300000, guid: 8b81a55f2bae6884880433bd61b438b8, type: 3}
+  enemyHit: {fileID: 8300000, guid: 139b6e193027cd6479765c29b35d6481, type: 3}
   bloodPrefab: {fileID: 8582095781730894252, guid: 8f0c80c787765d344a6bb9c5aa8a99f4, type: 3}
   permanentBloodPrefab: {fileID: 6906568303561589159, guid: 2eba2b4ec2d06b04fb6d477abfe4c11e, type: 3}
   itemDropChance: 100

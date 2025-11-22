@@ -30,6 +30,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] protected SpriteRenderer spriteRenderer;
 
     [SerializeField] private AudioClip enemyDeath;
+    [SerializeField] private AudioClip enemyHit;
     [SerializeField] private GameObject bloodPrefab;
     [SerializeField] private GameObject permanentBloodPrefab;
 
@@ -149,9 +150,10 @@ public class EnemyScript : MonoBehaviour
         {
             return;
         }
+        SFX.SpawnClip(enemyDeath, transform.position);
         dead = true;
         DropItem();
-        AudioSource.PlayClipAtPoint(enemyDeath, transform.position);
+        AudioSource.PlayClipAtPoint(enemyDeath, transform.position, 1.0f);
         //FindFirstObjectByType<EnemyWaveBar>().ApplyEnemyCount();
         FindFirstObjectByType<TopBar>().EnemyDied();
         Destroy(gameObject);
@@ -205,6 +207,7 @@ public class EnemyScript : MonoBehaviour
 
     private IEnumerator HitFX()
     {
+        SFX.SpawnClip(enemyHit, transform.position);
         spriteRenderer.material.SetFloat("_HitFlash", 1);
         Instantiate(bloodPrefab, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.1f);
