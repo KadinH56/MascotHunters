@@ -52,7 +52,7 @@ MonoBehaviour:
   initShootSpeed: 16
   explosionSize: 0
   maxDistance: 32
-  shootSound: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+  shootSound: {fileID: 8300000, guid: 5540d874d81f8e44e8178019651816ce, type: 3}
   level2Speed: 0.75
   level2ExplosionSize: 4
   level3Speed: 0.5

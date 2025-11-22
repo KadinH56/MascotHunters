@@ -25,6 +25,7 @@ public class BradyBoss : EnemyScript
 
     [SerializeField] private GameObject dashTelegraphPrefab;
     [SerializeField] private float telegraphDuration = 1f;
+    [SerializeField] private AudioClip battleCry;
 
     private STATE_MACHINE state = STATE_MACHINE.FOLLOW;
 
@@ -145,6 +146,7 @@ public class BradyBoss : EnemyScript
             {
                 spriteRenderer.flipX = true;
             }
+            SFX.SpawnClip(battleCry, transform.position);
 
             StartCoroutine(Chomp());
             yield return new WaitForSeconds(timeBetweenChomps);

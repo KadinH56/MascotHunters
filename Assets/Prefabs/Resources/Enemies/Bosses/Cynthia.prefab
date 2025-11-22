@@ -424,10 +424,12 @@ MonoBehaviour:
   meleeTime: 0
   meleeBox: {fileID: 0}
   cost: 1
+  startingWave: 1
   healthBar: {fileID: 2110205051230298626}
   animator: {fileID: 6726979392433173730}
   spriteRenderer: {fileID: 821021272953717337}
-  enemyDeath: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
+  enemyDeath: {fileID: 8300000, guid: 8b81a55f2bae6884880433bd61b438b8, type: 3}
+  enemyHit: {fileID: 8300000, guid: 139b6e193027cd6479765c29b35d6481, type: 3}
   bloodPrefab: {fileID: 8582095781730894252, guid: 8f0c80c787765d344a6bb9c5aa8a99f4, type: 3}
   permanentBloodPrefab: {fileID: 6906568303561589159, guid: 2eba2b4ec2d06b04fb6d477abfe4c11e, type: 3}
   itemDropChance: 100
@@ -440,6 +442,7 @@ MonoBehaviour:
   maxTargetDistance: 12
   telegraphLinePrefab: {fileID: 1906670201918488967, guid: ca192409e3c20534a80807caa692747e, type: 3}
   telegraphDuration: 1
+  battleCry: {fileID: 8300000, guid: 9d5b8b585c41668459700887c928547c, type: 3}
 --- !u!1 &5958240348254958594
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.85098046, g: 0.34117648, b: 0.38823533, a: 1}
+  m_Color: {r: 1, g: 0.65723264, b: 0.68887264, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
