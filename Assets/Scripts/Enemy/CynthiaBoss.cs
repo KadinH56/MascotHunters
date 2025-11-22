@@ -28,6 +28,8 @@ public class CynthiaBoss : EnemyScript
     [SerializeField] private GameObject telegraphLinePrefab;
     [SerializeField] private float telegraphDuration = 1f;
 
+    [SerializeField] private AudioClip battleCry;
+
     public override void EnemyAI()
     {
         switch (state)
@@ -85,6 +87,7 @@ public class CynthiaBoss : EnemyScript
         float angle = 0;
         for (int i = 0; i < numBigAttacks; i++)
         {
+            SFX.SpawnClip(battleCry, transform.position);
             animator.SetBool("Attack", true);
             angle = Random.Range(0, 360f / numProjectilesInBigAttack);
 

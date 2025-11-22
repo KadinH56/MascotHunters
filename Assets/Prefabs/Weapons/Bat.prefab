@@ -152,6 +152,7 @@ MonoBehaviour:
   cooldownLevel2: 0.8
   cooldownLevel3: 0.5
   sizeMultiplierLevel3: 2
+  batSwing: {fileID: 8300000, guid: 1b4f2c859b5f8234e898cd1541618241, type: 3}
 --- !u!95 &4115033051317844474
 Animator:
   serializedVersion: 7

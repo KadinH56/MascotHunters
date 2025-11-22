@@ -40,6 +40,8 @@ public class KarlBoss : EnemyScript
     [SerializeField] private GameObject bigAttackCircle;
     [SerializeField] private float telegraphDuration = 0.1f;
 
+    [SerializeField] private AudioClip battleCry;
+
     private bool isWaiting = false;
 
     public override void EnemyAI()
@@ -116,6 +118,7 @@ public class KarlBoss : EnemyScript
 
     private IEnumerator BigAttack()
     {
+        SFX.SpawnClip(battleCry, transform.position);
         for (int i = 0; i < 5; i++) 
         {
             GameObject circle = Instantiate(bigAttackCircle, transform.position, Quaternion.Euler(90f,0f,0f));

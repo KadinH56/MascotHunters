@@ -146,11 +146,15 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
-  hammerHitSound: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+  hammerHitSound: {fileID: 8300000, guid: d79ecf70a398f5a4dbe48a34c5575bde, type: 3}
   hitEffect: {fileID: 6906568303561589159, guid: a63d92af5eb0faa4d81e1783a963c18c, type: 3}
   hitDamageEffect: {fileID: 6906568303561589159, guid: 30816c8aa985d9b4e8a06878b9120dac, type: 3}
   hitOffset: {x: 1, y: 0, z: 0}
   maxHit: 40
+  speedModifier: 1
+  speedLevel2Modifier: 0.9
+  speedLevel3Modifier: 0.75
+  level2SizeModifier: 1.5
 --- !u!95 &790046347908656689
 Animator:
   serializedVersion: 7
