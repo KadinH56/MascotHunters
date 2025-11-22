@@ -27,7 +27,6 @@ public class PlayerSpawner : MonoBehaviour
     /// Player's prefab
     /// </summary>
     [SerializeField] private GameObject playerPrefab;
-    [SerializeField] private List<Image> playerHealthBars;
 
     /// <summary>
     /// Setup the game itself
@@ -76,7 +75,6 @@ public class PlayerSpawner : MonoBehaviour
                     }
                 }
                 //print(devices[0]);
-
                 player.GetComponent<PlayerStatManager>().SetControls(scheme, devices);//.SwitchCurrentControlScheme(scheme, devices);
             }
 
@@ -92,11 +90,6 @@ public class PlayerSpawner : MonoBehaviour
             spawnPos += transform.position;
             player.transform.position = spawnPos;
 
-            if(i < playerHealthBars.Count)
-            {
-                playerHealthBars[i].transform.parent.gameObject.SetActive(true);
-                player.GetComponent<PlayerStatManager>().HealthBar = playerHealthBars[i];
-            }
             player.GetComponent<PlayerStatManager>().OnAlive();
 
             //player.GetComponent<UpgradeSystem>().StartUpgrades(true);

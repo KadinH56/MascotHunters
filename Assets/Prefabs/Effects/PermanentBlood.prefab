@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 86d2126d185e2f445a798d2d34f3edda, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,3 +103,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397cf32410f558a4b80394c3765bf685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PermenentBlood
+  timeInSeconds: 120
+  dealsDamage: 0

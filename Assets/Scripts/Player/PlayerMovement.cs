@@ -10,7 +10,6 @@
 
 using System.Collections;
 using System.Threading;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -48,8 +47,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private WeaponManager weaponManager;
 
-    [SerializeField] private AnimatorController player1;
-    [SerializeField] private AnimatorController player2;
+    [SerializeField] private RuntimeAnimatorController player1;
+    [SerializeField] private RuntimeAnimatorController player2;
 
     /// <summary>
     /// Used by the Player Manager to set the player ID to 0 or 1
