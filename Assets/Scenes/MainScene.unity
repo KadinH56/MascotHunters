@@ -891,7 +891,7 @@ PrefabInstance:
     - target: {fileID: 3744004488665817723, guid: 863f38991540d144faef3db2a684d260, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 23800000, guid: 07d1533611c00104f8d1b548be264d2b, type: 2}
     - target: {fileID: 5673449495155256455, guid: 863f38991540d144faef3db2a684d260, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.102048315
@@ -2276,6 +2276,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 5
   playerPrefab: {fileID: 5593190870652179328, guid: 194562d1d66e8484f93aee963a6e9fed, type: 3}
+  p2ControlsMove: {fileID: 0}
+  p2ControlsRoll: {fileID: 0}
+  p2ControlsUpgrade: {fileID: 0}
+  p2ControlsMoveSprite: {fileID: 0}
+  p2ControlsRollSprite: {fileID: 0}
+  p2ControlsRollUpgrade: {fileID: 0}
 --- !u!1 &849603328
 GameObject:
   m_ObjectHideFlags: 0
