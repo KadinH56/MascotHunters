@@ -157,5 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c3ae130a01ce5246bb5ebe2b8d3f55f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PickupSFX: {fileID: 8300000, guid: 28948544f9085cc468b778824803a9e3, type: 3}
   buffDuration: 5
   buffPower: 1.5

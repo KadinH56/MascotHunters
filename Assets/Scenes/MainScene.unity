@@ -3529,6 +3529,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dc6238b78cbfb364a869febd9146904b, type: 2}
   nameText: {fileID: 1721179540}
   descriptionText: {fileID: 893988379}
+  upgradeClip: {fileID: 8300000, guid: 3ee73c09ae8657747a8dad8523ce904b, type: 3}
+  buttonClip: {fileID: 8300000, guid: 6b99ca0ab2244464586c23b21df00f0d, type: 3}
   anim: {fileID: 771446645}
 --- !u!114 &1147852437
 MonoBehaviour:

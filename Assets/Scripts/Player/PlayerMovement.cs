@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     [SerializeField] private AudioClip rollSound;
-    [SerializeField] private AudioClip moveSound;
 
     [SerializeField] private WeaponManager weaponManager;
 
@@ -100,17 +99,13 @@ public class PlayerMovement : MonoBehaviour
         if(rollTimer <= 0)
         {
             isRoll = true;
-            AudioSource.PlayClipAtPoint(rollSound, transform.position);
+            SFX.SpawnClip(rollSound, transform.position);
             //Vector3 moveDir = new(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
             //pRigidBody.AddForce(new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed));
             moveDir *= dashSpeed;
 
             //Starts the coroutine
             StartCoroutine(Roll());
-        }
-        else
-        {
-            Debug.Log("Cannot roll right now!");
         }
     }
 

@@ -157,4 +157,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96698ece166273d42b503b231c111a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PickupSFX: {fileID: 8300000, guid: 484d5162640cc2e4fa02154a549a0eda, type: 3}
   healthRegained: 25

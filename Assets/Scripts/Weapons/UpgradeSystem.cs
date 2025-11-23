@@ -25,6 +25,9 @@ public class UpgradeSystem : MonoBehaviour
 
     private Dictionary<string, UpgradeData> upgradeNames = new();
 
+    [SerializeField] private AudioClip upgradeClip;
+    [SerializeField] private AudioClip buttonClip;
+
     private string[] descriptions = new string[3];
     private string[] names = new string[3];
 
@@ -39,11 +42,11 @@ public class UpgradeSystem : MonoBehaviour
         }
     }
 
-    public void StartUpgrades(bool firstUpgrade = false)
+    public void StartUpgrades()
     {
-        StartCoroutine(Upgrade(firstUpgrade));
+        StartCoroutine(Upgrade());
     }
-    public IEnumerator Upgrade(bool firstUpgrade)
+    public IEnumerator Upgrade()
     {
         yield return null;
         PlayerMovement[] players = new PlayerMovement[2];
@@ -56,6 +59,8 @@ public class UpgradeSystem : MonoBehaviour
         Time.timeScale = 0.0f;
         for (int i = 0; i < GameInformation.NumPlayers; i++)
         {
+            SFX.SpawnClip(upgradeClip, FindFirstObjectByType<Camera>().transform.position);
+
             buttonHit = -1;
             currentPlayer = players[i];
 
@@ -184,6 +189,7 @@ public class UpgradeSystem : MonoBehaviour
     //Darn you unity input system
     private void SelectC_started(InputAction.CallbackContext obj)
     {
+        SFX.SpawnClip(buttonClip, FindFirstObjectByType<Camera>().transform.position);
         if(buttonHit != 2)
         {
             descriptionText.text = descriptions[2];
@@ -198,6 +204,7 @@ public class UpgradeSystem : MonoBehaviour
 
     private void SelectB_started(InputAction.CallbackContext obj)
     {
+        SFX.SpawnClip(buttonClip, FindFirstObjectByType<Camera>().transform.position);
         if (buttonHit != 1)
         {
             descriptionText.text = descriptions[1];
@@ -212,6 +219,7 @@ public class UpgradeSystem : MonoBehaviour
 
     private void SelectA_started(InputAction.CallbackContext obj)
     {
+        SFX.SpawnClip(buttonClip, FindFirstObjectByType<Camera>().transform.position);
         if (buttonHit != 0)
         {
             descriptionText.text = descriptions[0];
