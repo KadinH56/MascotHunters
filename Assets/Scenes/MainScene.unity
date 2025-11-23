@@ -888,10 +888,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3744004488665817723, guid: 863f38991540d144faef3db2a684d260, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: 07d1533611c00104f8d1b548be264d2b, type: 2}
     - target: {fileID: 5673449495155256455, guid: 863f38991540d144faef3db2a684d260, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.102048315
@@ -993,6 +989,26 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 863f38991540d144faef3db2a684d260, type: 3}
+--- !u!212 &229277865 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4635961219339464734, guid: 863f38991540d144faef3db2a684d260, type: 3}
+  m_PrefabInstance: {fileID: 229277864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &229277866 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 740078589161406678, guid: 863f38991540d144faef3db2a684d260, type: 3}
+  m_PrefabInstance: {fileID: 229277864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &229277867 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3176574501410692698, guid: 863f38991540d144faef3db2a684d260, type: 3}
+  m_PrefabInstance: {fileID: 229277864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &229277868 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8612029172371366017, guid: 863f38991540d144faef3db2a684d260, type: 3}
+  m_PrefabInstance: {fileID: 229277864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &237406300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,6 +1524,31 @@ MonoBehaviour:
     PCBuild: {fileID: 21300000, guid: 6e80005bec25ada48886d9bd62e2c572, type: 3}
     spriteRenderer: {fileID: 0}
     image: {fileID: 1462688192}
+    rawImage: {fileID: 0}
+  - arcadeBuild: {fileID: 21300000, guid: 21d1aa727ee3478428b89eba4603cc07, type: 3}
+    PCBuild: {fileID: 21300000, guid: 6e80005bec25ada48886d9bd62e2c572, type: 3}
+    spriteRenderer: {fileID: 0}
+    image: {fileID: 1462688192}
+    rawImage: {fileID: 0}
+  - arcadeBuild: {fileID: 21300000, guid: 58c5735d851a4ee458eebd267fc5644c, type: 3}
+    PCBuild: {fileID: 21300000, guid: 4edb5754f85afad499f9d4a5af30a171, type: 3}
+    spriteRenderer: {fileID: 229277868}
+    image: {fileID: 0}
+    rawImage: {fileID: 0}
+  - arcadeBuild: {fileID: 21300000, guid: 58c5735d851a4ee458eebd267fc5644c, type: 3}
+    PCBuild: {fileID: 21300000, guid: 0929c61eb035c254a9152ad7f3cb3565, type: 3}
+    spriteRenderer: {fileID: 229277865}
+    image: {fileID: 0}
+    rawImage: {fileID: 0}
+  - arcadeBuild: {fileID: 21300000, guid: db2f33059ff096a4ca1ac4415e898632, type: 3}
+    PCBuild: {fileID: 21300000, guid: 2f893881b6b311740b4ceade0e9a3aa1, type: 3}
+    spriteRenderer: {fileID: 229277867}
+    image: {fileID: 0}
+    rawImage: {fileID: 0}
+  - arcadeBuild: {fileID: 21300000, guid: db2f33059ff096a4ca1ac4415e898632, type: 3}
+    PCBuild: {fileID: 21300000, guid: c2c517d0aa22cef4296935e157e3be32, type: 3}
+    spriteRenderer: {fileID: 229277866}
+    image: {fileID: 0}
     rawImage: {fileID: 0}
 --- !u!4 &530430847
 Transform:
@@ -2276,12 +2317,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 5
   playerPrefab: {fileID: 5593190870652179328, guid: 194562d1d66e8484f93aee963a6e9fed, type: 3}
-  p2ControlsMove: {fileID: 0}
-  p2ControlsRoll: {fileID: 0}
-  p2ControlsUpgrade: {fileID: 0}
-  p2ControlsMoveSprite: {fileID: 0}
-  p2ControlsRollSprite: {fileID: 0}
-  p2ControlsRollUpgrade: {fileID: 0}
+  p2ControlsMove: {fileID: 229277865}
+  p2ControlsRoll: {fileID: 229277866}
+  p2ControlsUpgrade: {fileID: 1462688192}
+  p2ControlsMoveSprite: {fileID: 21300000, guid: 58c5735d851a4ee458eebd267fc5644c, type: 3}
+  p2ControlsRollSprite: {fileID: 21300000, guid: a87ed8971b2f2aa4c84c31e104f6b400, type: 3}
+  p2ControlsRollUpgrade: {fileID: 21300000, guid: bcd64f7da2e25044dbdb0a209c680f3e, type: 3}
 --- !u!1 &849603328
 GameObject:
   m_ObjectHideFlags: 0
