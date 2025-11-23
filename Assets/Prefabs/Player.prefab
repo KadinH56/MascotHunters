@@ -620,8 +620,7 @@ MonoBehaviour:
   isRoll: 0
   animator: {fileID: 698033908845542131}
   spriteRenderer: {fileID: 680136096779187297}
-  rollSound: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
-  moveSound: {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
+  rollSound: {fileID: 8300000, guid: 3f2cceca03498b1448fd95a57773bfde, type: 3}
   weaponManager: {fileID: 284896115691116450}
   player1: {fileID: 9100000, guid: 279fa7a08fce52345afb07c8223b7d11, type: 2}
   player2: {fileID: 9100000, guid: 0be0e77a8753a45478336d7ab549ecd0, type: 2}
@@ -650,6 +649,9 @@ MonoBehaviour:
   spriteRenderer: {fileID: 680136096779187297}
   animator: {fileID: 698033908845542131}
   isDead: 0
+  hurtSound: {fileID: 8300000, guid: e425b48d99c3198478f1b18b43534554, type: 3}
+  deathSound: {fileID: 8300000, guid: 7402019ffec9c0348821fda9850aad55, type: 3}
+  weaponManager: {fileID: 821040186821256891}
 --- !u!1001 &491127998355535138
 PrefabInstance:
   m_ObjectHideFlags: 0

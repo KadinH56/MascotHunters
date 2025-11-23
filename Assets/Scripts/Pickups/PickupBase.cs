@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PickupBase : MonoBehaviour
 {
+    [SerializeField] private AudioClip PickupSFX;
     public virtual void Effect(PlayerStatManager player)
     {
 
@@ -11,6 +12,7 @@ public class PickupBase : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerHurt"))
         {
+            SFX.SpawnClip(PickupSFX, transform.position);
             Effect(other.gameObject.transform.parent.GetComponent<PlayerStatManager>());
             Destroy(gameObject);
         }

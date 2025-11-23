@@ -64,7 +64,10 @@ public class EnemyScript : MonoBehaviour
         if (isMelee)
         {
             StartCoroutine(MeleeAttack());
-            animator.SetBool("Attack", true);
+            if(healthBar == null)
+            {
+                animator.SetBool("Attack", true);
+            }
         }
 
         if(healthBar != null)

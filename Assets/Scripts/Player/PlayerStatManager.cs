@@ -36,6 +36,10 @@ public class PlayerStatManager : MonoBehaviour
     [SerializeField] protected SpriteRenderer spriteRenderer;
     [SerializeField] protected Animator animator;
     [SerializeField] private bool isDead;
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip deathSound;
+
+    [SerializeField] private GameObject weaponManager;
 
     private void Start()
     {
@@ -51,14 +55,18 @@ public class PlayerStatManager : MonoBehaviour
     /// <param name="damage">Amount of damage</param>
     public void TakeDamage(int damage)
     {
+        if (isDead)
+        {
+            return;
+        }
         StartCoroutine(HitFX());
+        SFX.SpawnClip(hurtSound, transform.position);
 
         playerStats.Health -= damage;
         UpdateHealthBar();
 
         if (playerStats.Health <= 0 && !isDead)
         {
-         
             StartCoroutine(HandleDeath());
             
             //mainMenu.SetActive(true);
@@ -67,7 +75,11 @@ public class PlayerStatManager : MonoBehaviour
 
     private IEnumerator HandleDeath()
     {
+        isDead = true;
+        SFX.SpawnClip(deathSound, transform.position);
+
         animator.SetBool("IsDead", true);
+        weaponManager.SetActive(false);
         player.enabled = false;
         weapon.enabled = false;
         yield return new WaitForSeconds(4);
@@ -109,10 +121,13 @@ public class PlayerStatManager : MonoBehaviour
     public void OnAlive(bool fullRevive = true)
     {
         gameObject.SetActive(true);
+        isDead = false;
         player.enabled = true;
         weapon.enabled = true;
         animator.SetBool("IsDead", false);
         spriteRenderer.material.SetFloat("_HitFlash", 0);
+
+        weaponManager.SetActive(true);
 
         if (fullRevive)
         {
