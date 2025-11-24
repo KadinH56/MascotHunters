@@ -737,7 +737,7 @@
                     "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";UI",
+                    "groups": ";MainControlScheme",
                     "action": "Select High Score",
                     "isComposite": false,
                     "isPartOfComposite": false

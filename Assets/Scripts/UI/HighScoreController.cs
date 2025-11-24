@@ -67,7 +67,7 @@ public class HighScoreController : MonoBehaviour
             GetComponent<PlayerInput>().SwitchCurrentControlScheme("ArcadeA", devices);
         }
 
-        select = GetComponent<PlayerInput>().currentActionMap.FindAction("Roll");
+        select = GetComponent<PlayerInput>().currentActionMap.FindAction("Select High Score");
         move = GetComponent<PlayerInput>().currentActionMap.FindAction("Move");
 
         select.started += Select_started;
