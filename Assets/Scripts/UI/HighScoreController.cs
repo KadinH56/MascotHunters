@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class HighScoreController : MonoBehaviour
 {
-    private char[] ROTATING_CHARACTERS = new char[] 
+    private readonly char[] ROTATING_CHARACTERS = new char[] 
     { 
         '.',
         'A',
@@ -46,6 +46,9 @@ public class HighScoreController : MonoBehaviour
     [SerializeField] private float waitTime = 3f;
     [SerializeField] private float appearTime = 0.5f;
 
+    [SerializeField] private GameObject wordHolder;
+    [SerializeField] private TMP_Text selectText;
+
     private InputAction select;
     private InputAction move;
 
@@ -53,6 +56,7 @@ public class HighScoreController : MonoBehaviour
 
     private void Start()
     {
+        wordHolder.SetActive(false);
         SaveSystem.LoadGame();
         StartCoroutine(ShowScores());
 
@@ -65,13 +69,20 @@ public class HighScoreController : MonoBehaviour
                 InputSystem.GetDevice<Keyboard>()
             };
             GetComponent<PlayerInput>().SwitchCurrentControlScheme("ArcadeA", devices);
+            selectText.text = "Roll\r\nto Select";
         }
 
-        select = GetComponent<PlayerInput>().currentActionMap.FindAction("Roll");
+        select = GetComponent<PlayerInput>().currentActionMap.FindAction("Select High Score");
         move = GetComponent<PlayerInput>().currentActionMap.FindAction("Move");
 
         select.started += Select_started;
         move.started += Move_started;
+    }
+
+    private void OnDestroy()
+    {
+        select.started -= Select_started;
+        move.started -= Move_started;
     }
 
     private void Move_started(InputAction.CallbackContext obj)
@@ -130,6 +141,7 @@ public class HighScoreController : MonoBehaviour
         verticalPosition = SaveSystem.GetNewScorePosition(GameInformation.Wave);
         if (verticalPosition != -1)
         {
+            wordHolder.SetActive(true);
             StartCoroutine(EnterInitials());
             return;
         }

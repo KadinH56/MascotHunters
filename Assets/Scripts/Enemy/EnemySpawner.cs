@@ -102,11 +102,11 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Vector3 desiredPos = Quaternion.Euler(0, Random.Range(0f, 360f), 0) * Vector3.forward * Random.Range(minSpawnRadius, maxSpawnRadius);
                     //desiredPos += Vector3.up * 1.5f;
+                    desiredPos += new Vector3(cam.Average.x, 1.5f, cam.Average.z);
                     desiredPos =
                         new(Mathf.Clamp(desiredPos.x, boundsBottomLeft.position.x, boundsTopRight.position.x),
                         desiredPos.y,
                         Mathf.Clamp(desiredPos.z, boundsBottomLeft.position.z, boundsTopRight.position.z));
-                    desiredPos += new Vector3(cam.Average.x, 1.5f, cam.Average.z);
                     bool gotHit = Physics.CheckBox(desiredPos, boxSize / 2f, Quaternion.identity, groundLayers);
                     //Physics check
                     //I'm not sure if I need the wait for fixed update...but I don't want to crash the game

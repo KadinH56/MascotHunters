@@ -8,27 +8,33 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private PlayerInput pInput;
 
     private InputAction pauseAction;
+    private InputAction resumeAction;
 
     private bool paused = false;
 
     private void Start()
     {
+        paused = false;
         pauseAction = pInput.currentActionMap.FindAction("Pause");
+        resumeAction = pInput.currentActionMap.FindAction("Resume");
         pauseAction.started += PauseAction_started;
+        resumeAction.started += ResumeAction_started;
         Time.timeScale = 1.0f;
+    }
+
+    private void ResumeAction_started(InputAction.CallbackContext obj)
+    {
+        if (paused)
+        {
+            Resume();
+        }
     }
 
     private void PauseAction_started(InputAction.CallbackContext obj)
     {
-        if (GameInformation.IsArcadeBuild)
-        {
-            QuitGame();
-            return;
-        }
-
         if (paused)
         {
-            Resume();
+            QuitGame();
         }
         else
         {
@@ -54,6 +60,8 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        pauseAction.started -= PauseAction_started;
+        resumeAction.started -= ResumeAction_started;
         SceneManager.LoadScene(0);
     }
 }
