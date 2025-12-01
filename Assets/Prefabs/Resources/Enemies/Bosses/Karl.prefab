@@ -889,8 +889,8 @@ MonoBehaviour:
   maxTargetDistance: 10
   distanceFromKarl: 23
   hitboxOffset: 0.5
-  maxDistanceFromKarl: 90
-  minDistanceFromKarl: 5
+  maxDistanceFromKarl: 50
+  minDistanceFromKarl: 10
   claws: {fileID: 8241830170834023039}
   clawRenderers:
   - {fileID: 7535778844130069501}
