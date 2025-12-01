@@ -44,4 +44,10 @@ public class ResetQuit : MonoBehaviour
             start2P.started -= Start2P_started;
         }
     }
+
+    [ContextMenu("Increase Time")]
+    public void IncreaseTime()
+    {
+        Time.timeScale *= 1.5f;
+    }
 }
