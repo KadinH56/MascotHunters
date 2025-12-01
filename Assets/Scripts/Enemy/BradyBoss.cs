@@ -26,6 +26,8 @@ public class BradyBoss : EnemyScript
     [SerializeField] private GameObject dashTelegraphPrefab;
     [SerializeField] private float telegraphDuration = 1f;
     [SerializeField] private AudioClip battleCry;
+    
+    private bool isTelegraphing = false;
 
     private STATE_MACHINE state = STATE_MACHINE.FOLLOW;
 
@@ -110,31 +112,13 @@ public class BradyBoss : EnemyScript
             direction.y = 0;
             direction.Normalize();
 
-            Vector3 start = transform.position;
-            Vector3 end = target.transform.position; // or start + (direction * 8f) if you prefer a fixed length
 
-            GameObject telegraphObj = Instantiate(dashTelegraphPrefab);
-            LineRenderer lr = telegraphObj.GetComponent<LineRenderer>();
 
-            // Ensure LineRenderer exists
-            lr.positionCount = 2;
-            lr.useWorldSpace = true;
-
-            //Make it thick
-            lr.widthMultiplier = 0.5f;     
-            lr.startWidth = 0.5f;
-            lr.endWidth = 0.5f;
-
-            Vector3 Begin = transform.position;
-            Vector3 Stop = target.transform.position;
-
-            lr.SetPosition(0, start);
-            lr.SetPosition(1, end);
-
-         
-            Destroy(telegraphObj, telegraphDuration);
+            isTelegraphing = true;
+            StartCoroutine(Telegraph());
 
             yield return new WaitForSeconds(telegraphDuration);
+            isTelegraphing = false;
 
             GetComponent<Rigidbody>().linearVelocity = dashSpeedModifier * enemyStats.Movement * direction;
 
@@ -155,6 +139,33 @@ public class BradyBoss : EnemyScript
         GetComponent<Rigidbody>().linearVelocity = Vector2.zero;
         chompCircle.SetActive(false);
         attackCoroutine = null;
+    }
+
+    private IEnumerator Telegraph()
+    {
+        GameObject telegraphObj = Instantiate(dashTelegraphPrefab);
+        LineRenderer lr = telegraphObj.GetComponent<LineRenderer>();
+
+        // Ensure LineRenderer exists
+        lr.positionCount = 2;
+        lr.useWorldSpace = true;
+
+        //Make it thick
+        lr.widthMultiplier = 0.5f;
+        lr.startWidth = 0.5f;
+        lr.endWidth = 0.5f;
+
+        while (isTelegraphing)
+        {
+            Vector3 begin = transform.position;
+            Vector3 stop = target.transform.position;
+
+            lr.SetPosition(0, begin);
+            lr.SetPosition(1, stop);
+            yield return null;
+        }
+
+        Destroy(telegraphObj);
     }
 
     private IEnumerator Chomp()
