@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 495433689344277891}
   - component: {fileID: 19061732425654056}
   m_Layer: 7
-  m_Name: MinigunEnemy 1
+  m_Name: MinigunEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
