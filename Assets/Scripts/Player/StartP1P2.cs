@@ -9,6 +9,8 @@ public class ResetQuit : MonoBehaviour
     private InputAction start1P;
     private InputAction start2P;
 
+    private InputAction quit;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -18,10 +20,18 @@ public class ResetQuit : MonoBehaviour
         {
             start1P = pInput.currentActionMap.FindAction("Start Player 1");
             start2P = pInput.currentActionMap.FindAction("Start Player 2");
+            quit = pInput.currentActionMap.FindAction("Pause");
 
             start1P.started += Start1P_started;
             start2P.started += Start2P_started;
+            quit.started += Quit_started;
         }
+    }
+
+    private void Quit_started(InputAction.CallbackContext obj)
+    {
+        print("QUIT");
+        Application.Quit();
     }
 
     private void Start2P_started(InputAction.CallbackContext obj)
@@ -42,6 +52,7 @@ public class ResetQuit : MonoBehaviour
         {
             start1P.started -= Start1P_started;
             start2P.started -= Start2P_started;
+            quit.started -= Quit_started;
         }
     }
 
