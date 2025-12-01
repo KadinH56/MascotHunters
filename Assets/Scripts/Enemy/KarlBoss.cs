@@ -123,11 +123,7 @@ public class KarlBoss : EnemyScript
         {
             GameObject circle = Instantiate(bigAttackCircle, transform.position, Quaternion.Euler(90f,0f,0f));
 
-            yield return new WaitForSeconds(0.25f);
-
-            Destroy(circle);
-
-            yield return new WaitForSeconds(0.25f); 
+            yield return new WaitForSeconds(0.5f);
         }
 
         agent.speed = enemyStats.Movement / 2f;
