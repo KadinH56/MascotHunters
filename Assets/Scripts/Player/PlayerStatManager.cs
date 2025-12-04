@@ -59,7 +59,9 @@ public class PlayerStatManager : MonoBehaviour
         {
             return;
         }
-        StartCoroutine(HitFX());
+        //StartCoroutine(HitFX());
+        animator.Play("PlayerHit", 2);
+
         SFX.SpawnClip(hurtSound, transform.position);
 
         playerStats.Health -= damage;
@@ -125,7 +127,7 @@ public class PlayerStatManager : MonoBehaviour
         player.enabled = true;
         weapon.enabled = true;
         animator.SetBool("IsDead", false);
-        spriteRenderer.material.SetFloat("_HitFlash", 0);
+        //spriteRenderer.material.SetFloat("_HitFlash", 0);
 
         weaponManager.SetActive(true);
 
@@ -155,16 +157,18 @@ public class PlayerStatManager : MonoBehaviour
 
     private IEnumerator TempSpeedBuff(float duration, float level)
     {
+        animator.Play("OutlineOn");
         PlayerStats.TempMoveModifierMultiplicative *= level;
         yield return new WaitForSeconds(duration);
+        animator.Play("OutlineOff");
         PlayerStats.TempMoveModifierMultiplicative /= level;
     }
 
-    private IEnumerator HitFX()
-    {
-        spriteRenderer.material.SetFloat("_HitFlash", 1);
-        yield return new WaitForSeconds(0.1f);
-        spriteRenderer.material.SetFloat("_HitFlash", 0);
-    }
+    //private IEnumerator HitFX()
+    //{
+    //    spriteRenderer.material.SetFloat("_HitFlash", 1);
+    //    yield return new WaitForSeconds(0.1f);
+    //    spriteRenderer.material.SetFloat("_HitFlash", 0);
+    //}
 
 }
