@@ -49,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private RuntimeAnimatorController player1;
     [SerializeField] private RuntimeAnimatorController player2;
 
+    private bool flipped = false;
+
     /// <summary>
     /// Used by the Player Manager to set the player ID to 0 or 1
     /// </summary>
@@ -170,11 +172,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (facing.x > 0)
         {
-            spriteRenderer.flipX = false;
+            if (flipped)
+            {
+                flipped = false;
+                animator.Play("FlipRight", 3);
+            }
         }
         else
         {
-            spriteRenderer.flipX = true;
+            if (!flipped)
+            {
+                flipped = true;
+                animator.Play("FlipLeft", 3);
+            }
         }
     
         Vector3 average = Vector3.zero;
