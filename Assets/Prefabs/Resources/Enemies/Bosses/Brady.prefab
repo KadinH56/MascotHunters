@@ -579,7 +579,7 @@ MonoBehaviour:
   enemyHit: {fileID: 8300000, guid: 139b6e193027cd6479765c29b35d6481, type: 3}
   bloodPrefab: {fileID: 8582095781730894252, guid: 8f0c80c787765d344a6bb9c5aa8a99f4, type: 3}
   permanentBloodPrefab: {fileID: 6906568303561589159, guid: 2eba2b4ec2d06b04fb6d477abfe4c11e, type: 3}
-  itemDropChance: 1
+  itemDropChance: 0
   canAttackDistance: 12
   timeBetweenAttacks: 5
   pauseTime: 1
