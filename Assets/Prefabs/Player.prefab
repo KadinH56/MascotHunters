@@ -623,7 +623,7 @@ MonoBehaviour:
   rollSound: {fileID: 8300000, guid: 3f2cceca03498b1448fd95a57773bfde, type: 3}
   weaponManager: {fileID: 284896115691116450}
   player1: {fileID: 9100000, guid: 279fa7a08fce52345afb07c8223b7d11, type: 2}
-  player2: {fileID: 9100000, guid: 0be0e77a8753a45478336d7ab549ecd0, type: 2}
+  player2: {fileID: 9100000, guid: 3f39e90cfc24ee14c99e9bb8eaef201b, type: 2}
 --- !u!114 &7677238045681899569
 MonoBehaviour:
   m_ObjectHideFlags: 0
