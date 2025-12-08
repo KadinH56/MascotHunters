@@ -23,13 +23,8 @@ public class PickupSpawners : MonoBehaviour
             //If we have the max amount of items, stall this script
             if(spawnedItems.Count >= maxItems)
             {
-                foreach (GameObject item in spawnedItems)
-                {
-                    if(item == null || !item.activeSelf)
-                    {
-                        spawnedItems.Remove(item);
-                    }
-                }
+                //If an item is null, remove it
+                spawnedItems.RemoveAll(item => item == null);
                 yield return null;
             }
             //Keep this at the top because we don't want to start by spawning in an item
