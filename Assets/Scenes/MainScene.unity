@@ -3041,6 +3041,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 999257917}
+  - component: {fileID: 999257918}
   m_Layer: 0
   m_Name: PickupSpawners
   m_TagString: Untagged
@@ -3071,6 +3072,18 @@ Transform:
   - {fileID: 1849054124}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &999257918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999257916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97173ad00bbd56646bc22bccccb523f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupSpawners
 --- !u!1001 &1014119566
 PrefabInstance:
   m_ObjectHideFlags: 0
