@@ -242,7 +242,7 @@ Transform:
   m_GameObject: {fileID: 207170639}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.37293, y: -0, z: 15.16164}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1865,6 +1865,9 @@ MonoBehaviour:
   appearTime: 0.1
   wordHolder: {fileID: 276910021}
   selectText: {fileID: 972927514}
+  waitTimeAfterSelecting: 1
+  framesBeforeColorChange: 30
+  colorChange: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1337438991
 MonoBehaviour:
   m_ObjectHideFlags: 0
