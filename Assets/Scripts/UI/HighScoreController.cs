@@ -9,7 +9,6 @@ public class HighScoreController : MonoBehaviour
 {
     private readonly char[] ROTATING_CHARACTERS = new char[] 
     { 
-        '.',
         'A',
         'B',
         'C',
@@ -42,12 +41,19 @@ public class HighScoreController : MonoBehaviour
     private int horizontalPosition = 0;
 
     private bool settingNewScore = false;
+    private bool newHighScore = false;
 
     [SerializeField] private float waitTime = 3f;
     [SerializeField] private float appearTime = 0.5f;
 
     [SerializeField] private GameObject wordHolder;
     [SerializeField] private TMP_Text selectText;
+    [SerializeField] private float waitTimeAfterSelecting = 2f;
+
+    [SerializeField] private int framesBeforeColorChange = 60;
+    [SerializeField] private Color colorChange = Color.yellow;
+
+    private Color textColor = Color.white;
 
     private InputAction select;
     private InputAction move;
@@ -56,6 +62,7 @@ public class HighScoreController : MonoBehaviour
 
     private void Start()
     {
+        GameInformation.Wave = 1000;
         wordHolder.SetActive(false);
         SaveSystem.LoadGame();
         StartCoroutine(ShowScores());
@@ -141,6 +148,7 @@ public class HighScoreController : MonoBehaviour
         verticalPosition = SaveSystem.GetNewScorePosition(GameInformation.Wave);
         if (verticalPosition != -1)
         {
+            newHighScore = true;
             wordHolder.SetActive(true);
             StartCoroutine(EnterInitials());
             return;
@@ -151,8 +159,23 @@ public class HighScoreController : MonoBehaviour
 
     private IEnumerator MoveToNextScreen()
     {
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(newHighScore ? waitTimeAfterSelecting : waitTime);
         SceneManager.LoadScene(0);
+    }
+
+    private IEnumerator ColorChangingText()
+    {
+        int colorChangeFrames = framesBeforeColorChange;
+        while (settingNewScore)
+        {
+            colorChangeFrames--;
+            if(colorChangeFrames == 0)
+            {
+                textColor = textColor == Color.white ? colorChange : Color.white;
+                colorChangeFrames = framesBeforeColorChange;
+            }
+            yield return new WaitForFixedUpdate();
+        }
     }
 
     private IEnumerator EnterInitials()
@@ -176,9 +199,10 @@ public class HighScoreController : MonoBehaviour
             
         }
 
-        initials = "...";
+        initials = "AAA";
         TMP_Text gameText = transform.GetChild(verticalPosition).GetComponent<TMP_Text>();
         string endText = " : " + GameInformation.Wave.ToString();
+        StartCoroutine(ColorChangingText());
         while (settingNewScore)
         {
 
@@ -186,17 +210,17 @@ public class HighScoreController : MonoBehaviour
             switch (horizontalPosition)
             {
                 case 0:
-                    initialsText = "<U>" + initials[0].ToString() + "</U>" + initials[1].ToString() + initials[2].ToString();
+                    initialsText = "<U><color=#" + ColorUtility.ToHtmlStringRGB(textColor) + ">" + initials[0].ToString() + "</U></Color>" + initials[1].ToString() + initials[2].ToString();
 
                     gameText.text = initialsText + endText;
                     break;
                 case 1:
-                    initialsText = initials[0].ToString() + "<U>" + initials[1].ToString() + "</U>" + initials[2].ToString();
+                    initialsText = initials[0].ToString() + "<U><color=#" + ColorUtility.ToHtmlStringRGB(textColor) + ">" + initials[1].ToString() + "</U></Color>" + initials[2].ToString();
 
                     gameText.text = initialsText + endText;
                     break;
                 case 2:
-                    initialsText = initials[0].ToString() + initials[1].ToString() + "<U>" + initials[2].ToString() + "</U>";
+                    initialsText = initials[0].ToString() + initials[1].ToString() + "<U><color=#" + ColorUtility.ToHtmlStringRGB(textColor) + ">" + initials[2].ToString() + "</U></Color>";
 
                     gameText.text = initialsText + endText;
                     break;
