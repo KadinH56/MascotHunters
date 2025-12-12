@@ -17,9 +17,25 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: c0591406c7ea2844291442d9131f9638, type: 3}
+      propertyPath: m_Color.b
+      value: 0.38714844
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: c0591406c7ea2844291442d9131f9638, type: 3}
+      propertyPath: m_Color.g
+      value: 0.38714844
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: c0591406c7ea2844291442d9131f9638, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: c0591406c7ea2844291442d9131f9638, type: 3}
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: c0591406c7ea2844291442d9131f9638, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 86d2126d185e2f445a798d2d34f3edda, type: 2}
     - target: {fileID: 7878350319992209165, guid: c0591406c7ea2844291442d9131f9638, type: 3}
       propertyPath: m_LocalScale.x
       value: 11.5545635
