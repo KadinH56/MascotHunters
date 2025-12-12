@@ -42,12 +42,14 @@ public class HighScoreController : MonoBehaviour
     private int horizontalPosition = 0;
 
     private bool settingNewScore = false;
+    private bool newHighScore = false;
 
     [SerializeField] private float waitTime = 3f;
     [SerializeField] private float appearTime = 0.5f;
 
     [SerializeField] private GameObject wordHolder;
     [SerializeField] private TMP_Text selectText;
+    [SerializeField] private float waitTimeAfterSelecting = 2f;
 
     private InputAction select;
     private InputAction move;
@@ -141,6 +143,7 @@ public class HighScoreController : MonoBehaviour
         verticalPosition = SaveSystem.GetNewScorePosition(GameInformation.Wave);
         if (verticalPosition != -1)
         {
+            newHighScore = true;
             wordHolder.SetActive(true);
             StartCoroutine(EnterInitials());
             return;
@@ -151,7 +154,7 @@ public class HighScoreController : MonoBehaviour
 
     private IEnumerator MoveToNextScreen()
     {
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(newHighScore ? waitTimeAfterSelecting : waitTime);
         SceneManager.LoadScene(0);
     }
 
