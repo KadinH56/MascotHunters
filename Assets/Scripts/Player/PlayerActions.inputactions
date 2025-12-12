@@ -492,6 +492,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Credits",
+                    "type": "Button",
+                    "id": "75dece8c-fc94-47b4-9703-d963224db1de",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Resume",
                     "type": "Button",
                     "id": "c8eb7d3c-00b8-40b7-a38e-d0d2d6aa7eec",
@@ -717,6 +726,17 @@
                     "processors": "",
                     "groups": ";UI",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5882e0da-769d-482b-834d-789c30d31696",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";UI",
+                    "action": "Credits",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
