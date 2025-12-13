@@ -15,10 +15,14 @@ public class CorkGunProjectile : Projectile
 
     [SerializeField] private LayerMask enemyLayers;
 
+    [SerializeField] private bool explode = false;
+
     public float ExplosionSize { get => explosionSize; set => explosionSize = value; }
 
     public override void OnKill(bool hitTarget)
     {
+        explode = true;
+
         AudioSource.PlayClipAtPoint(bulletHitSound, transform.position);
 
         //Lookat later when upgrade stuff
