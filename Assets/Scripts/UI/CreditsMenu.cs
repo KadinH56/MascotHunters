@@ -1,8 +1,5 @@
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
-using static UnityEngine.Timeline.DirectorControlPlayable;
 
 public class CreditsMenu : MonoBehaviour
 {
@@ -35,14 +32,12 @@ public class CreditsMenu : MonoBehaviour
             tent.SetActive(false);
             credits.SetActive(true);
             creditsOpen = true;
-            Debug.Log("Credits open!");
         }
         else
         {
             tent.SetActive(true);
             credits.SetActive(false);
             creditsOpen = false;
-            Debug.Log("Credits closed!");
         }
     }
 }
