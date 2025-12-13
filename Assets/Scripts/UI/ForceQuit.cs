@@ -15,11 +15,20 @@ public class ForceQuit : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             pInput.currentActionMap.Enable();
             forceQuit = pInput.currentActionMap.FindAction("ForceQuit");
+            InputDevice[] devices = new InputDevice[1];
+            devices[0] = InputSystem.devices[0];
+
+            pInput.SwitchCurrentControlScheme("ForceQuit", devices);
             forceQuit.started += ForceQuit_started;
             return;
         }
 
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        forceQuit.started -= ForceQuit_started;
     }
 
     private void ForceQuit_started(InputAction.CallbackContext obj)
