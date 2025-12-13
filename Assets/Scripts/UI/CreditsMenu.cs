@@ -1,5 +1,7 @@
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CreditsMenu : MonoBehaviour
 {
@@ -7,13 +9,16 @@ public class CreditsMenu : MonoBehaviour
     [SerializeField] private GameObject credits;
     [SerializeField] private PlayerInput cInput;
 
+    private string targetScene = "TitleScreen";
+    private UnityEngine.SceneManagement.Scene currentScene;
+
     private InputAction creditsOpenAction;
 
     private bool creditsOpen = false;
 
     private void Start()
     {
-        creditsOpen = false;
+        creditsOpen = true;
         creditsOpenAction = cInput.currentActionMap.FindAction("Credits");
         Time.timeScale = 1.0f;
 
@@ -22,7 +27,12 @@ public class CreditsMenu : MonoBehaviour
 
     private void CreditsOpenAction_started(InputAction.CallbackContext obj)
     {
-        Credits();
+        currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.name == targetScene)
+        {
+            Credits();
+        }   
     }
 
     public void Credits()
