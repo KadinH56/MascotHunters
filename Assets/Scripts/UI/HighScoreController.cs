@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Windows;
 
 public class HighScoreController : MonoBehaviour
 {
@@ -67,10 +68,14 @@ public class HighScoreController : MonoBehaviour
         StartCoroutine(ShowScores());
 
         GetComponent<PlayerInput>().currentActionMap.Enable();
+        InputDevice[] devices = new InputDevice[1];
+        devices[0] = InputSystem.devices[0];
+
+        GetComponent<PlayerInput>().SwitchCurrentControlScheme("MainControlScheme", devices);
 
         if (GameInformation.IsArcadeBuild)
         {
-            InputDevice[] devices =
+            devices = new InputDevice[1]
             {
                 InputSystem.GetDevice<Keyboard>()
             };
