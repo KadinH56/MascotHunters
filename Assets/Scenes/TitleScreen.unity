@@ -362,10 +362,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3744004488665817723, guid: 863f38991540d144faef3db2a684d260, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: e174dab8788656c4b88c5242ed4a55fe, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1459,14 +1455,14 @@ RectTransform:
   m_GameObject: {fileID: 1654429842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1326, y: 1.1326, z: 1.1326}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 737369537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16.4, y: -215.05699}
+  m_AnchoredPosition: {x: -18.8, y: -216.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1654429844
@@ -1498,8 +1494,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292202966
-  m_fontColor: {r: 0.8396226, g: 0.8198202, b: 0.8361051, a: 1}
+    rgba: 4278231807
+  m_fontColor: {r: 1, g: 0.63529414, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
