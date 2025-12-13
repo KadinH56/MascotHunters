@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
     {
         paused = false;
         pauseAction = pInput.currentActionMap.FindAction("Pause");
-        resumeAction = pInput.currentActionMap.FindAction("Resume");
+        resumeAction = pInput.currentActionMap.FindAction("Credits");
         pauseAction.started += PauseAction_started;
         resumeAction.started += ResumeAction_started;
         Time.timeScale = 1.0f;
