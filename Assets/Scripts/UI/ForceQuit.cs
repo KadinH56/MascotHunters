@@ -28,7 +28,10 @@ public class ForceQuit : MonoBehaviour
 
     private void OnDestroy()
     {
-        forceQuit.started -= ForceQuit_started;
+        if(instance == this)
+        {
+            forceQuit.started -= ForceQuit_started;
+        }
     }
 
     private void ForceQuit_started(InputAction.CallbackContext obj)
