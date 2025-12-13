@@ -6,6 +6,7 @@ using static UnityEngine.Timeline.DirectorControlPlayable;
 
 public class CreditsMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject tent;
     [SerializeField] private GameObject credits;
     [SerializeField] private PlayerInput cInput;
 
@@ -31,13 +32,17 @@ public class CreditsMenu : MonoBehaviour
     {
         if (creditsOpen == false)
         {
+            tent.SetActive(false);
             credits.SetActive(true);
             creditsOpen = true;
+            Debug.Log("Credits open!");
         }
         else
         {
+            tent.SetActive(true);
             credits.SetActive(false);
             creditsOpen = false;
+            Debug.Log("Credits closed!");
         }
     }
 }
