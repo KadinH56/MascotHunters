@@ -62,7 +62,6 @@ public class HighScoreController : MonoBehaviour
 
     private void Start()
     {
-        GameInformation.Wave = 1000;
         wordHolder.SetActive(false);
         SaveSystem.LoadGame();
         StartCoroutine(ShowScores());

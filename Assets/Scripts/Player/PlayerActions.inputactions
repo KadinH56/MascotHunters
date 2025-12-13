@@ -501,15 +501,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Resume",
-                    "type": "Button",
-                    "id": "c8eb7d3c-00b8-40b7-a38e-d0d2d6aa7eec",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Select High Score",
                     "type": "Button",
                     "id": "c31f0de5-da8d-4d7d-9c3b-0f31bd75da9a",
@@ -742,17 +733,6 @@
                 },
                 {
                     "name": "",
-                    "id": "f32f72de-a62e-416b-ae28-9cb1735564fd",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";UI",
-                    "action": "Resume",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "57b23799-9121-44a3-be33-1a18df55a9ae",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
@@ -781,6 +761,34 @@
                     "processors": "",
                     "groups": ";ArcadeA",
                     "action": "Select High Score",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "ForceQuit",
+            "id": "3e471242-aea4-4ddd-8940-81c4d969700c",
+            "actions": [
+                {
+                    "name": "ForceQuit",
+                    "type": "Button",
+                    "id": "2348df52-c790-4c0f-8dbd-d63615f26417",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "519570ef-02c5-4485-91dc-93de1e796d6e",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";ForceQuit",
+                    "action": "ForceQuit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -840,6 +848,17 @@
         {
             "name": "Keyboard2",
             "bindingGroup": "Keyboard2",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "ForceQuit",
+            "bindingGroup": "ForceQuit",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",

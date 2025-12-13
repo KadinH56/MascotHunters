@@ -16,10 +16,20 @@ public class PauseMenu : MonoBehaviour
     {
         paused = false;
         pauseAction = pInput.currentActionMap.FindAction("Pause");
-        resumeAction = pInput.currentActionMap.FindAction("Resume");
+        resumeAction = pInput.currentActionMap.FindAction("Credits");
+        InputDevice[] devices = new InputDevice[1];
+        devices[0] = InputSystem.devices[0];
+
+        pInput.SwitchCurrentControlScheme("UI", devices);
         pauseAction.started += PauseAction_started;
         resumeAction.started += ResumeAction_started;
         Time.timeScale = 1.0f;
+    }
+
+    private void OnDestroy()
+    {
+        pauseAction.started -= PauseAction_started;
+        resumeAction.started -= ResumeAction_started;
     }
 
     private void ResumeAction_started(InputAction.CallbackContext obj)
