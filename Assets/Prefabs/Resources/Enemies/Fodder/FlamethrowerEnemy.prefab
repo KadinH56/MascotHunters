@@ -296,7 +296,7 @@ MonoBehaviour:
   distanceFromPlayer: 10
   projectileVelocity: 20
   projectile: {fileID: 4408125041637714283, guid: da9f3936808796b41bed45b2661380fa, type: 3}
-  shootTimer: 0.1
+  shootTimer: 0.5
   isMelee: 0
   meleeTime: 0
   meleeBox: {fileID: 2008192815645434260}

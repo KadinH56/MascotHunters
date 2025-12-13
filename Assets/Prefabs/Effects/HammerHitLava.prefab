@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1300809641336708588}
   - component: {fileID: 5625275669108126103}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: HammerHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 2feacde32522edf46b6fb4f219a52a6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 1937835515542816916}
   - component: {fileID: 6911344302130572943}
   - component: {fileID: 1785568983087379422}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: HammerHitLava
   m_TagString: Untagged
   m_Icon: {fileID: 0}
