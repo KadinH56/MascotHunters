@@ -806,7 +806,55 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f08943b4-1ef4-487b-a4b0-2aa77bcc2bc4
+    m_ActionName: 'PlayerActions/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/r,/Keyboard/f,/Keyboard/g]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1e0a48da-5cbf-43ad-b0e4-ab46a78bc6b4
+    m_ActionName: 'PlayerActions/Roll[/Keyboard/leftShift,/Keyboard/space,/Keyboard/w,/Keyboard/v]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: babe1c7b-45c4-4ee7-be39-b8a4b3759dc2
+    m_ActionName: 'PlayerActions/Selection1[/Keyboard/1,/Keyboard/7,/Keyboard/a,/Keyboard/z]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 501dc232-2ac2-44ed-a75b-728a25b45764
+    m_ActionName: 'PlayerActions/Selection2[/Keyboard/2,/Keyboard/8,/Keyboard/s,/Keyboard/x]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ca9cb05c-2974-48ab-924f-46d916c03165
+    m_ActionName: 'PlayerActions/Selection3[/Keyboard/3,/Keyboard/9,/Keyboard/q,/Keyboard/c]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0bc79366-9625-47da-84ff-17ceb7c0b41c
+    m_ActionName: 'UI/Start Player 1[/Keyboard/1]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 411971dc-1ed4-4c09-a137-e0410d980a38
+    m_ActionName: 'UI/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/r,/Keyboard/f,/Keyboard/g]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4f721eb8-41bf-4b29-9ffa-ceff93879193
+    m_ActionName: 'UI/Start Player 2[/Keyboard/2]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 63e80edd-5e0c-4b0c-ad0b-aaa76264dd31
+    m_ActionName: 'UI/Pause[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 75dece8c-fc94-47b4-9703-d963224db1de
+    m_ActionName: 'UI/Credits[/Keyboard/enter]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c31f0de5-da8d-4d7d-9c3b-0f31bd75da9a
+    m_ActionName: 'UI/Select High Score[/Keyboard/enter,/Keyboard/shift,/Keyboard/v]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2348df52-c790-4c0f-8dbd-d63615f26417
+    m_ActionName: 'ForceQuit/ForceQuit[/Keyboard/tab]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: ForceQuit
   m_DefaultActionMap: ForceQuit

@@ -18,9 +18,9 @@ public class CreditsMenu : MonoBehaviour
 
     private void Start()
     {
+        cInput.enabled = true;
         creditsOpen = false;
         creditsOpenAction = cInput.currentActionMap.FindAction("Credits");
-        Time.timeScale = 1.0f;
 
         creditsOpenAction.started += CreditsOpenAction_started;
     }
