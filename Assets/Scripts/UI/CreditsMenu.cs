@@ -14,11 +14,11 @@ public class CreditsMenu : MonoBehaviour
 
     private InputAction creditsOpenAction;
 
-    private bool creditsOpen = false;
+    private bool creditsOpen;
 
     private void Start()
     {
-        creditsOpen = true;
+        creditsOpen = false;
         creditsOpenAction = cInput.currentActionMap.FindAction("Credits");
         Time.timeScale = 1.0f;
 
