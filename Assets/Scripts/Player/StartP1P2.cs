@@ -16,7 +16,12 @@ public class ResetQuit : MonoBehaviour
     {
         pInput = GetComponent<PlayerInput>();
 
-        if(SceneManager.GetActiveScene().buildIndex == 0)
+        InputDevice[] devices = new InputDevice[1];
+        devices[0] = InputSystem.devices[0];
+
+        pInput.SwitchCurrentControlScheme("UI", devices);
+
+        if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             start1P = pInput.currentActionMap.FindAction("Start Player 1");
             start2P = pInput.currentActionMap.FindAction("Start Player 2");
@@ -30,7 +35,6 @@ public class ResetQuit : MonoBehaviour
 
     private void Quit_started(InputAction.CallbackContext obj)
     {
-        print("QUIT");
         Application.Quit();
     }
 
