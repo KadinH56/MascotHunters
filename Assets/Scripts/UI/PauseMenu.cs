@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,8 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pause;
     [SerializeField] private PlayerInput pInput;
+    [SerializeField] private List<GameObject> disappearInPCBuild;
+    [SerializeField] private RectTransform specificallyThatOneLargeButton;
 
     private InputAction pauseAction;
     private InputAction resumeAction;
@@ -24,6 +27,14 @@ public class PauseMenu : MonoBehaviour
         pauseAction.started += PauseAction_started;
         resumeAction.started += ResumeAction_started;
         Time.timeScale = 1.0f;
+        if (!GameInformation.IsArcadeBuild)
+        {
+            foreach (GameObject go in disappearInPCBuild)
+            {
+                go.SetActive(false);
+            }
+            specificallyThatOneLargeButton.localScale *= 0.5f;
+        }
     }
 
     private void OnDestroy()

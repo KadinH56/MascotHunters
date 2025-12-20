@@ -2561,6 +2561,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
   pause: {fileID: 1337377427}
   pInput: {fileID: 849931505}
+  disappearInPCBuild:
+  - {fileID: 397924845}
+  - {fileID: 1212053220}
+  specificallyThatOneLargeButton: {fileID: 526193286}
 --- !u!1 &1205445596
 GameObject:
   m_ObjectHideFlags: 0

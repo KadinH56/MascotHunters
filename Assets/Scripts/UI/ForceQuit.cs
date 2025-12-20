@@ -9,7 +9,7 @@ public class ForceQuit : MonoBehaviour
     private InputAction forceQuit;
     void Start()
     {
-        if(instance == null)
+        if(instance == null && !GameInformation.IsArcadeBuild)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
